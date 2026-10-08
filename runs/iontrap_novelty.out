@@ -1,0 +1,54 @@
+PLAN  iontrap_novelty  (novelty, seed 42, device cuda)
+data  nslkdd D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+      train 42,426 / val 4,714 / test 78,833 rows, 122 features, label sets ['novelty']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\iontrap_novelty
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  3p12m           220    0.11  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled            129,788    0.4m
+   2  it4+4_a2a_L8_dt0.3       84    0.04  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled             57,968    0.4m
+   3  it4+4_a2a_L8_dt0.3_nomem       84    0.04  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled             57,968    0.4m
+   4  it4+4_a2a_L16_dt0.3      164    0.08  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled            101,060    0.4m
+
+fits  23 total (1 label set(s) x heads x arms), 0 already on disk, 23 to run
+time  ~5 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+09:50:14 === iontrap_novelty: novelty, seed 42, 4 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+09:50:15 train (42426, 122) val (4714, 122) test (78833, 122)
+09:50:16   novelty            raw pca32          macroAUC=0.8985 det@1%=0.3093 macro_det@1%=0.2009 (1s)
+09:50:43   novelty            raw ae256-b32      macroAUC=0.9771 det@1%=0.9367 macro_det@1%=0.7455 (27s)
+09:50:44   novelty            raw iforest        macroAUC=0.9168 det@1%=0.7982 macro_det@1%=0.2339 (1s)
+09:50:44 [step 1/4] 3p12m: readout 220, PCA(12) 48.2%, heads ['pca32', 'ae256-b32', 'iforest']
+09:50:44   novelty        dials12 pca32          macroAUC=0.8697 det@1%=0.6334 macro_det@1%=0.2210 (0s)
+09:51:11   novelty        dials12 ae256-b32      macroAUC=0.9528 det@1%=0.6725 macro_det@1%=0.4450 (26s)
+09:51:12   reservoir 3p12m built in 1s
+09:51:13   novelty         q3p12m pca32          macroAUC=0.9120 det@1%=0.2360 macro_det@1%=0.3341 (1s)
+09:51:39   novelty         q3p12m ae256-b32      macroAUC=0.9695 det@1%=0.9034 macro_det@1%=0.6356 (26s)
+09:51:41   novelty     rff220_12m pca32          macroAUC=0.9126 det@1%=0.1949 macro_det@1%=0.0628 (1s)
+09:52:07   novelty     rff220_12m ae256-b32      macroAUC=0.9710 det@1%=0.9151 macro_det@1%=0.6600 (26s)
+09:52:07 [step 2/4] it4+4_a2a_L8_dt0.3: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+09:52:08   novelty        dials64 pca32          macroAUC=0.9279 det@1%=0.6666 macro_det@1%=0.3867 (1s)
+09:52:35   novelty        dials64 ae256-b32      macroAUC=0.9718 det@1%=0.8098 macro_det@1%=0.5378 (26s)
+09:52:38   reservoir it4+4_a2a_L8_dt0.3 built in 4s
+09:52:39   novelty qit4+4_a2a_L8_dt0.3 pca32          macroAUC=0.9261 det@1%=0.6422 macro_det@1%=0.2947 (1s)
+09:53:05   novelty qit4+4_a2a_L8_dt0.3 ae256-b32      macroAUC=0.9747 det@1%=0.8742 macro_det@1%=0.5818 (26s)
+09:53:07   novelty      rff84_64m pca32          macroAUC=0.8787 det@1%=0.0133 macro_det@1%=0.0207 (1s)
+09:53:33   novelty      rff84_64m ae256-b32      macroAUC=0.9735 det@1%=0.8550 macro_det@1%=0.5755 (27s)
+09:53:33 [step 3/4] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+09:53:37   reservoir it4+4_a2a_L8_dt0.3_nomem built in 4s
+09:53:38   novelty qit4+4_a2a_L8_dt0.3_nomem pca32          macroAUC=0.9272 det@1%=0.6392 macro_det@1%=0.2881 (1s)
+09:54:03   novelty qit4+4_a2a_L8_dt0.3_nomem ae256-b32      macroAUC=0.9758 det@1%=0.8967 macro_det@1%=0.6178 (26s)
+09:54:03 [step 4/4] it4+4_a2a_L16_dt0.3: readout 164, PCA(122) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+09:54:04   novelty       dials122 pca32          macroAUC=0.9377 det@1%=0.6878 macro_det@1%=0.3772 (1s)
+09:54:30   novelty       dials122 ae256-b32      macroAUC=0.9770 det@1%=0.8787 macro_det@1%=0.6312 (26s)
+09:54:38   reservoir it4+4_a2a_L16_dt0.3 built in 7s
+09:54:39   novelty qit4+4_a2a_L16_dt0.3 pca32          macroAUC=0.9514 det@1%=0.7434 macro_det@1%=0.5109 (1s)
+09:55:04   novelty qit4+4_a2a_L16_dt0.3 ae256-b32      macroAUC=0.9815 det@1%=0.9247 macro_det@1%=0.7671 (26s)
+09:55:07   novelty    rff164_122m pca32          macroAUC=0.8368 det@1%=0.0007 macro_det@1%=0.0149 (1s)
+09:55:33   novelty    rff164_122m ae256-b32      macroAUC=0.9741 det@1%=0.8809 macro_det@1%=0.5922 (26s)
+09:55:33 === iontrap_novelty done in 5.3 min -> D:\Dev\ai-ml\qorc\runs\iontrap_novelty\results.jsonl ===

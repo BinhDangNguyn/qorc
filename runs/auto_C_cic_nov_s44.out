@@ -1,0 +1,26 @@
+PLAN  auto_C_cic_nov_s44  (novelty, seed 44, device cuda)
+data  nf_cse_cic_ids2018_v2 (default path)
+      train 118,225 / val 13,137 / test 68,638 rows, 37 features, label sets ['novelty']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_C_cic_nov_s44
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L16_dt0.3      164    0.13  ae1024-b32     scaled            403,652    0.8m
+   2  it4+4_a2a_L16_dt0.3_nomem      164    0.13  ae1024-b32     scaled            403,652    0.8m
+
+fits  5 total (1 label set(s) x heads x arms), 0 already on disk, 5 to run
+time  ~5 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+06:01:13 === auto_C_cic_nov_s44: novelty, seed 44, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+06:01:23 train (118225, 37) val (13137, 37) test (68638, 37)
+06:02:33   novelty            raw ae1024-b32     macroAUC=0.9315 det@1%=0.8294 macro_det@1%=0.7912 (70s)
+06:02:33 [step 1/2] it4+4_a2a_L16_dt0.3: readout 164, PCA(37) 100.0%, heads ['ae1024-b32']
+06:03:41   novelty        dials37 ae1024-b32     macroAUC=0.9287 det@1%=0.7594 macro_det@1%=0.7315 (68s)
+06:03:53   reservoir it4+4_a2a_L16_dt0.3 built in 11s
+06:05:02   novelty qit4+4_a2a_L16_dt0.3 ae1024-b32     macroAUC=0.9297 det@1%=0.7838 macro_det@1%=0.7637 (70s)
+06:05:40   novelty     rff164_37m ae1024-b32     macroAUC=0.9246 det@1%=0.5439 macro_det@1%=0.4465 (37s)
+06:05:40 [step 2/2] it4+4_a2a_L16_dt0.3_nomem: readout 164, PCA(37) 100.0%, heads ['ae1024-b32']
+06:05:51   reservoir it4+4_a2a_L16_dt0.3_nomem built in 11s
+06:07:02   novelty qit4+4_a2a_L16_dt0.3_nomem ae1024-b32     macroAUC=0.9300 det@1%=0.7616 macro_det@1%=0.7876 (71s)
+06:07:02 === auto_C_cic_nov_s44 done in 5.6 min -> D:\Dev\ai-ml\qorc\runs\auto_C_cic_nov_s44\results.jsonl ===

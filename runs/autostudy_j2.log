@@ -1,0 +1,50 @@
+[21:46:42] run  auto_A_nsl_sup
+[21:48:06]   exit 0
+[21:48:06] run  auto_A_nsl_nov
+[21:49:00]   exit 0
+[21:49:00] run  auto_A_unsw_sup
+[21:50:44]   exit 0
+[21:50:44] run  auto_A_unsw_nov
+[21:52:32]   exit 0
+[21:52:32] run  auto_A_cic_sup
+[21:54:55]   exit 0
+[21:54:55] run  auto_A_cic_nov
+[21:57:18]   exit 0
+  nsl_sup: picked it4+4_a2a_L16_dt0.3
+[21:57:19] run  auto_B_nsl_sup
+[21:57:30]   exit 0
+  nsl_sup: head mlp512x512
+[21:57:30] run  auto_C_nsl_sup_s43
+[21:57:41]   exit 0
+[21:57:41] run  auto_C_nsl_sup_s44
+[21:57:52]   exit 0
+report -> D:\Dev\ai-ml\qorc\docs\findings_autostudy.md
+  nsl_nov: picked it6+4_a2a_L8_dt0.3
+[21:57:53] run  auto_B_nsl_nov
+[21:58:05]   exit 0
+  nsl_nov: head ae1024-b32
+[21:58:05] run  auto_C_nsl_nov_s43
+[21:58:17]   exit 0
+[21:58:17] run  auto_C_nsl_nov_s44
+[21:58:29]   exit 0
+report -> D:\Dev\ai-ml\qorc\docs\findings_autostudy.md
+  unsw_sup: picked 3p20m
+[21:58:29] run  auto_B_unsw_sup
+[21:58:40]   exit 0
+  unsw_sup: head mlp512x512
+[21:58:40] run  auto_C_unsw_sup_s43
+[21:58:53]   exit 0
+[21:58:53] run  auto_C_unsw_sup_s44
+[21:59:04]   exit 0
+report -> D:\Dev\ai-ml\qorc\docs\findings_autostudy.md
+  unsw_nov: picked 3p12m
+[21:59:05] run  auto_B_unsw_nov
+[21:59:16]   exit 0
+  unsw_nov: head ae256-b32
+[21:59:16] run  auto_C_unsw_nov_s43
+[21:59:27]   exit 0
+[21:59:27] run  auto_C_unsw_nov_s44
+[21:59:38]   exit 0
+report -> D:\Dev\ai-ml\qorc\docs\findings_autostudy.md
+  cic_sup: picked it4+4_a2a_L8_dt0.3_J2
+[21:59:38] run  auto_B_cic_sup

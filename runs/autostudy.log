@@ -1,0 +1,59 @@
+[00:39:32] run  auto_A_nsl_sup
+[01:02:44]   exit 0
+[01:02:44] run  auto_A_nsl_nov
+[01:02:54]   exit 3221226505
+[01:02:54] run  auto_A_unsw_sup
+[01:41:28]   exit 0
+[01:41:28] run  auto_A_unsw_nov
+[02:20:15]   exit 0
+[02:20:15] run  auto_A_cic_sup
+[02:48:38]   exit 0
+[02:48:38] run  auto_A_cic_nov
+[03:24:38]   exit 0
+  nsl_sup: picked it4+4_a2a_L16_dt0.3
+[03:24:38] run  auto_B_nsl_sup
+[03:41:29]   exit 0
+  nsl_sup: head mlp512x512
+[03:41:29] run  auto_C_nsl_sup_s43
+[03:44:58]   exit 0
+[03:44:58] run  auto_C_nsl_sup_s44
+[03:50:07]   exit 0
+  report failed: KeyError('head')
+  nsl_nov: no stage-A result ('head'); skipping B/C
+  unsw_sup: picked 3p20m
+[03:50:07] run  auto_B_unsw_sup
+[04:17:48]   exit 0
+  unsw_sup: head mlp512x512
+[04:17:48] run  auto_C_unsw_sup_s43
+[04:25:00]   exit 0
+[04:25:00] run  auto_C_unsw_sup_s44
+[04:31:34]   exit 0
+  report failed: KeyError('head')
+  unsw_nov: picked 3p12m
+[04:31:34] run  auto_B_unsw_nov
+[04:54:06]   exit 0
+  unsw_nov: head ae256-b32
+[04:54:06] run  auto_C_unsw_nov_s43
+[04:59:26]   exit 0
+[04:59:26] run  auto_C_unsw_nov_s44
+[05:04:52]   exit 0
+  report failed: KeyError('head')
+  cic_sup: picked it4+4_a2a_L16_dt0.3
+[05:04:52] run  auto_B_cic_sup
+[05:24:09]   exit 0
+  cic_sup: head mlp2048
+[05:24:09] run  auto_C_cic_sup_s43
+[05:28:22]   exit 0
+[05:28:22] run  auto_C_cic_sup_s44
+[05:28:52]   exit 3221226505
+  report failed: KeyError('head')
+  cic_nov: picked it4+4_a2a_L16_dt0.3
+[05:28:53] run  auto_B_cic_nov
+[05:54:22]   exit 0
+  cic_nov: head ae1024-b32
+[05:54:22] run  auto_C_cic_nov_s43
+[06:00:55]   exit 0
+[06:00:55] run  auto_C_cic_nov_s44
+[06:07:03]   exit 0
+  report failed: KeyError('head')
+  report failed: KeyError('head')

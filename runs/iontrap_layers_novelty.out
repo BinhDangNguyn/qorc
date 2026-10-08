@@ -1,0 +1,64 @@
+PLAN  iontrap_layers_novelty  (novelty, seed 42, device cuda)
+data  nslkdd D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+      train 42,426 / val 4,714 / test 78,833 rows, 122 features, label sets ['novelty']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\iontrap_layers_novelty
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L16_dt0.3_roundrobin      164    0.08  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled            101,060    0.4m
+   2  it4+4_a2a_L8_dt0.3_R2_roundrobin       84    0.04  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled             57,968    0.4m
+   3  it4+4_a2a_L4_dt0.3_R4_roundrobin       44    0.02  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled             30,266    0.4m
+   4  it4+4_a2a_L8_dt0.3_encall_roundrobin       84    0.04  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled             57,968    0.4m
+   5  it4+4_a2a_L4_dt0.3_R2_encall_roundrobin       44    0.02  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled             30,266    0.4m
+   6  it4+4_a2a_L2_dt0.3_R4_encall_roundrobin       24    0.01  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled             16,928    0.4m
+
+fits  25 total (1 label set(s) x heads x arms), 0 already on disk, 25 to run
+time  ~37 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+10:22:32 === iontrap_layers_novelty: novelty, seed 42, 6 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+10:22:33 train (42426, 122) val (4714, 122) test (78833, 122)
+10:22:34   novelty            raw pca32          macroAUC=0.8985 det@1%=0.3093 macro_det@1%=0.2009 (1s)
+10:23:08   novelty            raw ae256-b32      macroAUC=0.9771 det@1%=0.9367 macro_det@1%=0.7455 (34s)
+10:23:09   novelty            raw iforest        macroAUC=0.9168 det@1%=0.7982 macro_det@1%=0.2339 (1s)
+10:23:09 [step 1/6] it4+4_a2a_L16_dt0.3_roundrobin: readout 164, PCA(122) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+10:23:10   novelty       dials122 pca32          macroAUC=0.9377 det@1%=0.6878 macro_det@1%=0.3772 (1s)
+10:23:42   novelty       dials122 ae256-b32      macroAUC=0.9770 det@1%=0.8787 macro_det@1%=0.6312 (32s)
+10:23:50   reservoir it4+4_a2a_L16_dt0.3_roundrobin built in 8s
+10:23:51   novelty qit4+4_a2a_L16_dt0.3_roundrobin pca32          macroAUC=0.9417 det@1%=0.7137 macro_det@1%=0.4299 (1s)
+10:24:24   novelty qit4+4_a2a_L16_dt0.3_roundrobin ae256-b32      macroAUC=0.9814 det@1%=0.9470 macro_det@1%=0.7958 (32s)
+10:24:27   novelty    rff164_122m pca32          macroAUC=0.8368 det@1%=0.0007 macro_det@1%=0.0149 (1s)
+10:24:59   novelty    rff164_122m ae256-b32      macroAUC=0.9741 det@1%=0.8809 macro_det@1%=0.5922 (32s)
+10:24:59 [step 2/6] it4+4_a2a_L8_dt0.3_R2_roundrobin: readout 84, PCA(122) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+10:27:44   reservoir it4+4_a2a_L8_dt0.3_R2_roundrobin built in 165s
+10:27:45   novelty qit4+4_a2a_L8_dt0.3_R2_roundrobin pca32          macroAUC=0.9525 det@1%=0.5207 macro_det@1%=0.4392 (1s)
+10:28:19   novelty qit4+4_a2a_L8_dt0.3_R2_roundrobin ae256-b32      macroAUC=0.9784 det@1%=0.9448 macro_det@1%=0.7862 (34s)
+10:28:23   novelty     rff84_122m pca32          macroAUC=0.8886 det@1%=0.0539 macro_det@1%=0.0901 (1s)
+10:28:56   novelty     rff84_122m ae256-b32      macroAUC=0.9760 det@1%=0.8434 macro_det@1%=0.5854 (33s)
+10:28:56 [step 3/6] it4+4_a2a_L4_dt0.3_R4_roundrobin: readout 44, PCA(122) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+10:31:43   reservoir it4+4_a2a_L4_dt0.3_R4_roundrobin built in 167s
+10:31:44   novelty qit4+4_a2a_L4_dt0.3_R4_roundrobin pca32          macroAUC=0.9422 det@1%=0.4910 macro_det@1%=0.3419 (1s)
+10:32:17   novelty qit4+4_a2a_L4_dt0.3_R4_roundrobin ae256-b32      macroAUC=0.9748 det@1%=0.8960 macro_det@1%=0.7442 (33s)
+10:32:20   novelty     rff44_122m pca32          macroAUC=0.9321 det@1%=0.0960 macro_det@1%=0.1173 (1s)
+10:32:54   novelty     rff44_122m ae256-b32      macroAUC=0.9729 det@1%=0.7455 macro_det@1%=0.4944 (34s)
+10:32:54 [step 4/6] it4+4_a2a_L8_dt0.3_encall_roundrobin: readout 84, PCA(122) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+10:34:16   reservoir it4+4_a2a_L8_dt0.3_encall_roundrobin built in 82s
+10:34:17   novelty qit4+4_a2a_L8_dt0.3_encall_roundrobin pca32          macroAUC=0.9219 det@1%=0.6453 macro_det@1%=0.3144 (1s)
+10:34:50   novelty qit4+4_a2a_L8_dt0.3_encall_roundrobin ae256-b32      macroAUC=0.9762 det@1%=0.9121 macro_det@1%=0.7226 (33s)
+10:34:50 [step 5/6] it4+4_a2a_L4_dt0.3_R2_encall_roundrobin: readout 44, PCA(122) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+10:36:14   reservoir it4+4_a2a_L4_dt0.3_R2_encall_roundrobin built in 84s
+10:36:15   novelty qit4+4_a2a_L4_dt0.3_R2_encall_roundrobin pca32          macroAUC=0.9454 det@1%=0.6874 macro_det@1%=0.4504 (1s)
+10:36:49   novelty qit4+4_a2a_L4_dt0.3_R2_encall_roundrobin ae256-b32      macroAUC=0.9745 det@1%=0.9170 macro_det@1%=0.7330 (34s)
+10:36:49 [step 6/6] it4+4_a2a_L2_dt0.3_R4_encall_roundrobin: readout 24, PCA(122) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+10:38:14   reservoir it4+4_a2a_L2_dt0.3_R4_encall_roundrobin built in 85s
+10:38:14   novelty qit4+4_a2a_L2_dt0.3_R4_encall_roundrobin pca32          macroAUC=0.9327 det@1%=0.3897 macro_det@1%=0.2767 (1s)
+10:38:48   novelty qit4+4_a2a_L2_dt0.3_R4_encall_roundrobin ae256-b32      macroAUC=0.9777 det@1%=0.7726 macro_det@1%=0.5721 (34s)
+10:38:51   novelty     rff24_122m pca32          macroAUC=0.9271 det@1%=0.2907 macro_det@1%=0.2631 (1s)
+10:39:23   novelty     rff24_122m ae256-b32      macroAUC=0.9690 det@1%=0.6401 macro_det@1%=0.5084 (32s)
+10:39:23 === iontrap_layers_novelty done in 16.8 min -> D:\Dev\ai-ml\qorc\runs\iontrap_layers_novelty\results.jsonl ===

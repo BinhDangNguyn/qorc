@@ -1,0 +1,28 @@
+13:23:56 === classical_supervised: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+13:23:56 train (79362, 122) val (8819, 122) test (37792, 122)
+13:24:06   families6            raw logreg       F1=0.9265 acc=0.9636 (9s)
+13:30:19   families6            raw linsvm       F1=0.9413 acc=0.9741 (374s)
+13:30:39   families6            raw knn5         F1=0.9823 acc=0.9943 (20s)
+13:30:47   families6            raw rf300        F1=0.9953 acc=0.9982 (8s)
+13:31:01   families6            raw extratrees300 F1=0.9949 acc=0.9980 (14s)
+13:31:09   families6            raw hgb          F1=0.9967 acc=0.9988 (9s)
+13:31:25   families6            raw xgb300       F1=0.9970 acc=0.9989 (16s)
+13:32:03   families6            raw mlp512x512   F1=0.9864 acc=0.9946 (38s)
+13:32:24   all23                raw logreg       F1=0.6693 acc=0.9583 (22s)
+13:53:44 === classical_supervised: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+13:53:45 train (79362, 122) val (8819, 122) test (37792, 122)
+14:01:11   families6            raw linsvm       F1=0.9413 acc=0.9741 (446s)
+14:48:00   all23                raw linsvm       F1=0.6043 acc=0.9761 (2810s)
+14:48:18   all23                raw knn5         F1=0.7337 acc=0.9941 (17s)
+14:48:28   all23                raw rf300        F1=0.7786 acc=0.9980 (10s)
+14:48:43   all23                raw extratrees300 F1=0.8220 acc=0.9981 (15s)
+14:49:15 === classical_supervised: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+14:49:16 train (79362, 122) val (8819, 122) test (37792, 122)
+14:50:48   all23                raw hgb          F1=0.8110 acc=0.9989 (91s)
+14:51:27   all23                raw xgb300       F1=0.8386 acc=0.9987 (39s)
+14:51:40   all23                raw mlp512x512   F1=0.6782 acc=0.9622 (13s)
+14:51:40 === classical_supervised done in 2.4 min -> D:\Dev\ai-ml\qorc\runs\classical_supervised\results.jsonl ===
+14:51:59 === classical_supervised: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+14:51:59 train (79362, 122) val (8819, 122) test (37792, 122)
+14:52:40   families6            raw hgb          F1=0.9967 acc=0.9989 (40s)
+14:52:40 === classical_supervised done in 0.7 min -> D:\Dev\ai-ml\qorc\runs\classical_supervised\results.jsonl ===

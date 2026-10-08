@@ -1,0 +1,37 @@
+PLAN  auto_K_unsw_nov  (novelty, seed 42, device cuda)
+data  nf_unsw_nb15_v2 (default path)
+      train 125,876 / val 13,987 / test 101,302 rows, 37 features, label sets ['novelty']
+arms  ['raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_K_unsw_nov
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+      raw              37          iforest        classical                -    0.1m
+      raw              37          ocsvm-nu0.05   classical                -    0.5m
+      raw              37          lof20          classical                -    0.5m
+      raw              37          knndist5       classical                -    0.5m
+      raw              37          gmm8           classical                -    0.2m
+      raw              37          ae512-b32      classical                -    0.8m
+
+fits  6 total (1 label set(s) x heads x arms), 0 already on disk, 6 to run
+time  ~3 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.0 GB
+
+19:48:32 === auto_K_unsw_nov: novelty, seed 42, 0 steps, arms ['raw'], device cuda ===
+19:48:32 train (125876, 37) val (13987, 37) test (101302, 37)
+19:48:33   novelty            raw iforest        macroAUC=0.9073 det@1%=0.0734 macro_det@1%=0.1212 (1s)
+19:48:39   novelty            raw ocsvm-nu0.05   macroAUC=0.5169 det@1%=0.1824 macro_det@1%=0.3063 (5s)
+C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\threadpoolctl.py:1226: RuntimeWarning: 
+Found Intel OpenMP ('libiomp') and LLVM OpenMP ('libomp') loaded at
+the same time. Both libraries are known to be incompatible and this
+can cause random crashes or deadlocks on Linux when loaded in the
+same Python program.
+Using threadpoolctl may cause crashes or deadlocks. For more
+information and possible workarounds, please see
+    https://github.com/joblib/threadpoolctl/blob/master/multiple_openmp.md
+
+  warnings.warn(msg, RuntimeWarning)
+19:49:17   novelty            raw lof20          macroAUC=0.7775 det@1%=0.1273 macro_det@1%=0.1874 (39s)
+19:49:36   novelty            raw knndist5       macroAUC=0.9323 det@1%=0.2846 macro_det@1%=0.3583 (19s)
+19:49:39   novelty            raw gmm8           macroAUC=0.8931 det@1%=0.1257 macro_det@1%=0.1203 (3s)
+19:51:01   novelty            raw ae512-b32      macroAUC=0.9467 det@1%=0.2067 macro_det@1%=0.2789 (82s)
+19:51:01 === auto_K_unsw_nov done in 2.5 min -> D:\Dev\ai-ml\qorc\runs\auto_K_unsw_nov\results.jsonl ===

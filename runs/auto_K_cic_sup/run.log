@@ -1,0 +1,15 @@
+19:44:39 === auto_K_cic_sup: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+19:44:51 train (126000, 37) val (14000, 37) test (60000, 37)
+19:44:52   binary               raw logreg       F1=0.9233 acc=0.9821 (1s)
+19:45:30   binary               raw knn5         F1=0.9488 acc=0.9887 (38s)
+19:45:53   binary               raw rf300        F1=0.9453 acc=0.9878 (23s)
+19:46:13   binary               raw extratrees300 F1=0.9378 acc=0.9859 (20s)
+19:46:19   binary               raw xgb300       F1=0.9342 acc=0.9849 (6s)
+19:46:39   binary               raw mlp512x512   F1=0.9549 acc=0.9901 (19s)
+19:46:56   family7              raw logreg       F1=0.5447 acc=0.4085 (17s)
+19:47:14   family7              raw knn5         F1=0.6142 acc=0.9883 (18s)
+19:47:33   family7              raw rf300        F1=0.6815 acc=0.9876 (19s)
+19:47:52   family7              raw extratrees300 F1=0.6875 acc=0.9856 (18s)
+19:48:04   family7              raw xgb300       F1=0.7360 acc=0.9355 (12s)
+19:48:23   family7              raw mlp512x512   F1=0.6027 acc=0.9254 (19s)
+19:48:23 === auto_K_cic_sup done in 3.5 min -> D:\Dev\ai-ml\qorc\runs\auto_K_cic_sup\results.jsonl ===

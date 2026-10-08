@@ -1,0 +1,34 @@
+# The ORIGINAL zero-day sweep (qorc_zeroday_sweep_novelty.ipynb): normal-only
+# training, the reservoir grows, the detector stays the linear PCA /
+# Mahalanobis detector. Its four detectors map onto arms x heads here:
+#
+#   NOV_q      quantum x pca32        NOV_raw   raw x pca32
+#   NOV_dials  dials   x pca32        IForest   raw x iforest
+
+name: novelty_reference
+task: novelty
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+
+split:
+  test_size: 0.30
+  val_frac: 0.0          # nothing here early-stops
+
+arms: [quantum, dials, raw]
+
+grid:
+  reservoirs:
+    - {photons: 3, modes: 12}
+    - {photons: 3, modes: 20}
+    - {photons: 3, modes: 24}
+    - {photons: 4, modes: 12}
+    - {photons: 4, modes: 20}
+    - {photons: 4, modes: 24}
+  heads:
+    - {kind: pca, n_components: 32}
+    - {kind: iforest, arms: [raw]}
+
+out: runs

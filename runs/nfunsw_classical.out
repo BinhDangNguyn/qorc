@@ -1,0 +1,39 @@
+PLAN  nfunsw_classical  (supervised, seed 42, device cuda)
+data  nf_unsw_nb15_v2 (default path)
+      train 1,505,872 / val 167,320 / test 717,083 rows, 37 features, label sets ['binary', 'attack10']
+arms  ['raw']
+out   D:\Dev\ai-ml\qorc\runs\nfunsw_classical
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+      raw              37          logreg         classical                -    0.6m
+      raw              37          extratrees100  classical                -    1.0m
+      raw              37          rf100          classical                -    1.0m
+      raw              37          xgb300         classical                -    2.9m
+      raw              37          mlp512x512     classical                -    8.7m
+
+fits  10 total (2 label set(s) x heads x arms), 0 already on disk, 10 to run
+time  ~28 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.4 GB
+
+11:05:00 === nfunsw_classical: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+11:05:05 train (1505872, 37) val (167320, 37) test (717083, 37)
+11:05:25   binary               raw logreg       F1=0.9445 acc=0.9906 (18s)
+11:06:20   binary               raw extratrees100 F1=0.9832 acc=0.9974 (55s)
+11:07:11   binary               raw rf100        F1=0.9843 acc=0.9976 (51s)
+11:07:30   binary               raw xgb300       F1=0.9775 acc=0.9964 (19s)
+11:12:54   binary               raw mlp512x512   F1=0.9740 acc=0.9958 (324s)
+C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\linear_model\_logistic.py:473: ConvergenceWarning: lbfgs failed to converge after 1000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=1000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+11:20:13   attack10             raw logreg       F1=0.4218 acc=0.9676 (439s)
+11:21:10   attack10             raw extratrees100 F1=0.6495 acc=0.9892 (57s)
+11:22:07   attack10             raw rf100        F1=0.6539 acc=0.9896 (57s)
+11:25:33   attack10             raw xgb300       F1=0.6467 acc=0.9876 (206s)
+11:37:48   attack10             raw mlp512x512   F1=0.5976 acc=0.9853 (736s)
+11:37:48 === nfunsw_classical done in 32.7 min -> D:\Dev\ai-ml\qorc\runs\nfunsw_classical\results.jsonl ===

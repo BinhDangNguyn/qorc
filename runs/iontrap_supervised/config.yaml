@@ -1,0 +1,59 @@
+name: iontrap_supervised
+task: supervised
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  schemes:
+  - families6
+  - all23
+  n_train: 0
+  max_rows: 0
+seed: 42
+split:
+  test_size: 0.3
+  val_frac: 0.1
+encoding:
+  scheme: tanh
+  width: 3.0
+arms:
+- quantum
+- dials
+- rff
+- raw
+ladder: null
+grid:
+  reservoirs:
+  - photons: 3
+    modes: 12
+  - kind: iontrap
+    n_in: 4
+    n_mem: 4
+    steps: 8
+    dt: 0.3
+    topology: all_to_all
+  - kind: iontrap
+    n_in: 4
+    n_mem: 4
+    steps: 8
+    dt: 0.3
+    topology: all_to_all
+    memory: false
+  - kind: iontrap
+    n_in: 4
+    n_mem: 4
+    steps: 16
+    dt: 0.3
+    topology: all_to_all
+  heads:
+  - kind: lbfgs
+    l2: 0.0001
+    max_iter: 200
+  - kind: mlp
+    hidden:
+    - 256
+rule: null
+models: null
+baseline_heads: []
+device: auto
+out: runs
+notes: ''

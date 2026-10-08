@@ -1,0 +1,93 @@
+PLAN  auto_B_unsw_sup  (supervised, seed 42, device cuda)
+data  nf_unsw_nb15_v2 (default path)
+      train 151,933 / val 16,882 / test 72,350 rows, 37 features, label sets ['binary', 'attack10']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_B_unsw_sup
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  3p20m          1140    1.10  lbfgs          scaled             11,410    0.6m
+                                   mlp32          scaled             36,842    0.9m
+                                   mlp128         scaled            147,338    1.0m
+                                   mlp512         scaled            589,322    1.1m
+                                   mlp2048        scaled          2,357,258    1.5m
+                                   mlp512x512     scaled            851,978    1.1m
+
+fits  48 total (2 label set(s) x heads x arms), 0 already on disk, 48 to run
+time  ~44 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 1.1 GB
+
+03:50:14 === auto_B_unsw_sup: supervised, seed 42, 1 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+03:50:15 train (151933, 37) val (16882, 37) test (72350, 37)
+03:50:19   binary               raw lbfgs        F1=0.8909 acc=0.9294 (4s)
+03:50:57   binary               raw mlp32        F1=0.9454 acc=0.9667 (38s)
+03:51:15   binary               raw mlp128       F1=0.9454 acc=0.9668 (18s)
+03:51:34   binary               raw mlp512       F1=0.9458 acc=0.9671 (18s)
+03:51:52   binary               raw mlp2048      F1=0.9459 acc=0.9671 (18s)
+03:52:24   binary               raw mlp512x512   F1=0.9482 acc=0.9685 (32s)
+03:52:28   attack10             raw lbfgs        F1=0.3413 acc=0.8131 (4s)
+03:53:17   attack10             raw mlp32        F1=0.4025 acc=0.8893 (49s)
+03:54:05   attack10             raw mlp128       F1=0.4218 acc=0.8976 (48s)
+03:54:42   attack10             raw mlp512       F1=0.4448 acc=0.9041 (37s)
+03:55:05   attack10             raw mlp2048      F1=0.4422 acc=0.9076 (24s)
+03:56:12   attack10             raw mlp512x512   F1=0.4704 acc=0.9125 (66s)
+03:56:12 [step 1/1] 3p20m: readout 1,140, PCA(20) 99.5%, heads ['lbfgs', 'mlp32', 'mlp128', 'mlp512', 'mlp2048', 'mlp512x512']
+03:56:12   binary           dials20 lbfgs        F1=0.8154 acc=0.8707 (1s)
+03:56:55   binary           dials20 mlp32        F1=0.9440 acc=0.9658 (43s)
+03:57:18   binary           dials20 mlp128       F1=0.9450 acc=0.9665 (23s)
+03:57:37   binary           dials20 mlp512       F1=0.9454 acc=0.9668 (19s)
+03:57:55   binary           dials20 mlp2048      F1=0.9453 acc=0.9668 (18s)
+03:58:32   binary           dials20 mlp512x512   F1=0.9486 acc=0.9688 (37s)
+03:58:36   attack10         dials20 lbfgs        F1=0.2995 acc=0.7739 (4s)
+03:59:12   attack10         dials20 mlp32        F1=0.3788 acc=0.8651 (36s)
+03:59:48   attack10         dials20 mlp128       F1=0.4059 acc=0.8920 (37s)
+04:00:26   attack10         dials20 mlp512       F1=0.4315 acc=0.8977 (37s)
+04:01:12   attack10         dials20 mlp2048      F1=0.4482 acc=0.9067 (47s)
+04:02:07   attack10         dials20 mlp512x512   F1=0.4720 acc=0.9132 (55s)
+04:02:11   reservoir 3p20m built in 4s
+04:02:34   binary            q3p20m lbfgs        F1=0.9454 acc=0.9668 (23s)
+04:03:01   binary            q3p20m mlp32        F1=0.9479 acc=0.9684 (26s)
+04:03:22   binary            q3p20m mlp128       F1=0.9479 acc=0.9684 (22s)
+04:03:41   binary            q3p20m mlp512       F1=0.9475 acc=0.9682 (19s)
+04:04:01   binary            q3p20m mlp2048      F1=0.9481 acc=0.9686 (21s)
+04:04:51   binary            q3p20m mlp512x512   F1=0.9492 acc=0.9693 (49s)
+04:05:16   attack10          q3p20m lbfgs        F1=0.4455 acc=0.9017 (25s)
+04:06:10   attack10          q3p20m mlp32        F1=0.4631 acc=0.9079 (55s)
+04:07:10   attack10          q3p20m mlp128       F1=0.4807 acc=0.9149 (60s)
+04:08:05   attack10          q3p20m mlp512       F1=0.4854 acc=0.9178 (55s)
+04:09:02   attack10          q3p20m mlp2048      F1=0.4856 acc=0.9172 (57s)
+04:10:10   attack10          q3p20m mlp512x512   F1=0.4870 acc=0.9177 (68s)
+04:10:38   binary       rff1140_20m lbfgs        F1=0.9454 acc=0.9668 (25s)
+04:11:04   binary       rff1140_20m mlp32        F1=0.9481 acc=0.9685 (26s)
+04:11:22   binary       rff1140_20m mlp128       F1=0.9479 acc=0.9684 (18s)
+04:11:40   binary       rff1140_20m mlp512       F1=0.9484 acc=0.9688 (18s)
+04:12:02   binary       rff1140_20m mlp2048      F1=0.9476 acc=0.9682 (21s)
+04:12:24   binary       rff1140_20m mlp512x512   F1=0.9487 acc=0.9690 (22s)
+04:12:49   attack10     rff1140_20m lbfgs        F1=0.4469 acc=0.9027 (25s)
+04:13:19   attack10     rff1140_20m mlp32        F1=0.4517 acc=0.9043 (30s)
+04:14:00   attack10     rff1140_20m mlp128       F1=0.4802 acc=0.9155 (41s)
+04:15:07   attack10     rff1140_20m mlp512       F1=0.4840 acc=0.9168 (67s)
+04:16:15   attack10     rff1140_20m mlp2048      F1=0.4919 acc=0.9202 (68s)
+04:17:47   attack10     rff1140_20m mlp512x512   F1=0.4906 acc=0.9191 (92s)
+04:17:47 === auto_B_unsw_sup done in 27.5 min -> D:\Dev\ai-ml\qorc\runs\auto_B_unsw_sup\results.jsonl ===
+PLAN  auto_B_unsw_sup  (supervised, seed 42, device cuda)
+data  nf_unsw_nb15_v2 (default path)
+      train 151,933 / val 16,882 / test 72,350 rows, 37 features, label sets ['binary', 'attack10']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_B_unsw_sup
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  3p20m          1140    1.10  lbfgs          scaled             11,410    0.6m
+                                   mlp32          scaled             36,842    0.9m
+                                   mlp128         scaled            147,338    1.0m
+                                   mlp512         scaled            589,322    1.1m
+                                   mlp2048        scaled          2,357,258    1.5m
+                                   mlp512x512     scaled            851,978    1.1m
+
+fits  48 total (2 label set(s) x heads x arms), 48 already on disk, 0 to run
+time  ~0 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 1.1 GB
+
+21:58:38 === auto_B_unsw_sup: supervised, seed 42, 1 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:58:39 train (151933, 37) val (16882, 37) test (72350, 37)
+21:58:39 [step 1/1] 3p20m: readout 1,140, PCA(20) 99.5%, heads ['lbfgs', 'mlp32', 'mlp128', 'mlp512', 'mlp2048', 'mlp512x512']
+21:58:39 === auto_B_unsw_sup done in 0.0 min -> D:\Dev\ai-ml\qorc\runs\auto_B_unsw_sup\results.jsonl ===

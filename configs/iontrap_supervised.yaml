@@ -1,0 +1,52 @@
+# Trapped-ion reservoir with quantum memory (NISQRC) on NSL-KDD, supervised.
+#
+#   python -m elements.run configs/iontrap_supervised.yaml --plan
+#   python -m elements.run configs/iontrap_supervised.yaml
+#
+# Exact density-matrix simulation (elements/core/iontrap.py), so every row of
+# the dataset goes through the reservoir -- not the ~200-row subsample the
+# hardware scripts in reservoir-computing/ion_traps/ can afford.
+#
+# Steps:
+#   3p12m                      the photonic reference, same split, same heads
+#   it4+4_a2a_L8               architecture A: 8 ions all-to-all, 4 in + 4 memory,
+#                              8 steps -> 64 PCA components ingested, 84 features
+#   it4+4_a2a_L8 _nomem        the SAME reservoir with its memory reset every step:
+#                              any gain over this is what the memory contributes
+#   it4+4_a2a_L16              16 steps -> 128 slots, i.e. the whole (scaled)
+#                              feature vector with no PCA truncation
+#
+# Controls per step (same head): dials = the PCA vector that drove the
+# reservoir; rff = random Fourier features of equal width; raw = no bottleneck.
+
+name: iontrap_supervised
+task: supervised
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  schemes: [families6, all23]
+
+split:
+  test_size: 0.30
+  val_frac: 0.10         # early stopping for the MLP only
+
+encoding:
+  scheme: tanh
+  width: 3.0
+
+arms: [quantum, dials, rff, raw]
+
+grid:
+  reservoirs:
+    - {photons: 3, modes: 12}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 8, dt: 0.3, topology: all_to_all}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 8, dt: 0.3, topology: all_to_all, memory: false}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 16, dt: 0.3, topology: all_to_all}
+  heads:
+    - {kind: lbfgs, l2: 1.0e-4, max_iter: 200}
+    - {kind: mlp, hidden: [256]}
+
+device: auto
+out: runs

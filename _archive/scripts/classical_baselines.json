@@ -1,0 +1,130 @@
+{
+  "novelty": {
+    "Isolation Forest": {
+      "accuracy": 0.8467266246368906,
+      "balanced_acc": 0.8937437765506646,
+      "detection": 0.7972880777758826,
+      "false_alarm": 0.009800524674553284,
+      "time_s": 2.1224279403686523
+    },
+    "Mahalanobis (full cov)": {
+      "accuracy": 0.5541207362398995,
+      "balanced_acc": 0.6972866104924492,
+      "detection": 0.40358178406958894,
+      "false_alarm": 0.009008563084690393,
+      "time_s": 0.8296279907226562
+    },
+    "PCA reconstruction": {
+      "accuracy": 0.729136275417655,
+      "balanced_acc": 0.8146400230733275,
+      "detection": 0.6392290636193075,
+      "false_alarm": 0.009949017472652576,
+      "time_s": 0.1711888313293457
+    },
+    "One-Class SVM (6k sub)": {
+      "accuracy": 0.8015805563659889,
+      "balanced_acc": 0.8634573035590514,
+      "detection": 0.7365171413951902,
+      "false_alarm": 0.00960253427708756,
+      "time_s": 5.945497989654541
+    }
+  },
+  "supervised": {
+    "Logistic Regression": {
+      "accuracy": 0.9685118543607113,
+      "balanced_acc": 0.8897415290724562,
+      "attack_family_recall": {
+        "DoS": 0.9978951952387864,
+        "Probe": 0.9859879897054619,
+        "R2L": 0.9563758389261745,
+        "U2R": 0.5625
+      },
+      "mean_attack_recall": 0.8756897559676058,
+      "time_s": 32.976067543029785
+    },
+    "Decision Tree": {
+      "accuracy": 0.9982535986452159,
+      "balanced_acc": 0.9020725746446541,
+      "attack_family_recall": {
+        "DoS": 0.9997096821019016,
+        "Probe": 0.996568487274807,
+        "R2L": 0.9530201342281879,
+        "U2R": 0.5625
+      },
+      "mean_attack_recall": 0.8779495759012241,
+      "time_s": 1.1809628009796143
+    },
+    "Random Forest": {
+      "accuracy": 0.9987034292972058,
+      "balanced_acc": 0.8783086269584782,
+      "attack_family_recall": {
+        "DoS": 0.9998548410509508,
+        "Probe": 0.9948527309122105,
+        "R2L": 0.959731543624161,
+        "U2R": 0.4375
+      },
+      "mean_attack_recall": 0.8479847788968305,
+      "time_s": 5.6349568367004395
+    },
+    "Linear SVM": {
+      "accuracy": 0.9777995342929721,
+      "balanced_acc": 0.8611155547660221,
+      "attack_family_recall": {
+        "DoS": 0.9959355494266221,
+        "Probe": 0.959679725478982,
+        "R2L": 0.9429530201342282,
+        "U2R": 0.4375
+      },
+      "mean_attack_recall": 0.834017073759958,
+      "time_s": 330.1659574508667
+    },
+    "k-NN (k=5)": {
+      "accuracy": 0.9934377646062659,
+      "balanced_acc": 0.8140537923201023,
+      "attack_family_recall": {
+        "DoS": 0.999274205254754,
+        "Probe": 0.9605376036602803,
+        "R2L": 0.9261744966442953,
+        "U2R": 0.1875
+      },
+      "mean_attack_recall": 0.7683715763898324,
+      "time_s": 14.442606925964355
+    },
+    "Gaussian Naive Bayes": {
+      "accuracy": 0.6351079593564776,
+      "balanced_acc": 0.6080533519326481,
+      "attack_family_recall": {
+        "DoS": 0.8938888082450283,
+        "Probe": 0.16757220474692594,
+        "R2L": 0.5,
+        "U2R": 0.9375
+      },
+      "mean_attack_recall": 0.6247402532479885,
+      "time_s": 0.33303403854370117
+    },
+    "MLP (100,)": {
+      "accuracy": 0.9962161303979679,
+      "balanced_acc": 0.8436313057422989,
+      "attack_family_recall": {
+        "DoS": 0.9994193642038032,
+        "Probe": 0.9899914212181871,
+        "R2L": 0.9194630872483222,
+        "U2R": 0.3125
+      },
+      "mean_attack_recall": 0.8053434681675781,
+      "time_s": 56.88427996635437
+    },
+    "Random Forest (PCA-24)": {
+      "accuracy": 0.9967,
+      "balanced_acc": 0.8566,
+      "mean_attack_recall": 0.8211,
+      "note": "same 24-dim PCA input as the reservoir"
+    },
+    "Logistic Regression (PCA-24)": {
+      "accuracy": 0.9246,
+      "balanced_acc": 0.8721,
+      "mean_attack_recall": 0.8697,
+      "note": "same 24-dim PCA input as the reservoir"
+    }
+  }
+}

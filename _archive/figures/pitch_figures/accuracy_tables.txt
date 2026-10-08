@@ -1,0 +1,30 @@
+TABLE 1 - NOVELTY
+       readout dim QUANTUM same PCA input classical 122-feat Isolation Forest
+3p12m          220  93.31%         92.84%             95.00%           93.55%
+3p20m         1140  94.43%         94.72%             95.00%           93.55%
+3p24m         2024  94.51%         94.93%             95.00%           93.55%
+4p12m          495  93.35%         92.84%             95.00%           93.55%
+4p20m         4845  94.47%         94.72%             95.00%           93.55%
+4p24m        10626  94.58%         94.93%             95.00%           93.55%
+
+trivial all-attack guess = 74.37%
+
+TABLE 2 - SUPERVISED
+       readout dim QUANTUM acc same PCA input QUANTUM attack-rec
+3p12m          220      95.62%         71.96%             95.04%
+3p20m         1140      97.45%         76.69%             92.22%
+3p24m         2024      97.71%         79.66%             92.08%
+4p12m          495      96.86%         71.96%             94.96%
+4p20m         4845      97.82%         76.69%             92.18%
+4p24m        10626      97.85%         79.66%             92.07%
+
+classical (122 feat):
+  Random Forest                  acc= 99.87%  attack-rec= 84.80%
+  Decision Tree                  acc= 99.83%  attack-rec= 87.79%
+  Random Forest (PCA-24)         acc= 99.67%  attack-rec= 82.11%
+  MLP (100,)                     acc= 99.62%  attack-rec= 80.53%
+  k-NN (k=5)                     acc= 99.34%  attack-rec= 76.84%
+  Linear SVM                     acc= 97.78%  attack-rec= 83.40%
+  Logistic Regression            acc= 96.85%  attack-rec= 87.57%
+  Logistic Regression (PCA-24)   acc= 92.46%  attack-rec= 86.97%
+  Gaussian Naive Bayes           acc= 63.51%  attack-rec= 62.47%

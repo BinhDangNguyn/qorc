@@ -1,0 +1,46 @@
+20:05:17 [INFO ] run id      : 20260726_200517
+20:05:17 [INFO ] run dir     : D:\Python\AI\Code\ReservoirComputing\QRC\team\qorc_sup_runs\20260726_200517
+20:05:17 [INFO ] device      : cuda (NVIDIA GeForce RTX 2070 with Max-Q Design)
+20:05:17 [INFO ] python      : 3.10.19 | torch 2.5.1+cu121 | perceval 1.2.1
+20:05:17 [INFO ] configs     : ['3p12m', '3p20m', '3p24m', '4p12m', '4p20m', '4p24m']
+20:05:17 [INFO ] label sets  : ['families6', 'all23']
+20:05:17 [INFO ]   3p12m  -> readout dim    220 | full-data matrix 0.11 GB
+20:05:17 [INFO ]   3p20m  -> readout dim   1140 | full-data matrix 0.57 GB
+20:05:17 [INFO ]   3p24m  -> readout dim   2024 | full-data matrix 1.02 GB
+20:05:17 [INFO ]   4p12m  -> readout dim    495 | full-data matrix 0.25 GB
+20:05:17 [INFO ]   4p20m  -> readout dim   4845 | full-data matrix 2.44 GB
+20:05:17 [INFO ]   4p24m  -> readout dim  10626 | full-data matrix 5.35 GB
+20:05:17 [INFO ] loading ../../NSL_KDD_labeled.csv
+20:05:17 [INFO ] data: 125,973 rows x 122 features, 23 distinct labels
+20:05:17 [INFO ] [families6] 7 classes
+20:05:17 [INFO ]      0 normal              67,343
+20:05:17 [INFO ]      1 neptune             41,214
+20:05:17 [INFO ]      2 satan                3,633
+20:05:17 [INFO ]      3 ipsweep              3,599
+20:05:17 [INFO ]      4 portsweep            2,931
+20:05:17 [INFO ]      5 smurf                2,646
+20:05:17 [INFO ]      6 other_attack         4,607
+20:05:17 [INFO ] [all23] 23 classes
+20:05:17 [INFO ]      0 normal              67,343
+20:05:17 [INFO ]      1 neptune             41,214
+20:05:17 [INFO ]      2 satan                3,633
+20:05:17 [INFO ]      3 ipsweep              3,599
+20:05:17 [INFO ]      4 portsweep            2,931
+20:05:17 [INFO ]      5 smurf                2,646
+20:05:17 [INFO ]      6 nmap                 1,493
+20:05:17 [INFO ]      7 back                   956
+20:05:17 [INFO ]      8 teardrop               892
+20:05:17 [INFO ]      9 warezclient            890
+20:05:17 [INFO ]     10 pod                    201
+20:05:17 [INFO ]     11 guess_passwd            53
+20:05:17 [INFO ]     12 buffer_overflow         30  <-- TINY, treat with care
+20:05:17 [INFO ]     13 warezmaster             20  <-- TINY, treat with care
+20:05:17 [INFO ]     14 land                    18  <-- TINY, treat with care
+20:05:17 [INFO ]     15 imap                    11  <-- TINY, treat with care
+20:05:17 [INFO ]     16 rootkit                 10  <-- TINY, treat with care
+20:05:17 [INFO ]     17 loadmodule               9  <-- TINY, treat with care
+20:05:17 [INFO ]     18 ftp_write                8  <-- TINY, treat with care
+20:05:18 [INFO ]     19 multihop                 7  <-- TINY, treat with care
+20:05:18 [INFO ]     20 phf                      4  <-- TINY, treat with care
+20:05:18 [INFO ]     21 perl                     3  <-- TINY, treat with care
+20:05:18 [INFO ]     22 spy                      2  <-- TINY, treat with care

@@ -1,0 +1,30 @@
+# Same idea as the ladder, but the head is DERIVED from each reservoir's readout
+# dimension instead of listed by hand: width = readout / ratio, rounded to a
+# power of 2, clipped to [min_width, max_width], `depth` hidden layers.
+# Add a reservoir and its head follows automatically.
+
+name: supervised_rule
+task: supervised
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  schemes: [families6, all23]
+
+arms: [quantum, dials, rff, raw]
+
+baseline_heads:
+  - {kind: lbfgs}
+
+rule:
+  reservoirs:
+    - {photons: 3, modes: 12}
+    - {photons: 4, modes: 12}
+    - {photons: 3, modes: 20}
+    - {photons: 3, modes: 24}
+    - {photons: 4, modes: 20}
+    - {photons: 4, modes: 24}
+  head: {kind: mlp, ratio: 4, min_width: 128, max_width: 2048, depth: 1, dropout: 0.1}
+
+out: runs

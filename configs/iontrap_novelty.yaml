@@ -1,0 +1,44 @@
+# Trapped-ion reservoir on NSL-KDD zero-day novelty (normal-only training).
+#
+#   python -m elements.run configs/iontrap_novelty.yaml --plan
+#   python -m elements.run configs/iontrap_novelty.yaml
+#
+# The team protocol (docs/README_novelty.md): fit on normal traffic only, score
+# the held-out normal rows plus EVERY attack row; macro AUC over attack types
+# with >= 20 rows and detection at a 1% false-alarm budget. Same reservoirs as
+# iontrap_supervised.yaml, including the photonic reference and the _nomem
+# control.
+
+name: iontrap_novelty
+task: novelty
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+
+split:
+  test_size: 0.30
+  val_frac: 0.10
+
+encoding:
+  scheme: tanh
+  width: 3.0
+
+arms: [quantum, dials, rff, raw]
+
+grid:
+  reservoirs:
+    - {photons: 3, modes: 12}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 8, dt: 0.3, topology: all_to_all}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 8, dt: 0.3, topology: all_to_all, memory: false}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 16, dt: 0.3, topology: all_to_all}
+  heads:
+    - {kind: pca, n_components: 32}
+    - {kind: ae, hidden: [256], bottleneck: 32}
+
+baseline_heads:
+  - {kind: iforest, arms: [raw]}
+
+device: auto
+out: runs

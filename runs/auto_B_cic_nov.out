@@ -1,0 +1,54 @@
+PLAN  auto_B_cic_nov  (novelty, seed 42, device cuda)
+data  nf_cse_cic_ids2018_v2 (default path)
+      train 118,225 / val 13,137 / test 68,638 rows, 37 features, label sets ['novelty']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_B_cic_nov
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L16_dt0.3      164    0.13  pca32          scaled                  0    0.0m
+                                   ae64-b32       scaled             25,412    0.8m
+                                   ae256-b32      scaled            101,060    0.8m
+                                   ae1024-b32     scaled            403,652    0.8m
+                                   ae512x512-b32  scaled            727,236    0.9m
+   2  it4+4_a2a_L16_dt0.3_nomem      164    0.13  pca32          scaled                  0    0.0m
+                                   ae64-b32       scaled             25,412    0.8m
+                                   ae256-b32      scaled            101,060    0.8m
+                                   ae1024-b32     scaled            403,652    0.8m
+                                   ae512x512-b32  scaled            727,236    0.9m
+
+fits  25 total (1 label set(s) x heads x arms), 0 already on disk, 25 to run
+time  ~17 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+05:29:10 === auto_B_cic_nov: novelty, seed 42, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+05:29:21 train (118225, 37) val (13137, 37) test (68638, 37)
+05:29:22   novelty            raw pca32          macroAUC=0.9209 det@1%=0.5956 macro_det@1%=0.6189 (1s)
+05:30:34   novelty            raw ae64-b32       macroAUC=0.9269 det@1%=0.7532 macro_det@1%=0.6796 (71s)
+05:31:46   novelty            raw ae256-b32      macroAUC=0.9309 det@1%=0.8139 macro_det@1%=0.7565 (72s)
+05:33:01   novelty            raw ae1024-b32     macroAUC=0.9297 det@1%=0.8060 macro_det@1%=0.7210 (75s)
+05:34:32   novelty            raw ae512x512-b32  macroAUC=0.9305 det@1%=0.8370 macro_det@1%=0.7647 (91s)
+05:34:32 [step 1/2] it4+4_a2a_L16_dt0.3: readout 164, PCA(37) 100.0%, heads ['pca32', 'ae64-b32', 'ae256-b32', 'ae1024-b32', 'ae512x512-b32']
+05:34:33   novelty        dials37 pca32          macroAUC=0.9208 det@1%=0.6146 macro_det@1%=0.6256 (1s)
+05:35:44   novelty        dials37 ae64-b32       macroAUC=0.9299 det@1%=0.6822 macro_det@1%=0.6944 (70s)
+05:36:56   novelty        dials37 ae256-b32      macroAUC=0.9309 det@1%=0.7297 macro_det@1%=0.7520 (72s)
+05:38:11   novelty        dials37 ae1024-b32     macroAUC=0.9315 det@1%=0.8520 macro_det@1%=0.8232 (75s)
+05:39:34   novelty        dials37 ae512x512-b32  macroAUC=0.9305 det@1%=0.8107 macro_det@1%=0.7575 (82s)
+05:39:45   reservoir it4+4_a2a_L16_dt0.3 built in 11s
+05:39:47   novelty qit4+4_a2a_L16_dt0.3 pca32          macroAUC=0.9214 det@1%=0.5805 macro_det@1%=0.5872 (2s)
+05:40:58   novelty qit4+4_a2a_L16_dt0.3 ae64-b32       macroAUC=0.9246 det@1%=0.5361 macro_det@1%=0.5843 (72s)
+05:42:10   novelty qit4+4_a2a_L16_dt0.3 ae256-b32      macroAUC=0.9296 det@1%=0.7918 macro_det@1%=0.7980 (71s)
+05:43:26   novelty qit4+4_a2a_L16_dt0.3 ae1024-b32     macroAUC=0.9310 det@1%=0.8086 macro_det@1%=0.8260 (76s)
+05:45:01   novelty qit4+4_a2a_L16_dt0.3 ae512x512-b32  macroAUC=0.9303 det@1%=0.8338 macro_det@1%=0.8069 (96s)
+05:45:04   novelty     rff164_37m pca32          macroAUC=0.8303 det@1%=0.0259 macro_det@1%=0.0060 (2s)
+05:46:16   novelty     rff164_37m ae64-b32       macroAUC=0.9176 det@1%=0.3487 macro_det@1%=0.3364 (72s)
+05:47:29   novelty     rff164_37m ae256-b32      macroAUC=0.9239 det@1%=0.5734 macro_det@1%=0.4950 (73s)
+05:48:12   novelty     rff164_37m ae1024-b32     macroAUC=0.9272 det@1%=0.6565 macro_det@1%=0.6198 (43s)
+05:48:52   novelty     rff164_37m ae512x512-b32  macroAUC=0.9265 det@1%=0.7128 macro_det@1%=0.6599 (39s)
+05:48:52 [step 2/2] it4+4_a2a_L16_dt0.3_nomem: readout 164, PCA(37) 100.0%, heads ['pca32', 'ae64-b32', 'ae256-b32', 'ae1024-b32', 'ae512x512-b32']
+05:49:03   reservoir it4+4_a2a_L16_dt0.3_nomem built in 11s
+05:49:05   novelty qit4+4_a2a_L16_dt0.3_nomem pca32          macroAUC=0.9223 det@1%=0.4819 macro_det@1%=0.5655 (2s)
+05:50:16   novelty qit4+4_a2a_L16_dt0.3_nomem ae64-b32       macroAUC=0.9227 det@1%=0.3572 macro_det@1%=0.5543 (71s)
+05:51:29   novelty qit4+4_a2a_L16_dt0.3_nomem ae256-b32      macroAUC=0.9282 det@1%=0.5545 macro_det@1%=0.6336 (73s)
+05:52:45   novelty qit4+4_a2a_L16_dt0.3_nomem ae1024-b32     macroAUC=0.9304 det@1%=0.7675 macro_det@1%=0.7446 (76s)
+05:54:21   novelty qit4+4_a2a_L16_dt0.3_nomem ae512x512-b32  macroAUC=0.9302 det@1%=0.7445 macro_det@1%=0.7271 (96s)
+05:54:21 === auto_B_cic_nov done in 25.0 min -> D:\Dev\ai-ml\qorc\runs\auto_B_cic_nov\results.jsonl ===

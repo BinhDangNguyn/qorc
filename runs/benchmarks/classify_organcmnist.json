@@ -1,0 +1,38 @@
+[
+  {
+    "dataset": "organcmnist",
+    "task": "classify",
+    "arm": "raw",
+    "dim": 784,
+    "accuracy": 0.6075949367088608,
+    "macro_f1": 0.5970275721315145,
+    "fit_s": 4.5
+  },
+  {
+    "dataset": "organcmnist",
+    "task": "classify",
+    "arm": "dials",
+    "dim": 12,
+    "accuracy": 0.626095423563778,
+    "macro_f1": 0.6186117649948311,
+    "fit_s": 0.3
+  },
+  {
+    "dataset": "organcmnist",
+    "task": "classify",
+    "arm": "quantum",
+    "dim": 220,
+    "accuracy": 0.7031402142161636,
+    "macro_f1": 0.6962419040662621,
+    "fit_s": 1.2
+  },
+  {
+    "dataset": "organcmnist",
+    "task": "classify",
+    "arm": "logreg_raw",
+    "dim": 784,
+    "accuracy": 0.6646786757546251,
+    "macro_f1": 0.6514204290182342,
+    "fit_s": 20.2
+  }
+]

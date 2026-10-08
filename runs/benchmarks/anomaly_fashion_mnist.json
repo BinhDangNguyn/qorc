@@ -1,0 +1,46 @@
+[
+  {
+    "dataset": "fashion_mnist",
+    "task": "anomaly",
+    "arm": "raw",
+    "dim": 784,
+    "auc": 0.88833784,
+    "det@0.001": 0.023,
+    "det@0.01": 0.4846,
+    "det@0.05": 0.7764,
+    "fit_s": 0.5
+  },
+  {
+    "dataset": "fashion_mnist",
+    "task": "anomaly",
+    "arm": "dials",
+    "dim": 12,
+    "auc": 0.8756921200000001,
+    "det@0.001": 0.0348,
+    "det@0.01": 0.3946,
+    "det@0.05": 0.755,
+    "fit_s": 0.0
+  },
+  {
+    "dataset": "fashion_mnist",
+    "task": "anomaly",
+    "arm": "quantum",
+    "dim": 220,
+    "auc": 0.8919139199999999,
+    "det@0.001": 0.015,
+    "det@0.01": 0.2426,
+    "det@0.05": 0.78,
+    "fit_s": 0.2
+  },
+  {
+    "dataset": "fashion_mnist",
+    "task": "anomaly",
+    "arm": "iforest_raw",
+    "dim": 784,
+    "auc": 0.9178433199999999,
+    "det@0.001": 0.04,
+    "det@0.01": 0.488,
+    "det@0.05": 0.7828,
+    "fit_s": 0.4
+  }
+]

@@ -1,0 +1,55 @@
+# Supervised attack classification on NSL-KDD: the reservoir and the classical
+# head grow TOGETHER, one step at a time.
+#
+#   python -m elements.run configs/supervised_ladder.yaml --plan   # check first
+#   python -m elements.run configs/supervised_ladder.yaml
+#
+# Every head is trained on every arm at its step, so the dials and RFF controls
+# always get exactly the classical capacity the quantum readout gets.
+
+name: supervised_ladder
+task: supervised
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  schemes: [families6, all23]
+
+split:
+  test_size: 0.30      # held-out test, never used for fitting or selection
+  val_frac: 0.10       # carved from train, early stopping only
+
+encoding:
+  scheme: tanh
+  width: 3.0
+
+# quantum  - the C(m,p) Fock readout
+# dials    - the n_modes PCA input that drove it (same head)
+# rff      - classical random Fourier lift of the same width (same head)
+# raw      - all 122 scaled features, no bottleneck (classical ceiling)
+# also available: qdials ([quantum | dials]), rffdials
+arms: [quantum, dials, rff, raw]
+
+# The original notebook's linear head (full-batch L-BFGS softmax), trained at
+# every step too, so one run shows the plateau AND what the bigger head does.
+baseline_heads:
+  - {kind: lbfgs, l2: 1.0e-4, max_iter: 200}
+
+# Each step: a bigger reservoir AND a wider head. Widths follow readout/4
+# rounded to a power of 2; edit freely -- depth, activation, dropout, lr, ...
+# are all per-head fields (see elements/config.py: HeadSpec).
+ladder:
+  - reservoir: {photons: 3, modes: 12}     # 220 features
+    head: {kind: mlp, hidden: [128]}
+  - reservoir: {photons: 3, modes: 20}     # 1,140
+    head: {kind: mlp, hidden: [256]}
+  - reservoir: {photons: 3, modes: 24}     # 2,024
+    head: {kind: mlp, hidden: [512]}
+  - reservoir: {photons: 4, modes: 20}     # 4,845
+    head: {kind: mlp, hidden: [1024]}
+  - reservoir: {photons: 4, modes: 24}     # 10,626
+    head: {kind: mlp, hidden: [2048]}
+
+device: auto
+out: runs

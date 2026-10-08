@@ -1,0 +1,150 @@
+23:50:53 [INFO ] run id      : 20260725_235053
+23:50:53 [INFO ] run dir     : D:\Python\AI\Code\ReservoirComputing\QRC\team\qorc_sup_runs\20260725_235053
+23:50:53 [INFO ] device      : cuda (NVIDIA GeForce RTX 2070 with Max-Q Design)
+23:50:53 [INFO ] python      : 3.10.19 | torch 2.5.1+cu121 | perceval 1.2.1
+23:50:53 [INFO ] configs     : ['3p12m', '3p20m', '3p24m', '4p24m']
+23:50:53 [INFO ] label sets  : ['families6', 'all23']
+23:50:53 [INFO ]   3p12m  -> readout dim    220 | full-data matrix 0.11 GB
+23:50:53 [INFO ]   3p20m  -> readout dim   1140 | full-data matrix 0.57 GB
+23:50:53 [INFO ]   3p24m  -> readout dim   2024 | full-data matrix 1.02 GB
+23:50:53 [INFO ]   4p24m  -> readout dim  10626 | full-data matrix 5.35 GB
+23:50:53 [INFO ] loading ../../NSL_KDD_labeled.csv
+23:50:54 [INFO ] data: 125,973 rows x 122 features, 23 distinct labels
+23:50:54 [INFO ] [families6] 7 classes
+23:50:54 [INFO ]      0 normal              67,343
+23:50:54 [INFO ]      1 neptune             41,214
+23:50:54 [INFO ]      2 satan                3,633
+23:50:54 [INFO ]      3 ipsweep              3,599
+23:50:54 [INFO ]      4 portsweep            2,931
+23:50:54 [INFO ]      5 smurf                2,646
+23:50:54 [INFO ]      6 other_attack         4,607
+23:50:54 [INFO ] [all23] 23 classes
+23:50:54 [INFO ]      0 normal              67,343
+23:50:54 [INFO ]      1 neptune             41,214
+23:50:54 [INFO ]      2 satan                3,633
+23:50:54 [INFO ]      3 ipsweep              3,599
+23:50:54 [INFO ]      4 portsweep            2,931
+23:50:54 [INFO ]      5 smurf                2,646
+23:50:54 [INFO ]      6 nmap                 1,493
+23:50:54 [INFO ]      7 back                   956
+23:50:54 [INFO ]      8 teardrop               892
+23:50:54 [INFO ]      9 warezclient            890
+23:50:54 [INFO ]     10 pod                    201
+23:50:54 [INFO ]     11 guess_passwd            53
+23:50:54 [INFO ]     12 buffer_overflow         30  <-- TINY, treat with care
+23:50:54 [INFO ]     13 warezmaster             20  <-- TINY, treat with care
+23:50:54 [INFO ]     14 land                    18  <-- TINY, treat with care
+23:50:54 [INFO ]     15 imap                    11  <-- TINY, treat with care
+23:50:54 [INFO ]     16 rootkit                 10  <-- TINY, treat with care
+23:50:54 [INFO ]     17 loadmodule               9  <-- TINY, treat with care
+23:50:54 [INFO ]     18 ftp_write                8  <-- TINY, treat with care
+23:50:54 [INFO ]     19 multihop                 7  <-- TINY, treat with care
+23:50:54 [INFO ]     20 phf                      4  <-- TINY, treat with care
+23:50:54 [INFO ]     21 perl                     3  <-- TINY, treat with care
+23:50:54 [INFO ]     22 spy                      2  <-- TINY, treat with care
+23:50:54 [INFO ] === SMOKE TEST ===
+23:50:55 [INFO ]   [PASS] readout dim == C(12,3) got 220, expected 220
+23:50:55 [INFO ]   [PASS] probabilities in [0,1] range [3.312e-08, 6.762e-02]
+23:50:55 [INFO ]   [PASS] rows sum to ~1 sums in [1.0000, 1.0000]
+23:50:55 [INFO ]   [PASS] reservoir reproducible for a fixed seed 
+23:50:55 [INFO ]   [PASS] different seed -> different reservoir 
+23:50:55 [INFO ]   [PASS] config 3p12m builds, dim 220 got 220
+23:50:55 [INFO ]   [PASS] config 3p20m builds, dim 1140 got 1140
+23:50:55 [INFO ]   [PASS] config 3p24m builds, dim 2024 got 2024
+23:50:56 [INFO ]   [PASS] config 4p24m builds, dim 10626 got 10626
+23:50:56 [INFO ]   [PASS] phase bounded in [0, pi] range [0.0000, 3.1416]
+23:50:56 [INFO ]   [PASS] phase monotonic (never decreases, so order is preserved) 
+23:50:56 [INFO ]   [PASS] phase strictly increasing over +/-4 sd (no clipping on real data) range [0.0011, 3.1405]
+23:50:56 [INFO ]   [PASS] encoding spreads real data across the range (not collapsed) std=1.361
+23:50:56 [INFO ]   [PASS] [families6] labels cover all rows 
+23:50:56 [INFO ]   [PASS] [families6] label ids within range 7 classes
+23:50:56 [INFO ]   [PASS] [families6] normal is class 0 
+23:50:56 [INFO ]   [PASS] [all23] labels cover all rows 
+23:50:56 [INFO ]   [PASS] [all23] label ids within range 23 classes
+23:50:56 [INFO ]   [PASS] [all23] normal is class 0 
+23:50:56 [INFO ]   [PASS] [families6] exactly 7 classes got 7
+23:50:56 [INFO ]   [PASS] [families6] no class under 800 rows min=2646
+23:50:58 [INFO ]   [PASS] head solves a separable 3-class toy problem acc=1.000
+23:50:58 [INFO ] --- 3p12m / families6: 7 classes, readout dim 220, 0.01 GB ---
+23:50:58 [INFO ]   front-end fitted (0.0s), PCA explains 34.6% of variance
+23:50:58 [INFO ]   quantum features: 4,200+1,800 rows x 220 in 0.1s (0.011 ms/row)
+23:51:01 [INFO ]   quantum  dim=  220 acc=0.9700 bal_acc=0.9651 macro_F1=0.9376 (2.2s)
+23:51:03 [INFO ]   dials    dim=   12 acc=0.8806 bal_acc=0.8688 macro_F1=0.7789 (2.0s)
+23:51:03 [INFO ]   GAIN quantum-dials: macro_F1 +0.1587 | bal_acc +0.0963 (total 4.3s)
+23:51:03 [INFO ]   [PASS] end-to-end experiment returns metrics macro_F1=0.938
+23:51:03 [INFO ]   [PASS] result record is JSON-serialisable 
+23:51:03 [INFO ]   [PASS] at least 1 GB free disk 114.6 GB free
+23:51:03 [INFO ] ============================================================
+23:51:03 [INFO ] SMOKE TEST PASSED (25 checks) - safe to start the full run
+23:51:03 [INFO ] ============================================================
+23:51:03 [INFO ] ======================================================================
+23:51:03 [INFO ] SWEEP: 8 experiments, 0 already done, 8 to run
+23:51:03 [INFO ] results -> qorc_sup_runs\20260725_235053\results.jsonl
+23:51:03 [INFO ] ======================================================================
+23:51:03 [INFO ] [1/8] 3p12m / families6   (elapsed 0.0 min)
+23:51:03 [INFO ] --- 3p12m / families6: 7 classes, readout dim 220, 0.11 GB ---
+23:51:03 [INFO ]   front-end fitted (0.5s), PCA explains 31.3% of variance
+23:51:04 [INFO ]   quantum features: 88,181+37,792 rows x 220 in 0.7s (0.005 ms/row)
+23:51:12 [INFO ]   quantum  dim=  220 acc=0.9792 bal_acc=0.9848 macro_F1=0.9519 (7.5s)
+23:51:16 [INFO ]   dials    dim=   12 acc=0.9009 bal_acc=0.8741 macro_F1=0.7933 (3.9s)
+23:51:16 [INFO ]   GAIN quantum-dials: macro_F1 +0.1585 | bal_acc +0.1107 (total 12.9s)
+23:51:16 [INFO ] [1/8] saved.
+23:51:16 [INFO ] [2/8] 3p12m / all23   (elapsed 0.2 min)
+23:51:16 [INFO ] --- 3p12m / all23: 23 classes, readout dim 220, 0.11 GB ---
+23:51:16 [INFO ]   front-end fitted (0.5s), PCA explains 31.3% of variance
+23:51:17 [INFO ]   quantum features: 88,181+37,792 rows x 220 in 0.7s (0.005 ms/row)
+23:51:25 [INFO ]   quantum  dim=  220 acc=0.9540 bal_acc=0.7968 macro_F1=0.5575 (7.8s)
+23:51:29 [INFO ]   dials    dim=   12 acc=0.7133 bal_acc=0.7552 macro_F1=0.4640 (3.8s)
+23:51:29 [INFO ]   GAIN quantum-dials: macro_F1 +0.0935 | bal_acc +0.0417 (total 13.2s)
+23:51:29 [INFO ] [2/8] saved.
+23:51:29 [INFO ] [3/8] 3p20m / families6   (elapsed 0.4 min)
+23:51:29 [INFO ] --- 3p20m / families6: 7 classes, readout dim 1140, 0.57 GB ---
+23:51:29 [INFO ]   front-end fitted (0.4s), PCA explains 39.0% of variance
+23:51:31 [INFO ]   quantum features: 88,181+37,792 rows x 1140 in 1.4s (0.011 ms/row)
+23:51:56 [INFO ]   quantum  dim= 1140 acc=0.9865 bal_acc=0.9877 macro_F1=0.9674 (24.3s)
+23:52:00 [INFO ]   dials    dim=   20 acc=0.9218 bal_acc=0.9160 macro_F1=0.8423 (3.4s)
+23:52:00 [INFO ]   GAIN quantum-dials: macro_F1 +0.1250 | bal_acc +0.0717 (total 30.8s)
+23:52:00 [INFO ] [3/8] saved.
+23:52:00 [INFO ] [4/8] 3p20m / all23   (elapsed 1.0 min)
+23:52:00 [INFO ] --- 3p20m / all23: 23 classes, readout dim 1140, 0.57 GB ---
+23:52:00 [INFO ]   front-end fitted (0.5s), PCA explains 39.0% of variance
+23:52:02 [INFO ]   quantum features: 88,181+37,792 rows x 1140 in 1.6s (0.013 ms/row)
+23:52:31 [INFO ]   quantum  dim= 1140 acc=0.9729 bal_acc=0.8007 macro_F1=0.6672 (27.2s)
+23:52:35 [INFO ]   dials    dim=   20 acc=0.7635 bal_acc=0.7798 macro_F1=0.4881 (4.0s)
+23:52:35 [INFO ]   GAIN quantum-dials: macro_F1 +0.1791 | bal_acc +0.0208 (total 34.9s)
+23:52:35 [INFO ] [4/8] saved.
+23:52:35 [INFO ] [5/8] 3p24m / families6   (elapsed 1.5 min)
+23:52:35 [INFO ] --- 3p24m / families6: 7 classes, readout dim 2024, 1.02 GB ---
+23:52:35 [INFO ]   front-end fitted (0.4s), PCA explains 42.4% of variance
+23:52:37 [INFO ]   quantum features: 88,181+37,792 rows x 2024 in 2.1s (0.017 ms/row)
+23:53:16 [INFO ]   quantum  dim= 2024 acc=0.9872 bal_acc=0.9889 macro_F1=0.9690 (37.1s)
+23:53:20 [INFO ]   dials    dim=   24 acc=0.9270 bal_acc=0.9269 macro_F1=0.8562 (3.8s)
+23:53:20 [INFO ]   GAIN quantum-dials: macro_F1 +0.1128 | bal_acc +0.0620 (total 45.5s)
+23:53:20 [INFO ] [5/8] saved.
+23:53:20 [INFO ] [6/8] 3p24m / all23   (elapsed 2.3 min)
+23:53:20 [INFO ] --- 3p24m / all23: 23 classes, readout dim 2024, 1.02 GB ---
+23:53:21 [INFO ]   front-end fitted (0.6s), PCA explains 42.3% of variance
+23:53:24 [INFO ]   quantum features: 88,181+37,792 rows x 2024 in 2.8s (0.022 ms/row)
+23:54:03 [INFO ]   quantum  dim= 2024 acc=0.9756 bal_acc=0.8007 macro_F1=0.6672 (36.5s)
+23:54:07 [INFO ]   dials    dim=   24 acc=0.7939 bal_acc=0.7692 macro_F1=0.5153 (4.3s)
+23:54:07 [INFO ]   GAIN quantum-dials: macro_F1 +0.1519 | bal_acc +0.0315 (total 46.8s)
+23:54:07 [INFO ] [6/8] saved.
+23:54:07 [INFO ] [7/8] 4p24m / families6   (elapsed 3.1 min)
+23:54:07 [INFO ] --- 4p24m / families6: 7 classes, readout dim 10626, 5.35 GB ---
+23:54:08 [INFO ]   front-end fitted (0.5s), PCA explains 42.4% of variance
+23:54:22 [INFO ]   quantum features: 88,181+37,792 rows x 10626 in 13.8s (0.109 ms/row)
+23:57:17 [INFO ]   quantum  dim=10626 acc=0.9877 bal_acc=0.9894 macro_F1=0.9710 (162.2s)
+23:57:21 [INFO ]   dials    dim=   24 acc=0.9270 bal_acc=0.9269 macro_F1=0.8562 (4.0s)
+23:57:21 [INFO ]   GAIN quantum-dials: macro_F1 +0.1148 | bal_acc +0.0624 (total 193.5s)
+23:57:21 [INFO ] [7/8] saved.
+23:57:21 [INFO ] [8/8] 4p24m / all23   (elapsed 6.3 min)
+23:57:21 [INFO ] --- 4p24m / all23: 23 classes, readout dim 10626, 5.35 GB ---
+23:57:22 [INFO ]   front-end fitted (0.6s), PCA explains 42.3% of variance
+23:57:37 [INFO ]   quantum features: 88,181+37,792 rows x 10626 in 14.8s (0.117 ms/row)
+00:00:45 [INFO ]   quantum  dim=10626 acc=0.9779 bal_acc=0.8013 macro_F1=0.6926 (176.3s)
+00:00:50 [INFO ]   dials    dim=   24 acc=0.7939 bal_acc=0.7692 macro_F1=0.5153 (5.1s)
+00:00:50 [INFO ]   GAIN quantum-dials: macro_F1 +0.1773 | bal_acc +0.0321 (total 208.5s)
+00:00:50 [INFO ] [8/8] saved.
+00:00:50 [INFO ] ======================================================================
+00:00:50 [INFO ] SWEEP COMPLETE in 9.8 min - 8/8 experiments on disk
+00:00:50 [INFO ] ======================================================================

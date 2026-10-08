@@ -1,0 +1,43 @@
+PLAN  auto_K_cic_sup  (supervised, seed 42, device cuda)
+data  nf_cse_cic_ids2018_v2 (default path)
+      train 126,000 / val 14,000 / test 60,000 rows, 36 features, label sets ['binary', 'family7']
+arms  ['raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_K_cic_sup
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+      raw              36          logreg         classical                -    0.2m
+      raw              36          knn5           classical                -    0.5m
+      raw              36          rf300          classical                -    0.2m
+      raw              36          extratrees300  classical                -    0.2m
+      raw              36          xgb300         classical                -    0.2m
+      raw              36          mlp512x512     classical                -    0.8m
+
+fits  12 total (2 label set(s) x heads x arms), 0 already on disk, 12 to run
+time  ~5 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.0 GB
+
+19:44:39 === auto_K_cic_sup: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+19:44:51 train (126000, 37) val (14000, 37) test (60000, 37)
+19:44:52   binary               raw logreg       F1=0.9233 acc=0.9821 (1s)
+C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\threadpoolctl.py:1226: RuntimeWarning: 
+Found Intel OpenMP ('libiomp') and LLVM OpenMP ('libomp') loaded at
+the same time. Both libraries are known to be incompatible and this
+can cause random crashes or deadlocks on Linux when loaded in the
+same Python program.
+Using threadpoolctl may cause crashes or deadlocks. For more
+information and possible workarounds, please see
+    https://github.com/joblib/threadpoolctl/blob/master/multiple_openmp.md
+
+  warnings.warn(msg, RuntimeWarning)
+19:45:30   binary               raw knn5         F1=0.9488 acc=0.9887 (38s)
+19:45:53   binary               raw rf300        F1=0.9453 acc=0.9878 (23s)
+19:46:13   binary               raw extratrees300 F1=0.9378 acc=0.9859 (20s)
+19:46:19   binary               raw xgb300       F1=0.9342 acc=0.9849 (6s)
+19:46:39   binary               raw mlp512x512   F1=0.9549 acc=0.9901 (19s)
+19:46:56   family7              raw logreg       F1=0.5447 acc=0.4085 (17s)
+19:47:14   family7              raw knn5         F1=0.6142 acc=0.9883 (18s)
+19:47:33   family7              raw rf300        F1=0.6815 acc=0.9876 (19s)
+19:47:52   family7              raw extratrees300 F1=0.6875 acc=0.9856 (18s)
+19:48:04   family7              raw xgb300       F1=0.7360 acc=0.9355 (12s)
+19:48:23   family7              raw mlp512x512   F1=0.6027 acc=0.9254 (19s)
+19:48:23 === auto_K_cic_sup done in 3.5 min -> D:\Dev\ai-ml\qorc\runs\auto_K_cic_sup\results.jsonl ===

@@ -1,0 +1,13 @@
+04:59:33 === auto_C_unsw_nov_s44: novelty, seed 44, 1 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+04:59:33 train (125876, 37) val (13987, 37) test (101302, 37)
+05:00:53   novelty            raw ae256-b32      macroAUC=0.9477 det@1%=0.2108 macro_det@1%=0.2889 (79s)
+05:00:53 [step 1/1] 3p12m: readout 220, PCA(12) 97.7%, heads ['ae256-b32']
+05:02:11   novelty        dials12 ae256-b32      macroAUC=0.9514 det@1%=0.3012 macro_det@1%=0.3491 (78s)
+05:02:12   reservoir 3p12m built in 1s
+05:03:32   novelty         q3p12m ae256-b32      macroAUC=0.9457 det@1%=0.2955 macro_det@1%=0.3749 (80s)
+05:04:51   novelty     rff220_12m ae256-b32      macroAUC=0.9443 det@1%=0.2766 macro_det@1%=0.3715 (79s)
+05:04:51 === auto_C_unsw_nov_s44 done in 5.3 min -> D:\Dev\ai-ml\qorc\runs\auto_C_unsw_nov_s44\results.jsonl ===
+21:59:36 === auto_C_unsw_nov_s44: novelty, seed 44, 1 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:59:37 train (125876, 37) val (13987, 37) test (101302, 37)
+21:59:37 [step 1/1] 3p12m: readout 220, PCA(12) 97.7%, heads ['ae256-b32']
+21:59:37 === auto_C_unsw_nov_s44 done in 0.0 min -> D:\Dev\ai-ml\qorc\runs\auto_C_unsw_nov_s44\results.jsonl ===

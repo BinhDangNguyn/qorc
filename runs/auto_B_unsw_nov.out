@@ -1,0 +1,63 @@
+PLAN  auto_B_unsw_nov  (novelty, seed 42, device cuda)
+data  nf_unsw_nb15_v2 (default path)
+      train 125,876 / val 13,987 / test 101,302 rows, 37 features, label sets ['novelty']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_B_unsw_nov
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  3p12m           220    0.21  pca32          scaled                  0    0.0m
+                                   ae64-b32       scaled             32,636    0.8m
+                                   ae256-b32      scaled            129,788    0.8m
+                                   ae1024-b32     scaled            518,396    0.9m
+                                   ae512x512-b32  scaled            784,636    0.9m
+
+fits  20 total (1 label set(s) x heads x arms), 0 already on disk, 20 to run
+time  ~14 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.2 GB
+
+04:31:41 === auto_B_unsw_nov: novelty, seed 42, 1 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+04:31:42 train (125876, 37) val (13987, 37) test (101302, 37)
+04:31:43   novelty            raw pca32          macroAUC=0.9350 det@1%=0.1795 macro_det@1%=0.3015 (1s)
+04:33:00   novelty            raw ae64-b32       macroAUC=0.9536 det@1%=0.1982 macro_det@1%=0.2896 (76s)
+04:34:17   novelty            raw ae256-b32      macroAUC=0.9481 det@1%=0.1983 macro_det@1%=0.2719 (77s)
+04:35:36   novelty            raw ae1024-b32     macroAUC=0.9400 det@1%=0.2401 macro_det@1%=0.3136 (80s)
+04:37:15   novelty            raw ae512x512-b32  macroAUC=0.9447 det@1%=0.2449 macro_det@1%=0.3269 (99s)
+04:37:15 [step 1/1] 3p12m: readout 220, PCA(12) 97.7%, heads ['pca32', 'ae64-b32', 'ae256-b32', 'ae1024-b32', 'ae512x512-b32']
+04:37:15   novelty        dials12 pca32          macroAUC=0.8582 det@1%=0.0724 macro_det@1%=0.1138 (0s)
+04:38:31   novelty        dials12 ae64-b32       macroAUC=0.9398 det@1%=0.1873 macro_det@1%=0.2577 (76s)
+04:39:48   novelty        dials12 ae256-b32      macroAUC=0.9482 det@1%=0.2382 macro_det@1%=0.2327 (77s)
+04:41:06   novelty        dials12 ae1024-b32     macroAUC=0.9457 det@1%=0.2559 macro_det@1%=0.2143 (77s)
+04:42:41   novelty        dials12 ae512x512-b32  macroAUC=0.9449 det@1%=0.2980 macro_det@1%=0.2860 (96s)
+04:42:43   reservoir 3p12m built in 1s
+04:42:45   novelty         q3p12m pca32          macroAUC=0.9033 det@1%=0.0857 macro_det@1%=0.1340 (2s)
+04:44:02   novelty         q3p12m ae64-b32       macroAUC=0.9421 det@1%=0.2270 macro_det@1%=0.3254 (77s)
+04:45:20   novelty         q3p12m ae256-b32      macroAUC=0.9471 det@1%=0.3125 macro_det@1%=0.3961 (78s)
+04:46:41   novelty         q3p12m ae1024-b32     macroAUC=0.9489 det@1%=0.3275 macro_det@1%=0.3646 (81s)
+04:48:24   novelty         q3p12m ae512x512-b32  macroAUC=0.9502 det@1%=0.3324 macro_det@1%=0.3731 (103s)
+04:48:27   novelty     rff220_12m pca32          macroAUC=0.8977 det@1%=0.0450 macro_det@1%=0.0836 (2s)
+04:49:45   novelty     rff220_12m ae64-b32       macroAUC=0.9424 det@1%=0.2287 macro_det@1%=0.3583 (78s)
+04:51:03   novelty     rff220_12m ae256-b32      macroAUC=0.9460 det@1%=0.2820 macro_det@1%=0.3657 (78s)
+04:52:22   novelty     rff220_12m ae1024-b32     macroAUC=0.9466 det@1%=0.2988 macro_det@1%=0.3553 (80s)
+04:54:05   novelty     rff220_12m ae512x512-b32  macroAUC=0.9506 det@1%=0.2953 macro_det@1%=0.3600 (103s)
+04:54:05 === auto_B_unsw_nov done in 22.4 min -> D:\Dev\ai-ml\qorc\runs\auto_B_unsw_nov\results.jsonl ===
+PLAN  auto_B_unsw_nov  (novelty, seed 42, device cuda)
+data  nf_unsw_nb15_v2 (default path)
+      train 125,876 / val 13,987 / test 101,302 rows, 37 features, label sets ['novelty']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_B_unsw_nov
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  3p12m           220    0.21  pca32          scaled                  0    0.0m
+                                   ae64-b32       scaled             32,636    0.8m
+                                   ae256-b32      scaled            129,788    0.8m
+                                   ae1024-b32     scaled            518,396    0.9m
+                                   ae512x512-b32  scaled            784,636    0.9m
+
+fits  20 total (1 label set(s) x heads x arms), 20 already on disk, 0 to run
+time  ~0 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.2 GB
+
+21:59:15 === auto_B_unsw_nov: novelty, seed 42, 1 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:59:15 train (125876, 37) val (13987, 37) test (101302, 37)
+21:59:15 [step 1/1] 3p12m: readout 220, PCA(12) 97.7%, heads ['pca32', 'ae64-b32', 'ae256-b32', 'ae1024-b32', 'ae512x512-b32']
+21:59:15 === auto_B_unsw_nov done in 0.0 min -> D:\Dev\ai-ml\qorc\runs\auto_B_unsw_nov\results.jsonl ===

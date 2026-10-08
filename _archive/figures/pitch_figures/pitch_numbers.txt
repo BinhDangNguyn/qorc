@@ -1,0 +1,71 @@
+
+==========================================================================
+PITCH NUMBERS
+==========================================================================
+
+DATASET
+--------------------------------------------------------------------------
+  normal traffic      67,343 records
+  attack traffic      58,630 records, 22 distinct types, 4 families
+    DoS     45,927
+    Probe   11,656
+    R2L        995
+    U2R         52
+
+SUPERVISED HEAD  (known-attack classification)
+--------------------------------------------------------------------------
+  accuracy = correct family assignment over ALL test traffic
+  3p12m  ACCURACY 95.62% (classical 71.96%)   error 4.38% vs 28.04% = 6.4x fewer
+         macroF1 0.604 (classical 0.488)   detection  99.87%   false alarms  7.90%
+  3p20m  ACCURACY 97.45% (classical 76.69%)   error 2.55% vs 23.31% = 9.1x fewer
+         macroF1 0.663 (classical 0.502)   detection  99.87%   false alarms  4.51%
+  3p24m  ACCURACY 97.71% (classical 79.66%)   error 2.29% vs 20.34% = 8.9x fewer
+         macroF1 0.674 (classical 0.511)   detection  99.87%   false alarms  4.05%
+  4p12m  ACCURACY 96.86% (classical 71.96%)   error 3.14% vs 28.04% = 8.9x fewer
+         macroF1 0.638 (classical 0.488)   detection  99.86%   false alarms  5.61%
+  4p20m  ACCURACY 97.82% (classical 76.69%)   error 2.18% vs 23.31% = 10.7x fewer
+         macroF1 0.683 (classical 0.502)   detection  99.88%   false alarms  3.86%
+  4p24m  ACCURACY 97.85% (classical 79.66%)   error 2.15% vs 20.34% = 9.5x fewer
+         macroF1 0.697 (classical 0.511)   detection  99.85%   false alarms  3.77%
+  best config: 4p24m
+    DoS    recall  99.9% (classical  99.5%)  precision  99.2%  n=13,778
+    Probe  recall  99.4% (classical  97.7%)  precision  94.6%  n=3,497
+    R2L    recall  94.0% (classical  95.6%)  precision  41.0%  n=298
+    U2R    recall  75.0% (classical  81.2%)  precision  15.2%  n=16
+
+NOVELTY HEAD  (zero-day, trained on normal traffic only)
+--------------------------------------------------------------------------
+  3p12m  AUC 0.9120  (classical 0.8653, IForest 0.9074)   detection@1%FA  23.3%
+  3p20m  AUC 0.9067  (classical 0.8939, IForest 0.9074)   detection@1%FA   6.5%
+  3p24m  AUC 0.9044  (classical 0.8946, IForest 0.9074)   detection@1%FA   3.7%
+  4p12m  AUC 0.9047  (classical 0.8653, IForest 0.9074)   detection@1%FA  67.3%
+  4p20m  AUC 0.9007  (classical 0.8939, IForest 0.9074)   detection@1%FA   5.4%
+  4p24m  AUC 0.8937  (classical 0.8946, IForest 0.9074)   detection@1%FA   2.5%
+  best config: 3p12m  (AUC 0.9120)
+
+--------------------------------------------------------------------------
+WHAT NOT TO OVERCLAIM
+--------------------------------------------------------------------------
+* Single seed (42) everywhere. The reservoir unitary is random and the
+  earlier notebook saw std up to 0.17 across seeds -- larger than most
+  gains shown here. Trends are indicative, NOT established.
+* Isolation Forest matches the quantum novelty head on AUC and beats it
+  badly at a 1% false-alarm budget. The zero-day advantage is in ranking,
+  not at a deployable operating point.
+* R2L/U2R recall is high but precision is low -- we find the rare attacks
+  by accepting many false accusations.
+* NSL-KDD 'zero-days' are known attacks withheld from training, not
+  genuinely novel traffic.
+* U2R has 52 records total (16 in test). Treat its numbers as anecdote.
+* Raw attack-detection rate is SATURATED (~99.85% for both arms) and the
+  classical control is marginally ahead at the smallest config. Quote
+  macro F1 / per-family numbers, and never plot detection rate on a
+  zoomed y-axis -- it turns 0.02% of noise into a fake trend.
+* R2L/U2R F1 is low in ABSOLUTE terms (0.57 / 0.24). The claim is
+  'far better than the classical control', not 'solved'.
+* Accuracy is dominated by normal + DoS (91% of all test rows), so a
+  high figure mostly reflects those two. It is the right headline for a
+  general audience, but pair it with the per-class panel (fig 03) and
+  the R2L/U2R numbers before making a technical claim.
+* The log10 chart plots ERROR RATE, not log(accuracy) -- the latter is
+  flat near 1.0 and would hide exactly what it is meant to reveal.

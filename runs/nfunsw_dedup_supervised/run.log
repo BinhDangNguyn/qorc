@@ -1,0 +1,27 @@
+10:47:40 === nfunsw_dedup_supervised: supervised, seed 42, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+10:47:41 train (151933, 37) val (16882, 37) test (72350, 37)
+10:47:46   binary               raw lbfgs        F1=0.8912 acc=0.9295 (4s)
+10:48:09   binary               raw mlp256       F1=0.9454 acc=0.9667 (23s)
+10:48:13   attack10             raw lbfgs        F1=0.3391 acc=0.8130 (4s)
+10:48:59   attack10             raw mlp256       F1=0.4363 acc=0.9023 (46s)
+10:48:59 [step 1/2] it4+4_a2a_L8_dt0.3: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+10:48:59   binary           dials37 lbfgs        F1=0.8998 acc=0.9359 (1s)
+10:49:16   binary           dials37 mlp256       F1=0.9477 acc=0.9682 (17s)
+10:49:20   attack10         dials37 lbfgs        F1=0.3612 acc=0.8483 (4s)
+10:50:00   attack10         dials37 mlp256       F1=0.4617 acc=0.9100 (40s)
+10:50:08   reservoir it4+4_a2a_L8_dt0.3 built in 7s
+10:50:12   binary    qit4+4_a2a_L8_dt0.3 lbfgs        F1=0.9166 acc=0.9478 (5s)
+10:50:57   binary    qit4+4_a2a_L8_dt0.3 mlp256       F1=0.9479 acc=0.9685 (45s)
+10:51:02   attack10  qit4+4_a2a_L8_dt0.3 lbfgs        F1=0.3810 acc=0.8607 (5s)
+10:52:05   attack10  qit4+4_a2a_L8_dt0.3 mlp256       F1=0.4806 acc=0.9139 (63s)
+10:52:07   binary         rff84_37m lbfgs        F1=0.8879 acc=0.9282 (1s)
+10:52:20   binary         rff84_37m mlp256       F1=0.9476 acc=0.9684 (13s)
+10:52:25   attack10       rff84_37m lbfgs        F1=0.3588 acc=0.8389 (5s)
+10:52:53   attack10       rff84_37m mlp256       F1=0.4742 acc=0.9123 (28s)
+10:52:53 [step 2/2] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+10:53:00   reservoir it4+4_a2a_L8_dt0.3_nomem built in 7s
+10:53:05   binary    qit4+4_a2a_L8_dt0.3_nomem lbfgs        F1=0.9149 acc=0.9467 (5s)
+10:53:24   binary    qit4+4_a2a_L8_dt0.3_nomem mlp256       F1=0.9483 acc=0.9687 (20s)
+10:53:29   attack10  qit4+4_a2a_L8_dt0.3_nomem lbfgs        F1=0.3755 acc=0.8570 (5s)
+10:54:07   attack10  qit4+4_a2a_L8_dt0.3_nomem mlp256       F1=0.4684 acc=0.9099 (38s)
+10:54:07 === nfunsw_dedup_supervised done in 6.4 min -> D:\Dev\ai-ml\qorc\runs\nfunsw_dedup_supervised\results.jsonl ===

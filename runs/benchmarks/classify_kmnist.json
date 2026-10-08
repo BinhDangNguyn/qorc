@@ -1,0 +1,38 @@
+[
+  {
+    "dataset": "kmnist",
+    "task": "classify",
+    "arm": "raw",
+    "dim": 784,
+    "accuracy": 0.6125,
+    "macro_f1": 0.6138845805978638,
+    "fit_s": 2.4
+  },
+  {
+    "dataset": "kmnist",
+    "task": "classify",
+    "arm": "dials",
+    "dim": 12,
+    "accuracy": 0.5785,
+    "macro_f1": 0.5832111001731877,
+    "fit_s": 0.1
+  },
+  {
+    "dataset": "kmnist",
+    "task": "classify",
+    "arm": "quantum",
+    "dim": 220,
+    "accuracy": 0.6925,
+    "macro_f1": 0.6936467832481553,
+    "fit_s": 0.7
+  },
+  {
+    "dataset": "kmnist",
+    "task": "classify",
+    "arm": "logreg_raw",
+    "dim": 784,
+    "accuracy": 0.6515,
+    "macro_f1": 0.653161409165344,
+    "fit_s": 9.8
+  }
+]

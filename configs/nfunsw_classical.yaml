@@ -1,0 +1,30 @@
+# NF-UNSW-NB15-v2, standalone classical classifiers on the raw 37 features --
+# the models the literature reports (Extra Trees is the dataset paper's).
+# Same seed and split as nfunsw_supervised.yaml: identical test rows.
+#
+#   python -m elements.run configs/nfunsw_classical.yaml --plan
+
+name: nfunsw_classical
+task: supervised
+seed: 42
+
+data:
+  dataset: nf_unsw_nb15_v2
+  schemes: [binary, attack10]
+  dedup: false
+
+split:
+  test_size: 0.30
+  val_frac: 0.10
+
+arms: [raw]
+
+models:
+  - {kind: logreg}
+  - {kind: extratrees, n_estimators: 100}
+  - {kind: rf, n_estimators: 100}
+  - {kind: xgb, n_estimators: 300}
+  - {kind: mlp, hidden: [512, 512]}
+
+device: auto
+out: runs

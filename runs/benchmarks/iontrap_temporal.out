@@ -1,0 +1,43 @@
+=== NARMA-10 ===
+  ion          dim=  10 NRMSE=0.8301  {'dt': 0.2, 'scale': 0.25, 'leak': 0.1}  (80s)
+  ion_nomem    dim=  10 NRMSE=1.0254  {'dt': 0.8, 'scale': 0.25}  (20s)
+  ion_V4       dim=  40 NRMSE=0.8415  {'dt': 0.8, 'scale': 0.25, 'leak': 0.1}  (329s)
+  ion_oracle   dim=  14 NRMSE=0.7320  {'dt': 0.2, 'scale': 0.25, 'leak': 0.1}  (90s)
+  ion62        dim=  21 NRMSE=0.8222  {'dt': 0.8, 'scale': 0.25, 'leak': 0.1}  (81s)
+  ion62_nomem  dim=  21 NRMSE=1.0298  {'dt': 0.8, 'scale': 0.25}  (21s)
+  ion62_V4     dim=  84 NRMSE=0.8481  {'dt': 0.2, 'scale': 0.25, 'leak': 0.1}  (338s)
+  ion62_V4_nomem dim=  84 NRMSE=1.0301  {'dt': 0.2, 'scale': 0.25}  (83s)
+  esn10        dim=  10 NRMSE=0.8105  {'rho': 0.9, 'scale': 0.1}  (0s)
+  esn40        dim=  40 NRMSE=0.4428  {'rho': 1.0, 'scale': 0.1}  (0s)
+  esn200       dim= 200 NRMSE=0.2459  {'rho': 0.9, 'scale': 0.1}  (2s)
+  linear       dim=  15 NRMSE=0.4434  {}  (0s)
+
+=== Mackey-Glass, 1 step ahead ===
+  ion          dim=  10 NRMSE=0.0495  {'dt': 0.2, 'scale': 0.25, 'leak': 0.6}  (77s)
+  ion_nomem    dim=  10 NRMSE=0.1483  {'dt': 0.8, 'scale': 1.0}  (19s)
+  ion_V4       dim=  40 NRMSE=0.0145  {'dt': 0.8, 'scale': 0.25, 'leak': 0.3}  (317s)
+  ion_oracle   dim=  14 NRMSE=0.0295  {'dt': 0.8, 'scale': 0.25, 'leak': 0.6}  (82s)
+  ion62        dim=  21 NRMSE=0.0285  {'dt': 0.2, 'scale': 0.25, 'leak': 0.6}  (84s)
+  ion62_nomem  dim=  21 NRMSE=0.1483  {'dt': 0.8, 'scale': 0.5}  (20s)
+  ion62_V4     dim=  84 NRMSE=0.0094  {'dt': 0.2, 'scale': 0.25, 'leak': 0.3}  (334s)
+  ion62_V4_nomem dim=  84 NRMSE=0.1483  {'dt': 0.2, 'scale': 0.5}  (81s)
+  esn10        dim=  10 NRMSE=0.0022  {'rho': 0.9, 'scale': 0.1}  (0s)
+  esn40        dim=  40 NRMSE=0.0009  {'rho': 0.9, 'scale': 0.1}  (0s)
+  esn200       dim= 200 NRMSE=0.0003  {'rho': 0.9, 'scale': 0.1}  (2s)
+  linear       dim=  15 NRMSE=0.0009  {}  (0s)
+
+=== Linear memory capacity (max_lag=25) ===
+  ion          dim=  10 MC=  1.41  {'dt': 0.8, 'scale': 0.25, 'leak': 0.3}  (72s)
+  ion_nomem    dim=  10 MC=  0.03  {'dt': 0.2, 'scale': 0.25}  (17s)
+  ion_V4       dim=  40 MC=  3.43  {'dt': 0.2, 'scale': 0.25, 'leak': 0.1}  (280s)
+  ion_oracle   dim=  14 MC=  2.72  {'dt': 0.2, 'scale': 0.25, 'leak': 0.3}  (73s)
+  ion62        dim=  21 MC=  1.90  {'dt': 0.2, 'scale': 0.25, 'leak': 0.3}  (68s)
+  ion62_nomem  dim=  21 MC=  0.03  {'dt': 0.2, 'scale': 1.0}  (17s)
+  ion62_V4     dim=  84 MC=  3.54  {'dt': 0.2, 'scale': 0.25, 'leak': 0.1}  (283s)
+  ion62_V4_nomem dim=  84 MC=  0.02  {'dt': 0.2, 'scale': 0.5}  (68s)
+  esn10        dim=  10 MC=  7.90  {'rho': 0.9, 'scale': 0.1}  (0s)
+  esn40        dim=  40 MC= 18.77  {'rho': 1.0, 'scale': 0.1}  (0s)
+  esn200       dim= 200 MC= 24.71  {'rho': 0.9, 'scale': 0.1}  (5s)
+  linear       dim=  15 MC= 14.01  {}  (0s)
+
+wrote runs\benchmarks\iontrap_temporal.json

@@ -1,0 +1,50 @@
+PLAN  auto_C_cic_sup_s43  (supervised, seed 43, device cuda)
+data  nf_cse_cic_ids2018_v2 (default path)
+      train 126,000 / val 14,000 / test 60,000 rows, 36 features, label sets ['binary', 'family7']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_C_cic_sup_s43
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L16_dt0.3      164    0.13  mlp2048        scaled            352,263    0.9m
+   2  it4+4_a2a_L16_dt0.3_nomem      164    0.13  mlp2048        scaled            352,263    0.9m
+
+fits  10 total (2 label set(s) x heads x arms), 0 already on disk, 10 to run
+time  ~10 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+05:24:27 === auto_C_cic_sup_s43: supervised, seed 43, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+05:24:38 train (126000, 37) val (14000, 37) test (60000, 37)
+05:24:59   binary               raw mlp2048      F1=0.9558 acc=0.9903 (21s)
+05:25:16   family7              raw mlp2048      F1=0.6111 acc=0.9641 (16s)
+05:25:16 [step 1/2] it4+4_a2a_L16_dt0.3: readout 164, PCA(36) 100.0%, heads ['mlp2048']
+05:25:32   binary           dials36 mlp2048      F1=0.9538 acc=0.9899 (16s)
+05:25:44   family7          dials36 mlp2048      F1=0.6642 acc=0.6644 (12s)
+05:25:56   reservoir it4+4_a2a_L16_dt0.3 built in 11s
+05:26:29   binary    qit4+4_a2a_L16_dt0.3 mlp2048      F1=0.9525 acc=0.9896 (33s)
+05:26:55   family7   qit4+4_a2a_L16_dt0.3 mlp2048      F1=0.7147 acc=0.6927 (26s)
+05:27:21   binary        rff164_36m mlp2048      F1=0.9477 acc=0.9885 (25s)
+05:27:37   family7       rff164_36m mlp2048      F1=0.6088 acc=0.7400 (17s)
+05:27:38 [step 2/2] it4+4_a2a_L16_dt0.3_nomem: readout 164, PCA(36) 100.0%, heads ['mlp2048']
+05:27:49   reservoir it4+4_a2a_L16_dt0.3_nomem built in 11s
+05:28:04   binary    qit4+4_a2a_L16_dt0.3_nomem mlp2048      F1=0.9517 acc=0.9893 (15s)
+05:28:21   family7   qit4+4_a2a_L16_dt0.3_nomem mlp2048      F1=0.6798 acc=0.6297 (18s)
+05:28:21 === auto_C_cic_sup_s43 done in 3.7 min -> D:\Dev\ai-ml\qorc\runs\auto_C_cic_sup_s43\results.jsonl ===
+PLAN  auto_C_cic_sup_s43  (supervised, seed 43, device cuda)
+data  nf_cse_cic_ids2018_v2 (default path)
+      train 126,000 / val 14,000 / test 60,000 rows, 36 features, label sets ['binary', 'family7']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_C_cic_sup_s43
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L16_dt0.3      164    0.13  mlp2048        scaled            352,263    0.9m
+   2  it4+4_a2a_L16_dt0.3_nomem      164    0.13  mlp2048        scaled            352,263    0.9m
+
+fits  10 total (2 label set(s) x heads x arms), 10 already on disk, 0 to run
+time  ~1 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+06:41:34 === auto_C_cic_sup_s43: supervised, seed 43, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+06:41:45 train (126000, 37) val (14000, 37) test (60000, 37)
+06:41:45 [step 1/2] it4+4_a2a_L16_dt0.3: readout 164, PCA(36) 100.0%, heads ['mlp2048']
+06:41:45 [step 2/2] it4+4_a2a_L16_dt0.3_nomem: readout 164, PCA(36) 100.0%, heads ['mlp2048']
+06:41:45 === auto_C_cic_sup_s43 done in 0.0 min -> D:\Dev\ai-ml\qorc\runs\auto_C_cic_sup_s43\results.jsonl ===

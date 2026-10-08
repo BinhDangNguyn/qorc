@@ -1,0 +1,34 @@
+PLAN  nfunsw_dedup_novelty  (novelty, seed 42, device cuda)
+data  nf_unsw_nb15_v2 (default path)
+      train 125,876 / val 13,987 / test 101,302 rows, 37 features, label sets ['novelty']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\nfunsw_dedup_novelty
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L8_dt0.3       84    0.08  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled             57,968    0.8m
+   2  it4+4_a2a_L8_dt0.3_nomem       84    0.08  pca32          scaled                  0    0.0m
+                                   ae256-b32      scaled             57,968    0.8m
+
+fits  11 total (1 label set(s) x heads x arms), 0 already on disk, 11 to run
+time  ~5 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+10:57:42 === nfunsw_dedup_novelty: novelty, seed 42, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+10:57:42 train (125876, 37) val (13987, 37) test (101302, 37)
+10:57:43   novelty            raw pca32          macroAUC=0.9350 det@1%=0.1795 macro_det@1%=0.3015 (1s)
+10:59:04   novelty            raw ae256-b32      macroAUC=0.9481 det@1%=0.1983 macro_det@1%=0.2719 (81s)
+10:59:05   novelty            raw iforest        macroAUC=0.9073 det@1%=0.0734 macro_det@1%=0.1212 (1s)
+10:59:05 [step 1/2] it4+4_a2a_L8_dt0.3: readout 84, PCA(37) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+10:59:06   novelty        dials37 pca32          macroAUC=0.9304 det@1%=0.1790 macro_det@1%=0.3007 (1s)
+11:00:25   novelty        dials37 ae256-b32      macroAUC=0.9434 det@1%=0.2418 macro_det@1%=0.3182 (79s)
+11:00:32   reservoir it4+4_a2a_L8_dt0.3 built in 7s
+11:00:34   novelty qit4+4_a2a_L8_dt0.3 pca32          macroAUC=0.9400 det@1%=0.1826 macro_det@1%=0.3479 (2s)
+11:01:54   novelty qit4+4_a2a_L8_dt0.3 ae256-b32      macroAUC=0.9476 det@1%=0.2396 macro_det@1%=0.3581 (80s)
+11:01:56   novelty      rff84_37m pca32          macroAUC=0.9210 det@1%=0.0601 macro_det@1%=0.0768 (2s)
+11:03:17   novelty      rff84_37m ae256-b32      macroAUC=0.9455 det@1%=0.2207 macro_det@1%=0.3298 (80s)
+11:03:17 [step 2/2] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(37) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+11:03:24   reservoir it4+4_a2a_L8_dt0.3_nomem built in 7s
+11:03:25   novelty qit4+4_a2a_L8_dt0.3_nomem pca32          macroAUC=0.9407 det@1%=0.1819 macro_det@1%=0.3484 (1s)
+11:04:44   novelty qit4+4_a2a_L8_dt0.3_nomem ae256-b32      macroAUC=0.9424 det@1%=0.2408 macro_det@1%=0.3561 (79s)
+11:04:44 === nfunsw_dedup_novelty done in 7.0 min -> D:\Dev\ai-ml\qorc\runs\nfunsw_dedup_novelty\results.jsonl ===

@@ -1,0 +1,153 @@
+00:39:39 === auto_A_nsl_sup: supervised, seed 42, 13 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+00:39:40 train (79362, 122) val (8819, 122) test (37792, 122)
+00:39:45   families6            raw lbfgs        F1=0.9218 acc=0.9618 (5s)
+00:40:10   families6            raw mlp256       F1=0.9716 acc=0.9879 (25s)
+00:40:14   all23                raw lbfgs        F1=0.6321 acc=0.9425 (4s)
+00:40:25   all23                raw mlp256       F1=0.6711 acc=0.9464 (11s)
+00:40:25 [step 1/13] it4+4_a2a_L8_dt0.3: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+00:40:28   families6        dials64 lbfgs        F1=0.8644 acc=0.9294 (2s)
+00:40:53   families6        dials64 mlp256       F1=0.9498 acc=0.9774 (26s)
+00:40:57   all23            dials64 lbfgs        F1=0.5053 acc=0.7422 (3s)
+00:41:10   all23            dials64 mlp256       F1=0.5782 acc=0.9441 (13s)
+00:41:14   reservoir it4+4_a2a_L8_dt0.3 built in 4s
+00:41:17   families6 qit4+4_a2a_L8_dt0.3 lbfgs        F1=0.8993 acc=0.9516 (3s)
+00:41:35   families6 qit4+4_a2a_L8_dt0.3 mlp256       F1=0.9609 acc=0.9838 (18s)
+00:41:38   all23     qit4+4_a2a_L8_dt0.3 lbfgs        F1=0.5553 acc=0.9162 (4s)
+00:41:52   all23     qit4+4_a2a_L8_dt0.3 mlp256       F1=0.5944 acc=0.9506 (14s)
+00:41:57   families6      rff84_64m lbfgs        F1=0.8778 acc=0.9428 (4s)
+00:42:30   families6      rff84_64m mlp256       F1=0.9566 acc=0.9831 (33s)
+00:42:34   all23          rff84_64m lbfgs        F1=0.6138 acc=0.9205 (4s)
+00:42:47   all23          rff84_64m mlp256       F1=0.6630 acc=0.9588 (14s)
+00:42:47 [step 2/13] it4+4_a2a_L8_dt0.15: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+00:42:51   reservoir it4+4_a2a_L8_dt0.15 built in 4s
+00:42:54   families6 qit4+4_a2a_L8_dt0.15 lbfgs        F1=0.8966 acc=0.9505 (3s)
+00:43:19   families6 qit4+4_a2a_L8_dt0.15 mlp256       F1=0.9602 acc=0.9835 (26s)
+00:43:23   all23     qit4+4_a2a_L8_dt0.15 lbfgs        F1=0.5638 acc=0.9189 (3s)
+00:43:31   all23     qit4+4_a2a_L8_dt0.15 mlp256       F1=0.5836 acc=0.9201 (9s)
+00:43:32 [step 3/13] it4+4_a2a_L8_dt0.6: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+00:43:35   reservoir it4+4_a2a_L8_dt0.6 built in 4s
+00:43:38   families6 qit4+4_a2a_L8_dt0.6 lbfgs        F1=0.8983 acc=0.9512 (3s)
+00:44:04   families6 qit4+4_a2a_L8_dt0.6 mlp256       F1=0.9640 acc=0.9851 (26s)
+00:44:08   all23     qit4+4_a2a_L8_dt0.6 lbfgs        F1=0.5650 acc=0.9174 (4s)
+00:44:21   all23     qit4+4_a2a_L8_dt0.6 mlp256       F1=0.5999 acc=0.9523 (13s)
+00:44:21 [step 4/13] it4+4_a2a_L8_dt0.3: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+00:44:21 [step 5/13] it4+4_ring_L8_dt0.3: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+00:44:25   reservoir it4+4_ring_L8_dt0.3 built in 4s
+00:44:28   families6 qit4+4_ring_L8_dt0.3 lbfgs        F1=0.8825 acc=0.9414 (3s)
+00:44:54   families6 qit4+4_ring_L8_dt0.3 mlp256       F1=0.9611 acc=0.9838 (26s)
+00:44:57   all23     qit4+4_ring_L8_dt0.3 lbfgs        F1=0.5627 acc=0.9165 (4s)
+00:45:08   all23     qit4+4_ring_L8_dt0.3 mlp256       F1=0.5766 acc=0.9481 (11s)
+00:45:08 [step 6/13] it4+2_a2a_L8_dt0.3: readout 82, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+00:45:09   reservoir it4+2_a2a_L8_dt0.3 built in 1s
+00:45:12   families6 qit4+2_a2a_L8_dt0.3 lbfgs        F1=0.8782 acc=0.9401 (3s)
+00:45:32   families6 qit4+2_a2a_L8_dt0.3 mlp256       F1=0.9591 acc=0.9831 (20s)
+00:45:36   all23     qit4+2_a2a_L8_dt0.3 lbfgs        F1=0.5243 acc=0.9106 (3s)
+00:45:51   all23     qit4+2_a2a_L8_dt0.3 mlp256       F1=0.6069 acc=0.9552 (15s)
+00:45:56   families6      rff82_64m lbfgs        F1=0.8493 acc=0.9228 (3s)
+00:46:20   families6      rff82_64m mlp256       F1=0.9565 acc=0.9829 (25s)
+00:46:24   all23          rff82_64m lbfgs        F1=0.5964 acc=0.9043 (3s)
+00:46:39   all23          rff82_64m mlp256       F1=0.6697 acc=0.9483 (15s)
+00:46:39 [step 7/13] it4+6_a2a_L8_dt0.3: readout 86, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+00:48:48   reservoir it4+6_a2a_L8_dt0.3 built in 129s
+00:48:51   families6 qit4+6_a2a_L8_dt0.3 lbfgs        F1=0.8890 acc=0.9444 (3s)
+00:49:12   families6 qit4+6_a2a_L8_dt0.3 mlp256       F1=0.9619 acc=0.9845 (21s)
+00:49:16   all23     qit4+6_a2a_L8_dt0.3 lbfgs        F1=0.5917 acc=0.9142 (3s)
+00:49:28   all23     qit4+6_a2a_L8_dt0.3 mlp256       F1=0.5933 acc=0.9503 (12s)
+00:49:32   families6      rff86_64m lbfgs        F1=0.8807 acc=0.9426 (3s)
+00:49:47   families6      rff86_64m mlp256       F1=0.9558 acc=0.9833 (15s)
+00:49:51   all23          rff86_64m lbfgs        F1=0.6122 acc=0.9192 (3s)
+00:50:02   all23          rff86_64m mlp256       F1=0.6632 acc=0.9454 (11s)
+00:50:02 [step 8/13] it6+4_a2a_L8_dt0.3: readout 172, PCA(96) 98.1%, heads ['lbfgs', 'mlp256']
+00:50:06   families6        dials96 lbfgs        F1=0.8886 acc=0.9387 (4s)
+00:50:33   families6        dials96 mlp256       F1=0.9678 acc=0.9864 (27s)
+00:50:37   all23            dials96 lbfgs        F1=0.5579 acc=0.8832 (4s)
+00:50:45   all23            dials96 mlp256       F1=0.6159 acc=0.9243 (9s)
+00:50:58   reservoir it6+4_a2a_L8_dt0.3 built in 13s
+00:51:02   families6 qit6+4_a2a_L8_dt0.3 lbfgs        F1=0.9413 acc=0.9719 (4s)
+00:51:28   families6 qit6+4_a2a_L8_dt0.3 mlp256       F1=0.9693 acc=0.9878 (26s)
+00:51:32   all23     qit6+4_a2a_L8_dt0.3 lbfgs        F1=0.6038 acc=0.9491 (4s)
+00:51:43   all23     qit6+4_a2a_L8_dt0.3 mlp256       F1=0.6844 acc=0.9577 (11s)
+00:51:49   families6     rff172_96m lbfgs        F1=0.9124 acc=0.9579 (4s)
+00:52:13   families6     rff172_96m mlp256       F1=0.9665 acc=0.9873 (24s)
+00:52:17   all23         rff172_96m lbfgs        F1=0.6382 acc=0.9390 (4s)
+00:52:29   all23         rff172_96m mlp256       F1=0.6860 acc=0.9617 (12s)
+00:52:29 [step 9/13] it2+6_a2a_L16_dt0.3: readout 54, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+00:52:58   reservoir it2+6_a2a_L16_dt0.3 built in 29s
+00:53:01   families6 qit2+6_a2a_L16_dt0.3 lbfgs        F1=0.8609 acc=0.9263 (3s)
+00:53:28   families6 qit2+6_a2a_L16_dt0.3 mlp256       F1=0.9556 acc=0.9802 (26s)
+00:53:31   all23     qit2+6_a2a_L16_dt0.3 lbfgs        F1=0.5008 acc=0.8591 (3s)
+00:53:46   all23     qit2+6_a2a_L16_dt0.3 mlp256       F1=0.5612 acc=0.9336 (15s)
+00:53:51   families6      rff54_64m lbfgs        F1=0.8139 acc=0.8987 (3s)
+00:54:06   families6      rff54_64m mlp256       F1=0.9476 acc=0.9788 (15s)
+00:54:09   all23          rff54_64m lbfgs        F1=0.5854 acc=0.8852 (3s)
+00:54:23   all23          rff54_64m mlp256       F1=0.6706 acc=0.9490 (14s)
+00:54:23 [step 10/13] it4+4_a2a_L16_dt0.3: readout 164, PCA(121) 100.0%, heads ['lbfgs', 'mlp256']
+00:54:27   families6       dials121 lbfgs        F1=0.9270 acc=0.9648 (4s)
+00:54:50   families6       dials121 mlp256       F1=0.9769 acc=0.9904 (24s)
+00:54:54   all23           dials121 lbfgs        F1=0.6025 acc=0.9480 (4s)
+00:55:08   all23           dials121 mlp256       F1=0.6872 acc=0.9713 (14s)
+00:55:15   reservoir it4+4_a2a_L16_dt0.3 built in 7s
+00:55:19   families6 qit4+4_a2a_L16_dt0.3 lbfgs        F1=0.9397 acc=0.9743 (4s)
+00:55:38   families6 qit4+4_a2a_L16_dt0.3 mlp256       F1=0.9767 acc=0.9911 (20s)
+00:55:43   all23     qit4+4_a2a_L16_dt0.3 lbfgs        F1=0.6633 acc=0.9591 (4s)
+00:56:09   all23     qit4+4_a2a_L16_dt0.3 mlp256       F1=0.7063 acc=0.9821 (26s)
+00:56:14   families6    rff164_121m lbfgs        F1=0.9093 acc=0.9567 (4s)
+00:56:30   families6    rff164_121m mlp256       F1=0.9748 acc=0.9910 (15s)
+00:56:34   all23        rff164_121m lbfgs        F1=0.6487 acc=0.9487 (4s)
+00:56:56   all23        rff164_121m mlp256       F1=0.7150 acc=0.9812 (22s)
+00:56:56 [step 11/13] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+00:57:00   reservoir it4+4_a2a_L8_dt0.3_nomem built in 4s
+00:57:03   families6 qit4+4_a2a_L8_dt0.3_nomem lbfgs        F1=0.8971 acc=0.9505 (3s)
+00:57:20   families6 qit4+4_a2a_L8_dt0.3_nomem mlp256       F1=0.9609 acc=0.9838 (17s)
+00:57:24   all23     qit4+4_a2a_L8_dt0.3_nomem lbfgs        F1=0.5641 acc=0.9141 (4s)
+00:57:39   all23     qit4+4_a2a_L8_dt0.3_nomem mlp256       F1=0.5919 acc=0.9488 (15s)
+00:57:39 [step 12/13] 3p12m: readout 220, PCA(12) 31.3%, heads ['lbfgs', 'mlp256']
+00:57:41   families6        dials12 lbfgs        F1=0.7921 acc=0.8978 (2s)
+00:58:07   families6        dials12 mlp256       F1=0.9410 acc=0.9733 (26s)
+00:58:10   all23            dials12 lbfgs        F1=0.4531 acc=0.6882 (3s)
+00:58:17   all23            dials12 mlp256       F1=0.5252 acc=0.9024 (7s)
+00:58:18   reservoir 3p12m built in 1s
+00:58:23   families6         q3p12m lbfgs        F1=0.9533 acc=0.9795 (5s)
+00:58:43   families6         q3p12m mlp256       F1=0.9709 acc=0.9879 (20s)
+00:58:47   all23             q3p12m lbfgs        F1=0.5738 acc=0.9545 (5s)
+00:59:03   all23             q3p12m mlp256       F1=0.5891 acc=0.9634 (16s)
+00:59:09   families6     rff220_12m lbfgs        F1=0.9492 acc=0.9775 (5s)
+00:59:29   families6     rff220_12m mlp256       F1=0.9724 acc=0.9890 (20s)
+00:59:34   all23         rff220_12m lbfgs        F1=0.5942 acc=0.9522 (5s)
+00:59:49   all23         rff220_12m mlp256       F1=0.6399 acc=0.9624 (15s)
+00:59:49 [step 13/13] 3p20m: readout 1,140, PCA(20) 39.0%, heads ['lbfgs', 'mlp256']
+00:59:51   families6        dials20 lbfgs        F1=0.8410 acc=0.9200 (2s)
+01:00:18   families6        dials20 mlp256       F1=0.9490 acc=0.9768 (26s)
+01:00:20   all23            dials20 lbfgs        F1=0.4792 acc=0.7209 (3s)
+01:00:34   all23            dials20 mlp256       F1=0.5678 acc=0.9429 (14s)
+01:00:36   reservoir 3p20m built in 2s
+01:00:49   families6         q3p20m lbfgs        F1=0.9675 acc=0.9864 (13s)
+01:01:15   families6         q3p20m mlp256       F1=0.9773 acc=0.9907 (26s)
+01:01:28   all23             q3p20m lbfgs        F1=0.6639 acc=0.9743 (13s)
+01:01:38   all23             q3p20m mlp256       F1=0.6576 acc=0.9664 (10s)
+01:01:54   families6    rff1140_20m lbfgs        F1=0.9658 acc=0.9858 (14s)
+01:02:20   families6    rff1140_20m mlp256       F1=0.9793 acc=0.9920 (27s)
+01:02:34   all23        rff1140_20m lbfgs        F1=0.6638 acc=0.9724 (14s)
+01:02:43   all23        rff1140_20m mlp256       F1=0.6762 acc=0.9456 (9s)
+01:02:43 === auto_A_nsl_sup done in 23.0 min -> D:\Dev\ai-ml\qorc\runs\auto_A_nsl_sup\results.jsonl ===
+21:46:52 === auto_A_nsl_sup: supervised, seed 42, 13 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:46:52 train (79362, 122) val (8819, 122) test (37792, 122)
+21:46:53 [step 1/13] it4+4_a2a_L8_dt0.3: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+21:46:53 [step 2/13] it4+4_a2a_L8_dt0.15: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+21:46:53 [step 3/13] it4+4_a2a_L8_dt0.6: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+21:46:53 [step 4/13] it4+4_a2a_L8_dt0.3_J2: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+21:46:57   reservoir it4+4_a2a_L8_dt0.3_J2 built in 4s
+21:47:02   families6 qit4+4_a2a_L8_dt0.3_J2 lbfgs        F1=0.8968 acc=0.9502 (4s)
+21:47:39   families6 qit4+4_a2a_L8_dt0.3_J2 mlp256       F1=0.9657 acc=0.9860 (37s)
+21:47:43   all23     qit4+4_a2a_L8_dt0.3_J2 lbfgs        F1=0.5702 acc=0.9171 (4s)
+21:48:05   all23     qit4+4_a2a_L8_dt0.3_J2 mlp256       F1=0.6001 acc=0.9519 (22s)
+21:48:05 [step 5/13] it4+4_ring_L8_dt0.3: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+21:48:05 [step 6/13] it4+2_a2a_L8_dt0.3: readout 82, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+21:48:05 [step 7/13] it4+6_a2a_L8_dt0.3: readout 86, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+21:48:05 [step 8/13] it6+4_a2a_L8_dt0.3: readout 172, PCA(96) 98.1%, heads ['lbfgs', 'mlp256']
+21:48:05 [step 9/13] it2+6_a2a_L16_dt0.3: readout 54, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+21:48:05 [step 10/13] it4+4_a2a_L16_dt0.3: readout 164, PCA(121) 100.0%, heads ['lbfgs', 'mlp256']
+21:48:05 [step 11/13] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+21:48:05 [step 12/13] 3p12m: readout 220, PCA(12) 31.3%, heads ['lbfgs', 'mlp256']
+21:48:05 [step 13/13] 3p20m: readout 1,140, PCA(20) 39.0%, heads ['lbfgs', 'mlp256']
+21:48:05 === auto_A_nsl_sup done in 1.2 min -> D:\Dev\ai-ml\qorc\runs\auto_A_nsl_sup\results.jsonl ===

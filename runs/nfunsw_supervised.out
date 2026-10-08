@@ -1,0 +1,43 @@
+PLAN  nfunsw_supervised  (supervised, seed 42, device cuda)
+data  nf_unsw_nb15_v2 (default path)
+      train 1,505,872 / val 167,320 / test 717,083 rows, 37 features, label sets ['binary', 'attack10']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\nfunsw_supervised
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L8_dt0.3       84    0.80  lbfgs          scaled                850    0.4m
+                                   mlp256         scaled             24,330    8.0m
+   2  it4+4_a2a_L8_dt0.3_nomem       84    0.80  lbfgs          scaled                850    0.4m
+                                   mlp256         scaled             24,330    8.0m
+
+fits  20 total (2 label set(s) x heads x arms), 0 already on disk, 20 to run
+time  ~1.5 h remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.8 GB
+
+11:38:02 === nfunsw_supervised: supervised, seed 42, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+11:38:07 train (1505872, 37) val (167320, 37) test (717083, 37)
+11:38:27   binary               raw lbfgs        F1=0.9391 acc=0.9896 (18s)
+11:45:04   binary               raw mlp256       F1=0.9712 acc=0.9954 (398s)
+11:45:29   attack10             raw lbfgs        F1=0.4009 acc=0.9610 (25s)
+11:49:29   attack10             raw mlp256       F1=0.5288 acc=0.9827 (240s)
+11:49:29 [step 1/2] it4+4_a2a_L8_dt0.3: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+11:49:38   binary           dials37 lbfgs        F1=0.9452 acc=0.9907 (8s)
+11:51:59   binary           dials37 mlp256       F1=0.9733 acc=0.9957 (141s)
+11:52:22   attack10         dials37 lbfgs        F1=0.4344 acc=0.9686 (24s)
+11:56:39   attack10         dials37 mlp256       F1=0.5706 acc=0.9842 (257s)
+11:57:47   reservoir it4+4_a2a_L8_dt0.3 built in 68s
+11:58:14   binary    qit4+4_a2a_L8_dt0.3 lbfgs        F1=0.9317 acc=0.9881 (27s)
+12:05:45   binary    qit4+4_a2a_L8_dt0.3 mlp256       F1=0.9739 acc=0.9958 (451s)
+12:06:20   attack10  qit4+4_a2a_L8_dt0.3 lbfgs        F1=0.4461 acc=0.9694 (34s)
+12:15:28   attack10  qit4+4_a2a_L8_dt0.3 mlp256       F1=0.5817 acc=0.9842 (548s)
+12:15:38   binary         rff84_37m lbfgs        F1=0.8973 acc=0.9809 (7s)
+12:21:51   binary         rff84_37m mlp256       F1=0.9748 acc=0.9960 (374s)
+12:22:24   attack10       rff84_37m lbfgs        F1=0.4292 acc=0.9628 (33s)
+12:30:21   attack10       rff84_37m mlp256       F1=0.5882 acc=0.9836 (477s)
+12:30:21 [step 2/2] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+12:31:29   reservoir it4+4_a2a_L8_dt0.3_nomem built in 68s
+12:31:54   binary    qit4+4_a2a_L8_dt0.3_nomem lbfgs        F1=0.9326 acc=0.9883 (26s)
+12:35:59   binary    qit4+4_a2a_L8_dt0.3_nomem mlp256       F1=0.9729 acc=0.9957 (245s)
+12:36:32   attack10  qit4+4_a2a_L8_dt0.3_nomem lbfgs        F1=0.4412 acc=0.9680 (33s)
+12:44:00   attack10  qit4+4_a2a_L8_dt0.3_nomem mlp256       F1=0.5867 acc=0.9842 (448s)
+12:44:00 === nfunsw_supervised done in 65.9 min -> D:\Dev\ai-ml\qorc\runs\nfunsw_supervised\results.jsonl ===

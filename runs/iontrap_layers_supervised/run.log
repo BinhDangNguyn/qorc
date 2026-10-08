@@ -1,0 +1,63 @@
+09:59:37 === iontrap_layers_supervised: supervised, seed 42, 6 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+09:59:37 train (79362, 122) val (8819, 122) test (37792, 122)
+09:59:43   families6            raw lbfgs        F1=0.9218 acc=0.9618 (5s)
+10:00:16   families6            raw mlp256       F1=0.9716 acc=0.9879 (33s)
+10:00:20   all23                raw lbfgs        F1=0.6321 acc=0.9425 (5s)
+10:00:33   all23                raw mlp256       F1=0.6711 acc=0.9464 (13s)
+10:00:33 [step 1/6] it4+4_a2a_L16_dt0.3_roundrobin: readout 164, PCA(121) 100.0%, heads ['lbfgs', 'mlp256']
+10:00:37   families6       dials121 lbfgs        F1=0.9270 acc=0.9648 (4s)
+10:01:05   families6       dials121 mlp256       F1=0.9769 acc=0.9904 (28s)
+10:01:10   all23           dials121 lbfgs        F1=0.6025 acc=0.9480 (5s)
+10:01:26   all23           dials121 mlp256       F1=0.6872 acc=0.9713 (16s)
+10:01:34   reservoir it4+4_a2a_L16_dt0.3_roundrobin built in 8s
+10:01:40   families6 qit4+4_a2a_L16_dt0.3_roundrobin lbfgs        F1=0.9470 acc=0.9771 (5s)
+10:02:16   families6 qit4+4_a2a_L16_dt0.3_roundrobin mlp256       F1=0.9807 acc=0.9925 (36s)
+10:02:21   all23     qit4+4_a2a_L16_dt0.3_roundrobin lbfgs        F1=0.6028 acc=0.9627 (5s)
+10:02:43   all23     qit4+4_a2a_L16_dt0.3_roundrobin mlp256       F1=0.6545 acc=0.9765 (22s)
+10:02:53   families6    rff164_121m lbfgs        F1=0.9093 acc=0.9567 (5s)
+10:03:12   families6    rff164_121m mlp256       F1=0.9748 acc=0.9910 (20s)
+10:03:17   all23        rff164_121m lbfgs        F1=0.6487 acc=0.9487 (5s)
+10:03:42   all23        rff164_121m mlp256       F1=0.7150 acc=0.9812 (25s)
+10:03:42 [step 2/6] it4+4_a2a_L8_dt0.3_R2_roundrobin: readout 84, PCA(121) 100.0%, heads ['lbfgs', 'mlp256']
+10:06:26   reservoir it4+4_a2a_L8_dt0.3_R2_roundrobin built in 165s
+10:06:30   families6 qit4+4_a2a_L8_dt0.3_R2_roundrobin lbfgs        F1=0.8810 acc=0.9445 (4s)
+10:07:06   families6 qit4+4_a2a_L8_dt0.3_R2_roundrobin mlp256       F1=0.9721 acc=0.9895 (36s)
+10:07:10   all23     qit4+4_a2a_L8_dt0.3_R2_roundrobin lbfgs        F1=0.5637 acc=0.9272 (4s)
+10:08:02   all23     qit4+4_a2a_L8_dt0.3_R2_roundrobin mlp256       F1=0.6857 acc=0.9693 (53s)
+10:08:09   families6     rff84_121m lbfgs        F1=0.8540 acc=0.9211 (4s)
+10:08:43   families6     rff84_121m mlp256       F1=0.9747 acc=0.9912 (34s)
+10:08:47   all23         rff84_121m lbfgs        F1=0.6007 acc=0.9164 (4s)
+10:09:09   all23         rff84_121m mlp256       F1=0.6700 acc=0.9690 (23s)
+10:09:10 [step 3/6] it4+4_a2a_L4_dt0.3_R4_roundrobin: readout 44, PCA(121) 100.0%, heads ['lbfgs', 'mlp256']
+10:11:56   reservoir it4+4_a2a_L4_dt0.3_R4_roundrobin built in 167s
+10:11:59   families6 qit4+4_a2a_L4_dt0.3_R4_roundrobin lbfgs        F1=0.8209 acc=0.9014 (3s)
+10:12:40   families6 qit4+4_a2a_L4_dt0.3_R4_roundrobin mlp256       F1=0.9656 acc=0.9867 (41s)
+10:12:43   all23     qit4+4_a2a_L4_dt0.3_R4_roundrobin lbfgs        F1=0.4962 acc=0.8765 (4s)
+10:13:04   all23     qit4+4_a2a_L4_dt0.3_R4_roundrobin mlp256       F1=0.6176 acc=0.9627 (20s)
+10:13:09   families6     rff44_121m lbfgs        F1=0.7340 acc=0.8227 (3s)
+10:13:40   families6     rff44_121m mlp256       F1=0.9654 acc=0.9870 (31s)
+10:13:44   all23         rff44_121m lbfgs        F1=0.5161 acc=0.8260 (3s)
+10:14:02   all23         rff44_121m mlp256       F1=0.6235 acc=0.9561 (19s)
+10:14:02 [step 4/6] it4+4_a2a_L8_dt0.3_encall_roundrobin: readout 84, PCA(121) 100.0%, heads ['lbfgs', 'mlp256']
+10:15:24   reservoir it4+4_a2a_L8_dt0.3_encall_roundrobin built in 81s
+10:15:28   families6 qit4+4_a2a_L8_dt0.3_encall_roundrobin lbfgs        F1=0.8942 acc=0.9481 (4s)
+10:15:55   families6 qit4+4_a2a_L8_dt0.3_encall_roundrobin mlp256       F1=0.9667 acc=0.9869 (27s)
+10:15:59   all23     qit4+4_a2a_L8_dt0.3_encall_roundrobin lbfgs        F1=0.5620 acc=0.9247 (4s)
+10:16:10   all23     qit4+4_a2a_L8_dt0.3_encall_roundrobin mlp256       F1=0.5832 acc=0.9418 (11s)
+10:16:10 [step 5/6] it4+4_a2a_L4_dt0.3_R2_encall_roundrobin: readout 44, PCA(121) 100.0%, heads ['lbfgs', 'mlp256']
+10:17:35   reservoir it4+4_a2a_L4_dt0.3_R2_encall_roundrobin built in 84s
+10:17:38   families6 qit4+4_a2a_L4_dt0.3_R2_encall_roundrobin lbfgs        F1=0.8102 acc=0.8873 (3s)
+10:18:09   families6 qit4+4_a2a_L4_dt0.3_R2_encall_roundrobin mlp256       F1=0.9595 acc=0.9835 (31s)
+10:18:13   all23     qit4+4_a2a_L4_dt0.3_R2_encall_roundrobin lbfgs        F1=0.4821 acc=0.8495 (4s)
+10:18:25   all23     qit4+4_a2a_L4_dt0.3_R2_encall_roundrobin mlp256       F1=0.5523 acc=0.9000 (12s)
+10:18:25 [step 6/6] it4+4_a2a_L2_dt0.3_R4_encall_roundrobin: readout 24, PCA(121) 100.0%, heads ['lbfgs', 'mlp256']
+10:19:50   reservoir it4+4_a2a_L2_dt0.3_R4_encall_roundrobin built in 85s
+10:19:53   families6 qit4+4_a2a_L2_dt0.3_R4_encall_roundrobin lbfgs        F1=0.6575 acc=0.7541 (3s)
+10:20:34   families6 qit4+4_a2a_L2_dt0.3_R4_encall_roundrobin mlp256       F1=0.9454 acc=0.9763 (41s)
+10:20:37   all23     qit4+4_a2a_L2_dt0.3_R4_encall_roundrobin lbfgs        F1=0.3312 acc=0.7040 (3s)
+10:21:07   all23     qit4+4_a2a_L2_dt0.3_R4_encall_roundrobin mlp256       F1=0.5390 acc=0.9426 (30s)
+10:21:12   families6     rff24_121m lbfgs        F1=0.6069 acc=0.7190 (2s)
+10:21:45   families6     rff24_121m mlp256       F1=0.9447 acc=0.9785 (33s)
+10:21:48   all23         rff24_121m lbfgs        F1=0.3489 acc=0.6977 (3s)
+10:22:20   all23         rff24_121m mlp256       F1=0.6506 acc=0.9627 (32s)
+10:22:21 === iontrap_layers_supervised done in 22.7 min -> D:\Dev\ai-ml\qorc\runs\iontrap_layers_supervised\results.jsonl ===

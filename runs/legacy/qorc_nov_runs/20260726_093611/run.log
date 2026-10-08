@@ -1,0 +1,101 @@
+09:36:11 [INFO ] run id      : 20260726_093611
+09:36:11 [INFO ] run dir     : D:\Python\AI\Code\ReservoirComputing\QRC\team\qorc_nov_runs\20260726_093611
+09:36:11 [INFO ] device      : cuda (NVIDIA GeForce RTX 2070 with Max-Q Design)
+09:36:11 [INFO ] python      : 3.10.19 | torch 2.5.1+cu121 | perceval 1.2.1
+09:36:11 [INFO ] configs     : ['3p12m', '3p20m', '3p24m', '4p24m']
+09:36:11 [INFO ] seed        : 42 (single seed -- see caveats in section 9)
+09:36:11 [INFO ]   3p12m  -> readout dim    220 | full-data matrix 0.11 GB
+09:36:11 [INFO ]   3p20m  -> readout dim   1140 | full-data matrix 0.57 GB
+09:36:11 [INFO ]   3p24m  -> readout dim   2024 | full-data matrix 1.02 GB
+09:36:11 [INFO ]   4p24m  -> readout dim  10626 | full-data matrix 5.35 GB
+09:36:11 [INFO ] loading ../../NSL_KDD_labeled.csv
+09:36:11 [INFO ] data: 125,973 rows x 122 features
+09:36:11 [INFO ]       67,343 normal / 58,630 attack across 22 attack types
+09:36:11 [INFO ]       13 types have >= 20 rows (used for headline aggregates)
+09:36:11 [INFO ] train        : 47,140 normal rows  (NO attacks -- zero-day protocol)
+09:36:11 [INFO ] score-normal : 20,203 normal rows
+09:36:11 [INFO ] score-attack : 58,630 attack rows (all 22 types)
+09:36:11 [INFO ] === SMOKE TEST ===
+09:36:12 [INFO ]   [PASS] readout dim == C(12,3) got 220, expected 220
+09:36:12 [INFO ]   [PASS] probabilities in [0,1] range [3.312e-08, 6.762e-02]
+09:36:12 [INFO ]   [PASS] rows sum to ~1 sums in [1.0000, 1.0000]
+09:36:12 [INFO ]   [PASS] reservoir reproducible for a fixed seed 
+09:36:12 [INFO ]   [PASS] different seed -> different reservoir 
+09:36:12 [INFO ]   [PASS] config 3p12m builds, dim 220 got 220
+09:36:12 [INFO ]   [PASS] config 3p20m builds, dim 1140 got 1140
+09:36:12 [INFO ]   [PASS] config 3p24m builds, dim 2024 got 2024
+09:36:13 [INFO ]   [PASS] config 4p24m builds, dim 10626 got 10626
+09:36:13 [INFO ]   [PASS] phase bounded in [0, pi] range [0.0000, 3.1416]
+09:36:13 [INFO ]   [PASS] phase monotonic (order preserved) 
+09:36:13 [INFO ]   [PASS] phase strictly increasing over +/-4 sd (no clipping on real data) 
+09:36:13 [INFO ]   [PASS] training set is 100% normal (zero-day protocol) 0 attack rows found in train
+09:36:13 [INFO ]   [PASS] no train/score-normal overlap 
+09:36:13 [INFO ]   [PASS] no train/attack overlap 
+09:36:13 [INFO ]   [PASS] all attack rows are scored 58,630 of 58,630
+09:36:13 [INFO ]   [PASS] every attack type is represented 22 types
+09:36:13 [INFO ]   [PASS] detector solves a separable toy problem AUC=1.0000
+09:36:13 [INFO ]   [PASS] detector does not flag held-out normal (AUC ~ 0.5) AUC=0.5004
+09:36:13 [INFO ]   [PASS] chunked scoring matches unchunked max diff 0.00e+00
+09:36:13 [INFO ]   [PASS] false-alarm budget calibrates on normal (~0.05) empirical 0.0520
+09:36:13 [INFO ] --- 3p12m: readout dim 220, 0.01 GB across 10,000 rows ---
+09:36:13 [INFO ]   front-end fitted (0.0s), PCA explains 54.3% of variance
+09:36:13 [INFO ]   quantum features: 10,000 rows x 220 in 0.1s (0.006 ms/row)
+09:36:13 [INFO ]   NOV_q      dim=  220 AUC(all)=0.9708 det@1%FA=0.6650 (0.1s)
+09:36:13 [INFO ]   NOV_dials  dim=   12 AUC(all)=0.9480 det@1%FA=0.6245 (0.0s)
+09:36:13 [INFO ]   NOV_raw    dim=  122 AUC(all)=0.9559 det@1%FA=0.0585 (0.1s)
+09:36:14 [INFO ]   IForest    dim=  122 AUC(all)=0.9769 det@1%FA=0.7887 (0.5s)
+09:36:14 [INFO ]   GAIN NOV_q - NOV_dials: AUC +0.0228 | vs raw +0.0149 (total 1.0s)
+09:36:14 [INFO ]   [PASS] end-to-end config returns metrics AUC=0.971
+09:36:14 [INFO ]   [PASS] result record is JSON-serialisable 
+09:36:14 [INFO ]   [PASS] per-attack breakdown present 
+09:36:14 [INFO ]   [PASS] at least 1 GB free disk 114.6 GB free
+09:36:14 [INFO ] ============================================================
+09:36:14 [INFO ] SMOKE TEST PASSED (25 checks) - safe to start the full run
+09:36:14 [INFO ] ============================================================
+09:36:14 [INFO ] ======================================================================
+09:36:14 [INFO ] SWEEP: 4 configs, 0 already done, 4 to run
+09:36:14 [INFO ] results -> qorc_nov_runs\20260726_093611\results.jsonl
+09:36:14 [INFO ] ======================================================================
+09:36:14 [INFO ] [1/4] 3p12m   (elapsed 0.0 min)
+09:36:14 [INFO ] --- 3p12m: readout dim 220, 0.11 GB across 125,973 rows ---
+09:36:14 [INFO ]   front-end fitted (0.3s), PCA explains 48.1% of variance
+09:36:15 [INFO ]   quantum features: 125,973 rows x 220 in 0.4s (0.004 ms/row)
+09:36:16 [INFO ]   NOV_q      dim=  220 AUC(all)=0.9698 det@1%FA=0.2327 (0.6s)
+09:36:16 [INFO ]   NOV_dials  dim=   12 AUC(all)=0.9581 det@1%FA=0.6335 (0.1s)
+09:36:17 [INFO ]   NOV_raw    dim=  122 AUC(all)=0.9616 det@1%FA=0.2999 (0.4s)
+09:36:18 [INFO ]   IForest    dim=  122 AUC(all)=0.9798 det@1%FA=0.7975 (1.6s)
+09:36:18 [INFO ]   GAIN NOV_q - NOV_dials: AUC +0.0116 | vs raw +0.0082 (total 4.4s)
+09:36:18 [INFO ] [1/4] saved.
+09:36:18 [INFO ] [2/4] 3p20m   (elapsed 0.1 min)
+09:36:18 [INFO ] --- 3p20m: readout dim 1140, 0.57 GB across 125,973 rows ---
+09:36:19 [INFO ]   front-end fitted (0.3s), PCA explains 60.7% of variance
+09:36:20 [INFO ]   quantum features: 125,973 rows x 1140 in 1.4s (0.011 ms/row)
+09:36:24 [INFO ]   NOV_q      dim= 1140 AUC(all)=0.9520 det@1%FA=0.0649 (2.6s)
+09:36:24 [INFO ]   NOV_dials  dim=   20 AUC(all)=0.9640 det@1%FA=0.6224 (0.1s)
+09:36:24 [INFO ]   NOV_raw    dim=  122 AUC(all)=0.9616 det@1%FA=0.2999 (0.4s)
+09:36:26 [INFO ]   IForest    dim=  122 AUC(all)=0.9798 det@1%FA=0.7975 (1.4s)
+09:36:26 [INFO ]   GAIN NOV_q - NOV_dials: AUC -0.0120 | vs raw -0.0096 (total 7.6s)
+09:36:26 [INFO ] [2/4] saved.
+09:36:26 [INFO ] [3/4] 3p24m   (elapsed 0.2 min)
+09:36:26 [INFO ] --- 3p24m: readout dim 2024, 1.02 GB across 125,973 rows ---
+09:36:26 [INFO ]   front-end fitted (0.2s), PCA explains 66.1% of variance
+09:36:28 [INFO ]   quantum features: 125,973 rows x 2024 in 1.9s (0.015 ms/row)
+09:36:34 [INFO ]   NOV_q      dim= 2024 AUC(all)=0.9503 det@1%FA=0.0366 (4.4s)
+09:36:34 [INFO ]   NOV_dials  dim=   24 AUC(all)=0.9614 det@1%FA=0.4036 (0.1s)
+09:36:35 [INFO ]   NOV_raw    dim=  122 AUC(all)=0.9616 det@1%FA=0.2999 (0.4s)
+09:36:36 [INFO ]   IForest    dim=  122 AUC(all)=0.9798 det@1%FA=0.7975 (1.4s)
+09:36:37 [INFO ]   GAIN NOV_q - NOV_dials: AUC -0.0112 | vs raw -0.0113 (total 10.4s)
+09:36:37 [INFO ] [3/4] saved.
+09:36:37 [INFO ] [4/4] 4p24m   (elapsed 0.4 min)
+09:36:37 [INFO ] --- 4p24m: readout dim 10626, 5.35 GB across 125,973 rows ---
+09:36:37 [INFO ]   front-end fitted (0.2s), PCA explains 66.1% of variance
+09:36:49 [INFO ]   quantum features: 125,973 rows x 10626 in 12.3s (0.098 ms/row)
+09:37:24 [INFO ]   NOV_q      dim=10626 AUC(all)=0.9460 det@1%FA=0.0245 (28.4s)
+09:37:24 [INFO ]   NOV_dials  dim=   24 AUC(all)=0.9614 det@1%FA=0.4036 (0.1s)
+09:37:25 [INFO ]   NOV_raw    dim=  122 AUC(all)=0.9616 det@1%FA=0.2999 (0.4s)
+09:37:27 [INFO ]   IForest    dim=  122 AUC(all)=0.9798 det@1%FA=0.7975 (1.9s)
+09:37:27 [INFO ]   GAIN NOV_q - NOV_dials: AUC -0.0154 | vs raw -0.0155 (total 50.1s)
+09:37:28 [INFO ] [4/4] saved.
+09:37:28 [INFO ] ======================================================================
+09:37:28 [INFO ] SWEEP COMPLETE in 1.2 min - 4/4 configs on disk
+09:37:28 [INFO ] ======================================================================

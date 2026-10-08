@@ -1,0 +1,38 @@
+[
+  {
+    "dataset": "fashion_mnist",
+    "task": "classify",
+    "arm": "raw",
+    "dim": 784,
+    "accuracy": 0.7835,
+    "macro_f1": 0.7838664550756432,
+    "fit_s": 3.1
+  },
+  {
+    "dataset": "fashion_mnist",
+    "task": "classify",
+    "arm": "dials",
+    "dim": 12,
+    "accuracy": 0.751,
+    "macro_f1": 0.7484182184326095,
+    "fit_s": 0.2
+  },
+  {
+    "dataset": "fashion_mnist",
+    "task": "classify",
+    "arm": "quantum",
+    "dim": 220,
+    "accuracy": 0.809,
+    "macro_f1": 0.8082526155605875,
+    "fit_s": 0.7
+  },
+  {
+    "dataset": "fashion_mnist",
+    "task": "classify",
+    "arm": "logreg_raw",
+    "dim": 784,
+    "accuracy": 0.811,
+    "macro_f1": 0.8110682153857116,
+    "fit_s": 10.0
+  }
+]

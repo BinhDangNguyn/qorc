@@ -1,0 +1,75 @@
+PLAN  iontrap_supervised  (supervised, seed 42, device cuda)
+data  nslkdd D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+      train 79,362 / val 8,819 / test 37,792 rows, 121 features, label sets ['families6', 'all23']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\iontrap_supervised
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  3p12m           220    0.11  lbfgs          scaled              5,083    0.1m
+                                   mlp256         scaled             62,487    0.6m
+   2  it4+4_a2a_L8_dt0.3       84    0.04  lbfgs          scaled              1,955    0.1m
+                                   mlp256         scaled             27,671    0.6m
+   3  it4+4_a2a_L8_dt0.3_nomem       84    0.04  lbfgs          scaled              1,955    0.1m
+                                   mlp256         scaled             27,671    0.6m
+   4  it4+4_a2a_L16_dt0.3      164    0.08  lbfgs          scaled              3,795    0.1m
+                                   mlp256         scaled             48,151    0.6m
+
+fits  44 total (2 label set(s) x heads x arms), 0 already on disk, 44 to run
+time  ~14 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+09:40:08 === iontrap_supervised: supervised, seed 42, 4 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+09:40:09 train (79362, 122) val (8819, 122) test (37792, 122)
+09:40:15   families6            raw lbfgs        F1=0.9218 acc=0.9618 (5s)
+09:40:44   families6            raw mlp256       F1=0.9716 acc=0.9879 (30s)
+09:40:48   all23                raw lbfgs        F1=0.6321 acc=0.9425 (4s)
+09:41:01   all23                raw mlp256       F1=0.6711 acc=0.9464 (13s)
+09:41:01 [step 1/4] 3p12m: readout 220, PCA(12) 31.3%, heads ['lbfgs', 'mlp256']
+09:41:04   families6        dials12 lbfgs        F1=0.7921 acc=0.8978 (2s)
+09:41:34   families6        dials12 mlp256       F1=0.9410 acc=0.9733 (30s)
+09:41:37   all23            dials12 lbfgs        F1=0.4531 acc=0.6882 (3s)
+09:41:46   all23            dials12 mlp256       F1=0.5252 acc=0.9024 (9s)
+09:41:47   reservoir 3p12m built in 1s
+09:41:51   families6         q3p12m lbfgs        F1=0.9539 acc=0.9798 (5s)
+09:42:14   families6         q3p12m mlp256       F1=0.9709 acc=0.9879 (23s)
+09:42:19   all23             q3p12m lbfgs        F1=0.5722 acc=0.9542 (5s)
+09:42:38   all23             q3p12m mlp256       F1=0.5933 acc=0.9634 (19s)
+09:42:43   families6     rff220_12m lbfgs        F1=0.9492 acc=0.9775 (5s)
+09:43:07   families6     rff220_12m mlp256       F1=0.9724 acc=0.9890 (24s)
+09:43:12   all23         rff220_12m lbfgs        F1=0.5942 acc=0.9522 (4s)
+09:43:30   all23         rff220_12m mlp256       F1=0.6399 acc=0.9624 (18s)
+09:43:30 [step 2/4] it4+4_a2a_L8_dt0.3: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+09:43:33   families6        dials64 lbfgs        F1=0.8644 acc=0.9294 (2s)
+09:44:06   families6        dials64 mlp256       F1=0.9498 acc=0.9774 (33s)
+09:44:09   all23            dials64 lbfgs        F1=0.5053 acc=0.7422 (4s)
+09:44:25   all23            dials64 mlp256       F1=0.5782 acc=0.9441 (16s)
+09:44:29   reservoir it4+4_a2a_L8_dt0.3 built in 4s
+09:44:32   families6 qit4+4_a2a_L8_dt0.3 lbfgs        F1=0.8993 acc=0.9516 (3s)
+09:44:53   families6 qit4+4_a2a_L8_dt0.3 mlp256       F1=0.9609 acc=0.9838 (20s)
+09:44:57   all23     qit4+4_a2a_L8_dt0.3 lbfgs        F1=0.5553 acc=0.9162 (4s)
+09:45:13   all23     qit4+4_a2a_L8_dt0.3 mlp256       F1=0.5944 acc=0.9506 (16s)
+09:45:18   families6      rff84_64m lbfgs        F1=0.8778 acc=0.9428 (4s)
+09:45:56   families6      rff84_64m mlp256       F1=0.9566 acc=0.9831 (39s)
+09:46:00   all23          rff84_64m lbfgs        F1=0.6138 acc=0.9205 (4s)
+09:46:16   all23          rff84_64m mlp256       F1=0.6630 acc=0.9588 (16s)
+09:46:16 [step 3/4] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(64) 75.5%, heads ['lbfgs', 'mlp256']
+09:46:20   reservoir it4+4_a2a_L8_dt0.3_nomem built in 4s
+09:46:23   families6 qit4+4_a2a_L8_dt0.3_nomem lbfgs        F1=0.8971 acc=0.9505 (3s)
+09:46:44   families6 qit4+4_a2a_L8_dt0.3_nomem mlp256       F1=0.9609 acc=0.9838 (21s)
+09:46:48   all23     qit4+4_a2a_L8_dt0.3_nomem lbfgs        F1=0.5641 acc=0.9141 (4s)
+09:47:06   all23     qit4+4_a2a_L8_dt0.3_nomem mlp256       F1=0.5919 acc=0.9488 (18s)
+09:47:06 [step 4/4] it4+4_a2a_L16_dt0.3: readout 164, PCA(121) 100.0%, heads ['lbfgs', 'mlp256']
+09:47:10   families6       dials121 lbfgs        F1=0.9270 acc=0.9648 (4s)
+09:47:38   families6       dials121 mlp256       F1=0.9769 acc=0.9904 (28s)
+09:47:41   all23           dials121 lbfgs        F1=0.6025 acc=0.9480 (4s)
+09:47:58   all23           dials121 mlp256       F1=0.6872 acc=0.9713 (16s)
+09:48:05   reservoir it4+4_a2a_L16_dt0.3 built in 7s
+09:48:09   families6 qit4+4_a2a_L16_dt0.3 lbfgs        F1=0.9397 acc=0.9743 (4s)
+09:48:34   families6 qit4+4_a2a_L16_dt0.3 mlp256       F1=0.9767 acc=0.9911 (25s)
+09:48:38   all23     qit4+4_a2a_L16_dt0.3 lbfgs        F1=0.6633 acc=0.9591 (4s)
+09:49:10   all23     qit4+4_a2a_L16_dt0.3 mlp256       F1=0.7063 acc=0.9821 (32s)
+09:49:16   families6    rff164_121m lbfgs        F1=0.9093 acc=0.9567 (4s)
+09:49:35   families6    rff164_121m mlp256       F1=0.9748 acc=0.9910 (18s)
+09:49:39   all23        rff164_121m lbfgs        F1=0.6487 acc=0.9487 (4s)
+09:50:04   all23        rff164_121m mlp256       F1=0.7150 acc=0.9812 (25s)
+09:50:05 === iontrap_supervised done in 9.9 min -> D:\Dev\ai-ml\qorc\runs\iontrap_supervised\results.jsonl ===

@@ -1,0 +1,102 @@
+01:02:51 === auto_A_nsl_nov: novelty, seed 42, 13 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+01:02:52 train (42426, 122) val (4714, 122) test (78833, 122)
+01:02:53   novelty            raw pca32          macroAUC=0.8985 det@1%=0.3093 macro_det@1%=0.2009 (1s)
+06:09:11 === auto_A_nsl_nov: novelty, seed 42, 13 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+06:09:11 train (42426, 122) val (4714, 122) test (78833, 122)
+06:09:41   novelty            raw ae256-b32      macroAUC=0.9771 det@1%=0.9367 macro_det@1%=0.7455 (29s)
+06:09:42   novelty            raw iforest        macroAUC=0.9168 det@1%=0.7982 macro_det@1%=0.2339 (1s)
+06:09:42 [step 1/13] it4+4_a2a_L8_dt0.3: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+06:09:43   novelty        dials64 pca32          macroAUC=0.9279 det@1%=0.6666 macro_det@1%=0.3867 (1s)
+06:10:10   novelty        dials64 ae256-b32      macroAUC=0.9718 det@1%=0.8098 macro_det@1%=0.5378 (27s)
+06:10:14   reservoir it4+4_a2a_L8_dt0.3 built in 4s
+06:10:14   novelty qit4+4_a2a_L8_dt0.3 pca32          macroAUC=0.9261 det@1%=0.6422 macro_det@1%=0.2947 (1s)
+06:10:41   novelty qit4+4_a2a_L8_dt0.3 ae256-b32      macroAUC=0.9747 det@1%=0.8742 macro_det@1%=0.5818 (26s)
+06:10:42   novelty      rff84_64m pca32          macroAUC=0.8787 det@1%=0.0133 macro_det@1%=0.0207 (1s)
+06:11:09   novelty      rff84_64m ae256-b32      macroAUC=0.9735 det@1%=0.8550 macro_det@1%=0.5755 (26s)
+06:11:09 [step 2/13] it4+4_a2a_L8_dt0.15: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+06:11:12   reservoir it4+4_a2a_L8_dt0.15 built in 4s
+06:11:13   novelty qit4+4_a2a_L8_dt0.15 pca32          macroAUC=0.9207 det@1%=0.6406 macro_det@1%=0.2928 (1s)
+06:11:39   novelty qit4+4_a2a_L8_dt0.15 ae256-b32      macroAUC=0.9733 det@1%=0.8694 macro_det@1%=0.5719 (26s)
+06:11:40 [step 3/13] it4+4_a2a_L8_dt0.6: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+06:11:43   reservoir it4+4_a2a_L8_dt0.6 built in 4s
+06:11:44   novelty qit4+4_a2a_L8_dt0.6 pca32          macroAUC=0.9223 det@1%=0.6483 macro_det@1%=0.3048 (1s)
+06:12:10   novelty qit4+4_a2a_L8_dt0.6 ae256-b32      macroAUC=0.9753 det@1%=0.8820 macro_det@1%=0.5931 (26s)
+06:12:10 [step 4/13] it4+4_a2a_L8_dt0.3: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+06:12:10 [step 5/13] it4+4_ring_L8_dt0.3: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+06:12:14   reservoir it4+4_ring_L8_dt0.3 built in 4s
+06:12:14   novelty qit4+4_ring_L8_dt0.3 pca32          macroAUC=0.9191 det@1%=0.6410 macro_det@1%=0.2827 (1s)
+06:12:41   novelty qit4+4_ring_L8_dt0.3 ae256-b32      macroAUC=0.9731 det@1%=0.9370 macro_det@1%=0.6923 (26s)
+06:12:41 [step 6/13] it4+2_a2a_L8_dt0.3: readout 82, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+06:12:42   reservoir it4+2_a2a_L8_dt0.3 built in 1s
+06:12:42   novelty qit4+2_a2a_L8_dt0.3 pca32          macroAUC=0.9230 det@1%=0.6710 macro_det@1%=0.3239 (1s)
+06:13:09   novelty qit4+2_a2a_L8_dt0.3 ae256-b32      macroAUC=0.9717 det@1%=0.8839 macro_det@1%=0.6044 (26s)
+06:13:10   novelty      rff82_64m pca32          macroAUC=0.8665 det@1%=0.0006 macro_det@1%=0.0007 (1s)
+06:13:36   novelty      rff82_64m ae256-b32      macroAUC=0.9724 det@1%=0.6930 macro_det@1%=0.5428 (26s)
+06:13:37 [step 7/13] it4+6_a2a_L8_dt0.3: readout 86, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+06:15:44   reservoir it4+6_a2a_L8_dt0.3 built in 128s
+06:15:45   novelty qit4+6_a2a_L8_dt0.3 pca32          macroAUC=0.9291 det@1%=0.6418 macro_det@1%=0.2931 (1s)
+06:16:12   novelty qit4+6_a2a_L8_dt0.3 ae256-b32      macroAUC=0.9744 det@1%=0.8285 macro_det@1%=0.5970 (27s)
+06:16:14   novelty      rff86_64m pca32          macroAUC=0.8719 det@1%=0.0223 macro_det@1%=0.0292 (1s)
+06:16:40   novelty      rff86_64m ae256-b32      macroAUC=0.9726 det@1%=0.8468 macro_det@1%=0.5872 (26s)
+06:16:40 [step 8/13] it6+4_a2a_L8_dt0.3: readout 172, PCA(96) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+06:16:41   novelty        dials96 pca32          macroAUC=0.9307 det@1%=0.6596 macro_det@1%=0.3543 (1s)
+06:17:07   novelty        dials96 ae256-b32      macroAUC=0.9759 det@1%=0.8776 macro_det@1%=0.6216 (27s)
+06:17:20   reservoir it6+4_a2a_L8_dt0.3 built in 12s
+06:17:21   novelty qit6+4_a2a_L8_dt0.3 pca32          macroAUC=0.9379 det@1%=0.7386 macro_det@1%=0.4572 (1s)
+06:17:47   novelty qit6+4_a2a_L8_dt0.3 ae256-b32      macroAUC=0.9805 det@1%=0.9394 macro_det@1%=0.7751 (27s)
+06:17:50   novelty     rff172_96m pca32          macroAUC=0.8371 det@1%=0.0000 macro_det@1%=0.0000 (1s)
+06:18:17   novelty     rff172_96m ae256-b32      macroAUC=0.9753 det@1%=0.8723 macro_det@1%=0.5821 (27s)
+06:18:17 [step 9/13] it2+6_a2a_L16_dt0.3: readout 54, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+06:18:45   reservoir it2+6_a2a_L16_dt0.3 built in 28s
+06:18:46   novelty qit2+6_a2a_L16_dt0.3 pca32          macroAUC=0.9331 det@1%=0.6709 macro_det@1%=0.3459 (1s)
+06:19:13   novelty qit2+6_a2a_L16_dt0.3 ae256-b32      macroAUC=0.9755 det@1%=0.9128 macro_det@1%=0.6754 (27s)
+06:19:14   novelty      rff54_64m pca32          macroAUC=0.9134 det@1%=0.0556 macro_det@1%=0.0886 (1s)
+06:19:41   novelty      rff54_64m ae256-b32      macroAUC=0.9719 det@1%=0.8631 macro_det@1%=0.5684 (26s)
+06:19:41 [step 10/13] it4+4_a2a_L16_dt0.3: readout 164, PCA(122) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+06:19:42   novelty       dials122 pca32          macroAUC=0.9377 det@1%=0.6878 macro_det@1%=0.3772 (1s)
+06:20:08   novelty       dials122 ae256-b32      macroAUC=0.9770 det@1%=0.8787 macro_det@1%=0.6312 (26s)
+06:20:15   reservoir it4+4_a2a_L16_dt0.3 built in 7s
+06:20:16   novelty qit4+4_a2a_L16_dt0.3 pca32          macroAUC=0.9514 det@1%=0.7434 macro_det@1%=0.5109 (1s)
+06:20:43   novelty qit4+4_a2a_L16_dt0.3 ae256-b32      macroAUC=0.9815 det@1%=0.9247 macro_det@1%=0.7671 (27s)
+06:20:45   novelty    rff164_122m pca32          macroAUC=0.8368 det@1%=0.0007 macro_det@1%=0.0149 (1s)
+06:21:12   novelty    rff164_122m ae256-b32      macroAUC=0.9741 det@1%=0.8809 macro_det@1%=0.5922 (27s)
+06:21:12 [step 11/13] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+06:21:16   reservoir it4+4_a2a_L8_dt0.3_nomem built in 4s
+06:21:16   novelty qit4+4_a2a_L8_dt0.3_nomem pca32          macroAUC=0.9272 det@1%=0.6392 macro_det@1%=0.2881 (1s)
+06:21:43   novelty qit4+4_a2a_L8_dt0.3_nomem ae256-b32      macroAUC=0.9758 det@1%=0.8967 macro_det@1%=0.6178 (27s)
+06:21:43 [step 12/13] 3p12m: readout 220, PCA(12) 48.2%, heads ['pca32', 'ae256-b32', 'iforest']
+06:21:44   novelty        dials12 pca32          macroAUC=0.8697 det@1%=0.6334 macro_det@1%=0.2210 (0s)
+06:22:10   novelty        dials12 ae256-b32      macroAUC=0.9528 det@1%=0.6725 macro_det@1%=0.4450 (26s)
+06:22:11   reservoir 3p12m built in 1s
+06:22:12   novelty         q3p12m pca32          macroAUC=0.9120 det@1%=0.2360 macro_det@1%=0.3341 (1s)
+06:22:38   novelty         q3p12m ae256-b32      macroAUC=0.9695 det@1%=0.9034 macro_det@1%=0.6356 (26s)
+06:22:40   novelty     rff220_12m pca32          macroAUC=0.9126 det@1%=0.1949 macro_det@1%=0.0628 (1s)
+06:23:07   novelty     rff220_12m ae256-b32      macroAUC=0.9710 det@1%=0.9151 macro_det@1%=0.6600 (27s)
+06:23:07 [step 13/13] 3p20m: readout 1,140, PCA(20) 60.8%, heads ['pca32', 'ae256-b32', 'iforest']
+06:23:07   novelty        dials20 pca32          macroAUC=0.8957 det@1%=0.6224 macro_det@1%=0.2473 (0s)
+06:23:33   novelty        dials20 ae256-b32      macroAUC=0.9637 det@1%=0.9181 macro_det@1%=0.6361 (26s)
+06:23:35   reservoir 3p20m built in 2s
+06:23:39   novelty         q3p20m pca32          macroAUC=0.9051 det@1%=0.0581 macro_det@1%=0.1553 (4s)
+06:24:07   novelty         q3p20m ae256-b32      macroAUC=0.9716 det@1%=0.8628 macro_det@1%=0.5559 (28s)
+06:24:13   novelty    rff1140_20m pca32          macroAUC=0.8677 det@1%=0.0133 macro_det@1%=0.0624 (4s)
+06:24:42   novelty    rff1140_20m ae256-b32      macroAUC=0.9735 det@1%=0.9181 macro_det@1%=0.6595 (29s)
+06:24:42 === auto_A_nsl_nov done in 15.5 min -> D:\Dev\ai-ml\qorc\runs\auto_A_nsl_nov\results.jsonl ===
+21:48:16 === auto_A_nsl_nov: novelty, seed 42, 13 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:48:16 train (42426, 122) val (4714, 122) test (78833, 122)
+21:48:17 [step 1/13] it4+4_a2a_L8_dt0.3: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:17 [step 2/13] it4+4_a2a_L8_dt0.15: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:17 [step 3/13] it4+4_a2a_L8_dt0.6: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:17 [step 4/13] it4+4_a2a_L8_dt0.3_J2: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:21   reservoir it4+4_a2a_L8_dt0.3_J2 built in 4s
+21:48:22   novelty qit4+4_a2a_L8_dt0.3_J2 pca32          macroAUC=0.9198 det@1%=0.6429 macro_det@1%=0.2924 (1s)
+21:48:59   novelty qit4+4_a2a_L8_dt0.3_J2 ae256-b32      macroAUC=0.9732 det@1%=0.8696 macro_det@1%=0.5723 (37s)
+21:48:59 [step 5/13] it4+4_ring_L8_dt0.3: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:59 [step 6/13] it4+2_a2a_L8_dt0.3: readout 82, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:59 [step 7/13] it4+6_a2a_L8_dt0.3: readout 86, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:59 [step 8/13] it6+4_a2a_L8_dt0.3: readout 172, PCA(96) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:59 [step 9/13] it2+6_a2a_L16_dt0.3: readout 54, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:59 [step 10/13] it4+4_a2a_L16_dt0.3: readout 164, PCA(122) 100.0%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:59 [step 11/13] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(64) 99.7%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:59 [step 12/13] 3p12m: readout 220, PCA(12) 48.2%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:59 [step 13/13] 3p20m: readout 1,140, PCA(20) 60.8%, heads ['pca32', 'ae256-b32', 'iforest']
+21:48:59 === auto_A_nsl_nov done in 0.7 min -> D:\Dev\ai-ml\qorc\runs\auto_A_nsl_nov\results.jsonl ===

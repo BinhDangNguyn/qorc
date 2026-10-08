@@ -1,0 +1,17 @@
+06:35:13 === auto_C_nsl_nov_s43: novelty, seed 43, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+06:35:13 train (42426, 122) val (4714, 122) test (78833, 122)
+06:35:42   novelty            raw ae1024-b32     macroAUC=0.9771 det@1%=0.9429 macro_det@1%=0.7696 (29s)
+06:35:42 [step 1/2] it6+4_a2a_L8_dt0.3: readout 172, PCA(96) 100.0%, heads ['ae1024-b32']
+06:36:03   novelty        dials96 ae1024-b32     macroAUC=0.9766 det@1%=0.8964 macro_det@1%=0.6265 (21s)
+06:36:16   reservoir it6+4_a2a_L8_dt0.3 built in 13s
+06:36:44   novelty qit6+4_a2a_L8_dt0.3 ae1024-b32     macroAUC=0.9803 det@1%=0.9513 macro_det@1%=0.7930 (28s)
+06:37:11   novelty     rff172_96m ae1024-b32     macroAUC=0.9776 det@1%=0.9288 macro_det@1%=0.6697 (25s)
+06:37:11 [step 2/2] it6+4_a2a_L8_dt0.3_nomem: readout 172, PCA(96) 100.0%, heads ['ae1024-b32']
+06:37:23   reservoir it6+4_a2a_L8_dt0.3_nomem built in 13s
+06:37:51   novelty qit6+4_a2a_L8_dt0.3_nomem ae1024-b32     macroAUC=0.9810 det@1%=0.9512 macro_det@1%=0.7926 (28s)
+06:37:51 === auto_C_nsl_nov_s43 done in 2.6 min -> D:\Dev\ai-ml\qorc\runs\auto_C_nsl_nov_s43\results.jsonl ===
+21:58:15 === auto_C_nsl_nov_s43: novelty, seed 43, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:58:16 train (42426, 122) val (4714, 122) test (78833, 122)
+21:58:16 [step 1/2] it6+4_a2a_L8_dt0.3: readout 172, PCA(96) 100.0%, heads ['ae1024-b32']
+21:58:16 [step 2/2] it6+4_a2a_L8_dt0.3_nomem: readout 172, PCA(96) 100.0%, heads ['ae1024-b32']
+21:58:16 === auto_C_nsl_nov_s43 done in 0.0 min -> D:\Dev\ai-ml\qorc\runs\auto_C_nsl_nov_s43\results.jsonl ===

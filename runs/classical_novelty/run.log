@@ -1,0 +1,12 @@
+13:23:11 === classical_novelty: novelty, seed 42, 0 steps, arms ['raw'], device cuda ===
+13:23:12 train (42426, 122) val (4714, 122) test (78833, 122)
+13:23:13   novelty            raw iforest        macroAUC=0.9168 det@1%=0.7982 macro_det@1%=0.2339 (1s)
+13:23:19   novelty            raw ocsvm-nu0.05   macroAUC=0.9106 det@1%=0.7845 macro_det@1%=0.4869 (6s)
+13:23:37   novelty            raw lof20          macroAUC=0.9368 det@1%=0.2016 macro_det@1%=0.2273 (18s)
+13:23:46   novelty            raw knndist5       macroAUC=0.9642 det@1%=0.8527 macro_det@1%=0.5296 (9s)
+13:52:52 === classical_novelty: novelty, seed 42, 0 steps, arms ['raw'], device cuda ===
+13:52:53 train (42426, 122) val (4714, 122) test (78833, 122)
+13:52:59   novelty            raw gmm8           macroAUC=0.9192 det@1%=0.8666 macro_det@1%=0.6189 (6s)
+13:53:00   novelty            raw pca32          macroAUC=0.8985 det@1%=0.3093 macro_det@1%=0.2009 (1s)
+13:53:33   novelty            raw ae512-b32      macroAUC=0.9792 det@1%=0.9420 macro_det@1%=0.7691 (32s)
+13:53:33 === classical_novelty done in 0.7 min -> D:\Dev\ai-ml\qorc\runs\classical_novelty\results.jsonl ===

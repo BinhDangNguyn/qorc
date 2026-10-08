@@ -1,0 +1,19 @@
+20:07:26 [INFO ] run id      : 20260726_200726
+20:07:26 [INFO ] run dir     : D:\Python\AI\Code\ReservoirComputing\QRC\team\qorc_nov_runs\20260726_200726
+20:07:26 [INFO ] device      : cuda (NVIDIA GeForce RTX 2070 with Max-Q Design)
+20:07:26 [INFO ] python      : 3.10.19 | torch 2.5.1+cu121 | perceval 1.2.1
+20:07:26 [INFO ] configs     : ['3p12m', '3p20m', '3p24m', '4p12m', '4p20m', '4p24m']
+20:07:26 [INFO ] seed        : 42 (single seed -- see caveats in section 9)
+20:07:26 [INFO ]   3p12m  -> readout dim    220 | full-data matrix 0.11 GB
+20:07:26 [INFO ]   3p20m  -> readout dim   1140 | full-data matrix 0.57 GB
+20:07:26 [INFO ]   3p24m  -> readout dim   2024 | full-data matrix 1.02 GB
+20:07:26 [INFO ]   4p12m  -> readout dim    495 | full-data matrix 0.25 GB
+20:07:26 [INFO ]   4p20m  -> readout dim   4845 | full-data matrix 2.44 GB
+20:07:26 [INFO ]   4p24m  -> readout dim  10626 | full-data matrix 5.35 GB
+20:07:26 [INFO ] loading ../../NSL_KDD_labeled.csv
+20:07:26 [INFO ] data: 125,973 rows x 122 features
+20:07:26 [INFO ]       67,343 normal / 58,630 attack across 22 attack types
+20:07:26 [INFO ]       13 types have >= 20 rows (used for headline aggregates)
+20:07:26 [INFO ] train        : 47,140 normal rows  (NO attacks -- zero-day protocol)
+20:07:26 [INFO ] score-normal : 20,203 normal rows
+20:07:26 [INFO ] score-attack : 58,630 attack rows (all 22 types)

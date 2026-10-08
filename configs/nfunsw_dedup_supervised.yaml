@@ -1,0 +1,41 @@
+# NF-UNSW-NB15-v2 (2.39M NetFlow flows, 37 features after dropping IP/port
+# identifiers and TTL), trapped-ion reservoir vs its classical controls.
+#
+#   python -m elements.run configs/nfunsw_dedup_supervised.yaml --plan
+#
+# DEDUP protocol: exact duplicate rows (features + label) dropped BEFORE the
+# split, so no flow is in both train and test. Otherwise identical to
+# nfunsw_supervised.yaml (the published, duplicate-sharing protocol).
+#
+# 37 features fit the 4+4 L8 ion trap's 64 encoding slots, so the reservoir
+# ingests every feature (no PCA truncation); dials is the full 37-wide input.
+
+name: nfunsw_dedup_supervised
+task: supervised
+seed: 42
+
+data:
+  dataset: nf_unsw_nb15_v2
+  schemes: [binary, attack10]
+  dedup: true
+
+split:
+  test_size: 0.30
+  val_frac: 0.10
+
+encoding:
+  scheme: tanh
+  width: 3.0
+
+arms: [quantum, dials, rff, raw]
+
+grid:
+  reservoirs:
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 8, dt: 0.3, topology: all_to_all}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 8, dt: 0.3, topology: all_to_all, memory: false}
+  heads:
+    - {kind: lbfgs, l2: 1.0e-4, max_iter: 200}
+    - {kind: mlp, hidden: [256]}
+
+device: auto
+out: runs

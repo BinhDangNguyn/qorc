@@ -1,0 +1,55 @@
+# Architecture B -- 20 trapped ions on a nearest-neighbour RING, 8 input + 12
+# memory, L = 16 -- next to the 8-ion configurations, on NSL-KDD (novelty).
+#
+#   python -m elements.run configs/iontrap20_novelty.yaml --plan
+#   python -m elements.run configs/iontrap20_novelty.yaml
+#
+# 20 qubits is beyond exact density-matrix simulation, so the ring runs as K = 8
+# quantum trajectories per row (elements/core/iontrap.py:_laws_traj): each
+# trajectory records its exact per-step outcome law, so K = 8 is far less
+# noisy than 8 shots. ~0.18 s per row on the RTX 2070, hence the stratified
+# 20,000-row subsample (data.max_rows); every reservoir and control below runs
+# on that SAME subsample, so the comparison is like for like. Numbers are not
+# directly comparable to the full-data runs (iontrap_novelty).
+#
+# The ring ingests 2 x 8 x 16 = 256 slots >= all input features: no PCA
+# truncation. dt = 0.2 as in ion_traps/qrc_iontrap_20q_ring.py. Inputs are
+# spread round the ring: sites [0, 2, 5, 7, 10, 12, 15, 17]. Unlike the
+# original script, the wraparound bond (19, 0) is coupled.
+
+name: iontrap20_novelty
+task: novelty
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  max_rows: 20000
+
+split:
+  test_size: 0.30
+  val_frac: 0.10
+
+encoding:
+  scheme: tanh
+  width: 3.0
+
+arms: [quantum, dials, rff, raw]
+
+grid:
+  reservoirs:
+    - {photons: 3, modes: 12}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 8, dt: 0.3, topology: all_to_all}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 16, dt: 0.3, topology: all_to_all}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 16, dt: 0.3, topology: all_to_all, memory: false}
+    - {kind: iontrap, n_in: 8, n_mem: 12, steps: 16, dt: 0.2, topology: ring, trajectories: 8}
+    - {kind: iontrap, n_in: 8, n_mem: 12, steps: 16, dt: 0.2, topology: ring, trajectories: 8, memory: false}
+  heads:
+    - {kind: pca, n_components: 32}
+    - {kind: ae, hidden: [256], bottleneck: 32}
+
+baseline_heads:
+  - {kind: iforest, arms: [raw]}
+
+device: auto
+out: runs

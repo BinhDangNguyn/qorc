@@ -1,0 +1,20 @@
+# data lives outside git (see data/README.md)
+data/*
+!data/README.md
+
+# heavy run artifacts; results.jsonl, run.log, config.yaml and summaries are kept
+runs/**/artifacts/
+runs/**/*.npy
+runs/**/*.npz
+runs/**/figs/
+
+# python / jupyter
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+
+# papers are large binaries; keep the list in docs/papers/README.md
+docs/papers/*.pdf

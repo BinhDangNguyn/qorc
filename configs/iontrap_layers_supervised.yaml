@@ -1,0 +1,59 @@
+# 8 ions (4 input + 4 memory, all-to-all): pack MORE data rotations into each
+# round instead of running 16 rounds -- NSL-KDD supervised, full data.
+#
+#   python -m elements.run configs/iontrap_layers_supervised.yaml --plan
+#
+# Every reservoir below carries 2 x n_enc x R x L = 128 data angles, i.e. the
+# whole feature vector, with no PCA truncation. What changes is how it is laid
+# out (per sample, on hardware):
+#
+#   reservoir        data/round  rounds  ZZ gates  mid-circuit meas  readout
+#   L16              8           16      448       64                164
+#   L8  R2           16          8       448       32                84
+#   L4  R4           32          4       448       16                44
+#   L8  encall       16          8       224       32                84
+#   L4  R2 encall    32          4       224       16                44
+#   L2  R4 encall    64          2       224       8                 24
+#
+# R = re-uploads per round: encode -> Trotter step, R times, then measure.
+# encall = the memory qubits are rotated by data too, so each Trotter step
+# takes 16 angles instead of 8 -- this is what halves the two-qubit gates.
+# Stacking several rotations on one qubit WITHOUT an entangling step between
+# them adds nothing: a qubit state has only 2 degrees of freedom.
+#
+# slice_order roundrobin deals the PCA components evenly over rounds (the
+# legacy "interleave" does not for L != 8).
+
+name: iontrap_layers_supervised
+task: supervised
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  schemes: [families6, all23]
+
+split:
+  test_size: 0.30
+  val_frac: 0.10
+
+encoding:
+  scheme: tanh
+  width: 3.0
+
+arms: [quantum, dials, rff, raw]
+
+grid:
+  reservoirs:
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 16, slice_order: roundrobin}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 8, uploads: 2, slice_order: roundrobin}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 4, uploads: 4, slice_order: roundrobin}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 8, encode_all: true, slice_order: roundrobin}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 4, uploads: 2, encode_all: true, slice_order: roundrobin}
+    - {kind: iontrap, n_in: 4, n_mem: 4, steps: 2, uploads: 4, encode_all: true, slice_order: roundrobin}
+  heads:
+    - {kind: lbfgs, l2: 1.0e-4, max_iter: 200}
+    - {kind: mlp, hidden: [256]}
+
+device: auto
+out: runs

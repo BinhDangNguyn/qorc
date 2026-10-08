@@ -1,0 +1,39 @@
+name: nfunsw_dedup_classical
+task: supervised
+data:
+  dataset: nf_unsw_nb15_v2
+  path: null
+  schemes:
+  - binary
+  - attack10
+  n_train: 0
+  max_rows: 0
+  dedup: true
+seed: 42
+split:
+  test_size: 0.3
+  val_frac: 0.1
+encoding:
+  scheme: tanh
+  width: 3.0
+arms:
+- raw
+ladder: null
+grid: null
+rule: null
+models:
+- kind: logreg
+- kind: extratrees
+  n_estimators: 100
+- kind: rf
+  n_estimators: 100
+- kind: xgb
+  n_estimators: 300
+- kind: mlp
+  hidden:
+  - 512
+  - 512
+baseline_heads: []
+device: auto
+out: runs
+notes: ''

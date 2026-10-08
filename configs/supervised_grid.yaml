@@ -1,0 +1,30 @@
+# The full joint-scaling grid: every reservoir x every head size. This is the
+# study behind runs/joint_scaling (imported from the first sweep), where the
+# ladder is one diagonal through it.
+
+name: supervised_grid
+task: supervised
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  schemes: [families6, all23]
+
+arms: [quantum, dials, rff, raw, qdials, rffdials]
+
+grid:
+  reservoirs:
+    - {photons: 3, modes: 12}
+    - {photons: 3, modes: 20}
+    - {photons: 3, modes: 24}
+    - {photons: 4, modes: 20}
+    - {photons: 4, modes: 24}
+  heads:
+    - {kind: linear}
+    - {kind: mlp, hidden: [128]}
+    - {kind: mlp, hidden: [512]}
+    - {kind: mlp, hidden: [2048]}
+    - {kind: mlp, hidden: [512, 512]}
+
+out: runs

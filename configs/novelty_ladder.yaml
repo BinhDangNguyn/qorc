@@ -1,0 +1,52 @@
+# Zero-day novelty detection on NSL-KDD (normal-only training): the reservoir
+# and the detector grow TOGETHER.
+#
+#   python -m elements.run configs/novelty_ladder.yaml --plan
+#   python -m elements.run configs/novelty_ladder.yaml
+#
+# Protocol: train on (1 - test_size) of normal traffic only; score the held-out
+# normal rows plus EVERY attack row. No attack is seen in fitting, early
+# stopping or model selection. Headline metrics: macro AUC over attack types
+# with >= 20 rows, and detection at a 1% false-alarm budget.
+
+name: novelty_ladder
+task: novelty
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+
+split:
+  test_size: 0.30      # share of NORMAL held out to set the false-alarm threshold
+  val_frac: 0.10       # normal-only, early stopping for the autoencoders
+
+encoding:
+  scheme: tanh
+  width: 3.0
+
+arms: [quantum, dials, rff, raw]
+
+baseline_heads:
+  # the team's original linear detector (Mahalanobis in a PCA subspace + residual)
+  - {kind: pca, n_components: 32}
+  # the standard classical baseline, on the raw features only
+  - {kind: iforest, arms: [raw]}
+
+# Each step: a bigger reservoir AND a wider autoencoder.
+# ae hidden = encoder widths (mirrored in the decoder); the bottleneck is
+# capped at a third of the input width so a narrow input cannot be copied.
+ladder:
+  - reservoir: {photons: 3, modes: 12}
+    head: {kind: ae, hidden: [128], bottleneck: 16}
+  - reservoir: {photons: 3, modes: 20}
+    head: {kind: ae, hidden: [256], bottleneck: 32}
+  - reservoir: {photons: 3, modes: 24}
+    head: {kind: ae, hidden: [512], bottleneck: 32}
+  - reservoir: {photons: 4, modes: 20}
+    head: {kind: ae, hidden: [1024], bottleneck: 64}
+  - reservoir: {photons: 4, modes: 24}
+    head: {kind: ae, hidden: [2048], bottleneck: 64}
+
+device: auto
+out: runs

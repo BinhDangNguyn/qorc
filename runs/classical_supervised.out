@@ -1,0 +1,158 @@
+PLAN  classical_supervised  (supervised, seed 42, device cuda)
+data  nslkdd D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+      train 79,362 / val 8,819 / test 37,792 rows, 121 features, label sets ['families6', 'all23']
+arms  ['raw']
+out   D:\Dev\ai-ml\qorc\runs\classical_supervised
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+      raw             121          logreg         classical                -    0.4m
+      raw             121          linsvm         classical                -    0.4m
+      raw             121          knn5           classical                -    0.7m
+      raw             121          rf300          classical                -    1.2m
+      raw             121          extratrees300  classical                -    1.2m
+      raw             121          hgb            classical                -    1.2m
+      raw             121          xgb300         classical                -    1.2m
+      raw             121          mlp512x512     classical                -    0.6m
+
+fits  16 total (2 label set(s) x heads x arms), 0 already on disk, 16 to run
+time  ~13 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+13:23:56 === classical_supervised: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+13:23:56 train (79362, 122) val (8819, 122) test (37792, 122)
+13:24:06   families6            raw logreg       F1=0.9265 acc=0.9636 (9s)
+13:30:19   families6            raw linsvm       F1=0.9413 acc=0.9741 (374s)
+C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\threadpoolctl.py:1226: RuntimeWarning: 
+Found Intel OpenMP ('libiomp') and LLVM OpenMP ('libomp') loaded at
+the same time. Both libraries are known to be incompatible and this
+can cause random crashes or deadlocks on Linux when loaded in the
+same Python program.
+Using threadpoolctl may cause crashes or deadlocks. For more
+information and possible workarounds, please see
+    https://github.com/joblib/threadpoolctl/blob/master/multiple_openmp.md
+
+  warnings.warn(msg, RuntimeWarning)
+13:30:39   families6            raw knn5         F1=0.9823 acc=0.9943 (20s)
+13:30:47   families6            raw rf300        F1=0.9953 acc=0.9982 (8s)
+13:31:01   families6            raw extratrees300 F1=0.9949 acc=0.9980 (14s)
+13:31:09   families6            raw hgb          F1=0.9967 acc=0.9988 (9s)
+13:31:25   families6            raw xgb300       F1=0.9970 acc=0.9989 (16s)
+13:32:03   families6            raw mlp512x512   F1=0.9864 acc=0.9946 (38s)
+13:32:24   all23                raw logreg       F1=0.6693 acc=0.9583 (22s)
+PLAN  classical_supervised  (supervised, seed 42, device cuda)
+data  nslkdd D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+      train 79,362 / val 8,819 / test 37,792 rows, 121 features, label sets ['families6', 'all23']
+arms  ['raw']
+out   D:\Dev\ai-ml\qorc\runs\classical_supervised
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+      raw             121          logreg         classical                -    0.4m
+      raw             121          linsvm         classical                -    0.4m
+      raw             121          knn5           classical                -    0.7m
+      raw             121          rf300          classical                -    1.2m
+      raw             121          extratrees300  classical                -    1.2m
+      raw             121          hgb            classical                -    1.2m
+      raw             121          xgb300         classical                -    1.2m
+      raw             121          mlp512x512     classical                -    0.6m
+
+fits  16 total (2 label set(s) x heads x arms), 8 already on disk, 8 to run
+time  ~7 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+13:53:44 === classical_supervised: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+13:53:45 train (79362, 122) val (8819, 122) test (37792, 122)
+14:01:11   families6            raw linsvm       F1=0.9413 acc=0.9741 (446s)
+C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\svm\_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+14:48:00   all23                raw linsvm       F1=0.6043 acc=0.9761 (2810s)
+C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\threadpoolctl.py:1226: RuntimeWarning: 
+Found Intel OpenMP ('libiomp') and LLVM OpenMP ('libomp') loaded at
+the same time. Both libraries are known to be incompatible and this
+can cause random crashes or deadlocks on Linux when loaded in the
+same Python program.
+Using threadpoolctl may cause crashes or deadlocks. For more
+information and possible workarounds, please see
+    https://github.com/joblib/threadpoolctl/blob/master/multiple_openmp.md
+
+  warnings.warn(msg, RuntimeWarning)
+14:48:18   all23                raw knn5         F1=0.7337 acc=0.9941 (17s)
+14:48:28   all23                raw rf300        F1=0.7786 acc=0.9980 (10s)
+14:48:43   all23                raw extratrees300 F1=0.8220 acc=0.9981 (15s)
+Traceback (most recent call last):
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\Dev\ai-ml\qorc\elements\run.py", line 45, in <module>
+    main()
+  File "D:\Dev\ai-ml\qorc\elements\run.py", line 41, in main
+    run(cfg)
+  File "D:\Dev\ai-ml\qorc\elements\experiments\runner.py", line 200, in run
+    train(task, fe.raw(), meta, todo, role, cfg, device, results)
+  File "D:\Dev\ai-ml\qorc\elements\experiments\runner.py", line 69, in _supervised
+    head = make_classifier(spec, len(names), device, cfg.seed).fit(Xtr, ytr, Xva, yva)
+  File "D:\Dev\ai-ml\qorc\elements\heads\factory.py", line 161, in fit
+    self.model.fit(X, yy, **kw)
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\ensemble\_hist_gradient_boosting\gradient_boosting.py", line 691, in fit
+    ) = train_test_split(
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\utils\_param_validation.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\model_selection\_split.py", line 2940, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\model_selection\_split.py", line 1927, in split
+    for train, test in self._iter_indices(X, y, groups):
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\model_selection\_split.py", line 2342, in _iter_indices
+    raise ValueError(
+ValueError: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+PLAN  classical_supervised  (supervised, seed 42, device cuda)
+data  nslkdd D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+      train 79,362 / val 8,819 / test 37,792 rows, 121 features, label sets ['families6', 'all23']
+arms  ['raw']
+out   D:\Dev\ai-ml\qorc\runs\classical_supervised
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+      raw             121          logreg         classical                -    0.4m
+      raw             121          linsvm         classical                -    0.4m
+      raw             121          knn5           classical                -    0.7m
+      raw             121          rf300          classical                -    1.2m
+      raw             121          extratrees300  classical                -    1.2m
+      raw             121          hgb            classical                -    1.2m
+      raw             121          xgb300         classical                -    1.2m
+      raw             121          mlp512x512     classical                -    0.6m
+
+fits  16 total (2 label set(s) x heads x arms), 13 already on disk, 3 to run
+time  ~3 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+14:49:15 === classical_supervised: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+14:49:16 train (79362, 122) val (8819, 122) test (37792, 122)
+14:50:48   all23                raw hgb          F1=0.8110 acc=0.9989 (91s)
+14:51:27   all23                raw xgb300       F1=0.8386 acc=0.9987 (39s)
+14:51:40   all23                raw mlp512x512   F1=0.6782 acc=0.9622 (13s)
+14:51:40 === classical_supervised done in 2.4 min -> D:\Dev\ai-ml\qorc\runs\classical_supervised\results.jsonl ===
+PLAN  classical_supervised  (supervised, seed 42, device cuda)
+data  nslkdd D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+      train 79,362 / val 8,819 / test 37,792 rows, 121 features, label sets ['families6', 'all23']
+arms  ['raw']
+out   D:\Dev\ai-ml\qorc\runs\classical_supervised
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+      raw             121          logreg         classical                -    0.4m
+      raw             121          linsvm         classical                -    0.4m
+      raw             121          knn5           classical                -    0.7m
+      raw             121          rf300          classical                -    1.2m
+      raw             121          extratrees300  classical                -    1.2m
+      raw             121          hgb            classical                -    1.2m
+      raw             121          xgb300         classical                -    1.2m
+      raw             121          mlp512x512     classical                -    0.6m
+
+fits  16 total (2 label set(s) x heads x arms), 15 already on disk, 1 to run
+time  ~1 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+14:51:59 === classical_supervised: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+14:51:59 train (79362, 122) val (8819, 122) test (37792, 122)
+14:52:40   families6            raw hgb          F1=0.9967 acc=0.9989 (40s)
+14:52:40 === classical_supervised done in 0.7 min -> D:\Dev\ai-ml\qorc\runs\classical_supervised\results.jsonl ===

@@ -1,0 +1,38 @@
+[
+  {
+    "dataset": "retinamnist",
+    "task": "classify",
+    "arm": "raw",
+    "dim": 784,
+    "accuracy": 0.435,
+    "macro_f1": 0.3205170660053532,
+    "fit_s": 1.8
+  },
+  {
+    "dataset": "retinamnist",
+    "task": "classify",
+    "arm": "dials",
+    "dim": 12,
+    "accuracy": 0.4,
+    "macro_f1": 0.2842256007038418,
+    "fit_s": 0.1
+  },
+  {
+    "dataset": "retinamnist",
+    "task": "classify",
+    "arm": "quantum",
+    "dim": 220,
+    "accuracy": 0.32,
+    "macro_f1": 0.2220965608700543,
+    "fit_s": 0.4
+  },
+  {
+    "dataset": "retinamnist",
+    "task": "classify",
+    "arm": "logreg_raw",
+    "dim": 784,
+    "accuracy": 0.51,
+    "macro_f1": 0.30256369664009536,
+    "fit_s": 6.8
+  }
+]

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qorc-elements"
+version = "0.2.0"
+description = "Quantum optical reservoir computing: a fixed photonic reservoir, scalable classical heads, config-driven experiments"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "torch>=2.0",
+    "pyyaml>=6.0",
+    "matplotlib>=3.7",
+    "perceval-quandela>=0.13",
+    "merlinquantum>=0.1",
+]
+
+[project.optional-dependencies]
+baselines = ["xgboost>=2.0"]
+dev = ["pytest>=7.4", "nbformat>=5.9", "nbconvert>=7.0"]
+
+[project.scripts]
+qorc-run = "elements.run:main"
+
+[tool.setuptools.packages.find]
+include = ["elements*"]
+
+[tool.ruff]
+line-length = 100

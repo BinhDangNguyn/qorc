@@ -1,0 +1,28 @@
+# K-MNIST: does feeding MORE PCA components in (more modes, few photons) lift
+# the plateau? Imported results live in runs/joint_scaling_modes.
+
+name: kmnist_modes
+task: supervised
+seed: 42
+
+data:
+  dataset: kmnist
+  schemes: [all]
+
+arms: [quantum, dials, rff, qdials]
+
+grid:
+  reservoirs:
+    - {photons: 2, modes: 12}
+    - {photons: 2, modes: 24}
+    - {photons: 2, modes: 32}
+    - {photons: 2, modes: 48}
+    - {photons: 2, modes: 64}
+    - {photons: 2, modes: 96}
+    - {photons: 3, modes: 32}
+  heads:
+    - {kind: linear}
+    - {kind: mlp, hidden: [512]}
+    - {kind: mlp, hidden: [512, 512]}
+
+out: runs

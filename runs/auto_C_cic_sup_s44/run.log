@@ -1,0 +1,19 @@
+05:28:40 === auto_C_cic_sup_s44: supervised, seed 44, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+05:28:51 train (126000, 37) val (14000, 37) test (60000, 37)
+06:42:03 === auto_C_cic_sup_s44: supervised, seed 44, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+06:42:15 train (126000, 37) val (14000, 37) test (60000, 37)
+06:42:32   binary               raw mlp2048      F1=0.9542 acc=0.9899 (18s)
+06:43:08   family7              raw mlp2048      F1=0.6186 acc=0.6855 (36s)
+06:43:09 [step 1/2] it4+4_a2a_L16_dt0.3: readout 164, PCA(36) 100.0%, heads ['mlp2048']
+06:43:40   binary           dials36 mlp2048      F1=0.9544 acc=0.9900 (32s)
+06:43:59   family7          dials36 mlp2048      F1=0.7108 acc=0.7332 (18s)
+06:44:11   reservoir it4+4_a2a_L16_dt0.3 built in 12s
+06:44:31   binary    qit4+4_a2a_L16_dt0.3 mlp2048      F1=0.9537 acc=0.9898 (20s)
+06:44:45   family7   qit4+4_a2a_L16_dt0.3 mlp2048      F1=0.6644 acc=0.7752 (15s)
+06:45:12   binary        rff164_36m mlp2048      F1=0.9489 acc=0.9888 (26s)
+06:45:37   family7       rff164_36m mlp2048      F1=0.6827 acc=0.7825 (24s)
+06:45:37 [step 2/2] it4+4_a2a_L16_dt0.3_nomem: readout 164, PCA(36) 100.0%, heads ['mlp2048']
+06:45:48   reservoir it4+4_a2a_L16_dt0.3_nomem built in 11s
+06:46:08   binary    qit4+4_a2a_L16_dt0.3_nomem mlp2048      F1=0.9525 acc=0.9896 (20s)
+06:46:32   family7   qit4+4_a2a_L16_dt0.3_nomem mlp2048      F1=0.6511 acc=0.7098 (24s)
+06:46:32 === auto_C_cic_sup_s44 done in 4.3 min -> D:\Dev\ai-ml\qorc\runs\auto_C_cic_sup_s44\results.jsonl ===

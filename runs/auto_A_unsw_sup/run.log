@@ -1,0 +1,145 @@
+01:03:01 === auto_A_unsw_sup: supervised, seed 42, 13 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+01:03:02 train (151933, 37) val (16882, 37) test (72350, 37)
+01:03:07   binary               raw lbfgs        F1=0.8909 acc=0.9294 (4s)
+01:03:25   binary               raw mlp256       F1=0.9456 acc=0.9669 (18s)
+01:03:29   attack10             raw lbfgs        F1=0.3413 acc=0.8131 (4s)
+01:04:11   attack10             raw mlp256       F1=0.4367 acc=0.9012 (42s)
+01:04:11 [step 1/13] it4+4_a2a_L8_dt0.3: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:04:12   binary           dials37 lbfgs        F1=0.8986 acc=0.9351 (1s)
+01:04:41   binary           dials37 mlp256       F1=0.9483 acc=0.9686 (29s)
+01:04:45   attack10         dials37 lbfgs        F1=0.3644 acc=0.8498 (4s)
+01:05:23   attack10         dials37 mlp256       F1=0.4702 acc=0.9112 (37s)
+01:05:30   reservoir it4+4_a2a_L8_dt0.3 built in 7s
+01:05:35   binary    qit4+4_a2a_L8_dt0.3 lbfgs        F1=0.9194 acc=0.9497 (5s)
+01:05:53   binary    qit4+4_a2a_L8_dt0.3 mlp256       F1=0.9489 acc=0.9692 (19s)
+01:05:58   attack10  qit4+4_a2a_L8_dt0.3 lbfgs        F1=0.3766 acc=0.8551 (5s)
+01:06:36   attack10  qit4+4_a2a_L8_dt0.3 mlp256       F1=0.4696 acc=0.9110 (38s)
+01:06:38   binary         rff84_37m lbfgs        F1=0.8803 acc=0.9228 (1s)
+01:07:02   binary         rff84_37m mlp256       F1=0.9482 acc=0.9687 (24s)
+01:07:07   attack10       rff84_37m lbfgs        F1=0.3578 acc=0.8409 (5s)
+01:08:07   attack10       rff84_37m mlp256       F1=0.4745 acc=0.9121 (60s)
+01:08:07 [step 2/13] it4+4_a2a_L8_dt0.15: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:08:14   reservoir it4+4_a2a_L8_dt0.15 built in 7s
+01:08:18   binary    qit4+4_a2a_L8_dt0.15 lbfgs        F1=0.9209 acc=0.9506 (5s)
+01:08:43   binary    qit4+4_a2a_L8_dt0.15 mlp256       F1=0.9481 acc=0.9686 (24s)
+01:08:48   attack10  qit4+4_a2a_L8_dt0.15 lbfgs        F1=0.3731 acc=0.8519 (5s)
+01:09:26   attack10  qit4+4_a2a_L8_dt0.15 mlp256       F1=0.4663 acc=0.9093 (38s)
+01:09:26 [step 3/13] it4+4_a2a_L8_dt0.6: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:09:33   reservoir it4+4_a2a_L8_dt0.6 built in 7s
+01:09:37   binary    qit4+4_a2a_L8_dt0.6 lbfgs        F1=0.9182 acc=0.9489 (4s)
+01:09:54   binary    qit4+4_a2a_L8_dt0.6 mlp256       F1=0.9482 acc=0.9686 (18s)
+01:09:59   attack10  qit4+4_a2a_L8_dt0.6 lbfgs        F1=0.3835 acc=0.8635 (5s)
+01:10:37   attack10  qit4+4_a2a_L8_dt0.6 mlp256       F1=0.4709 acc=0.9117 (38s)
+01:10:37 [step 4/13] it4+4_a2a_L8_dt0.3: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:10:37 [step 5/13] it4+4_ring_L8_dt0.3: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:10:44   reservoir it4+4_ring_L8_dt0.3 built in 7s
+01:10:48   binary    qit4+4_ring_L8_dt0.3 lbfgs        F1=0.9020 acc=0.9374 (5s)
+01:11:13   binary    qit4+4_ring_L8_dt0.3 mlp256       F1=0.9474 acc=0.9682 (25s)
+01:11:18   attack10  qit4+4_ring_L8_dt0.3 lbfgs        F1=0.3762 acc=0.8497 (5s)
+01:11:56   attack10  qit4+4_ring_L8_dt0.3 mlp256       F1=0.4640 acc=0.9074 (38s)
+01:11:56 [step 6/13] it4+2_a2a_L8_dt0.3: readout 82, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:11:58   reservoir it4+2_a2a_L8_dt0.3 built in 2s
+01:12:02   binary    qit4+2_a2a_L8_dt0.3 lbfgs        F1=0.9158 acc=0.9472 (4s)
+01:12:25   binary    qit4+2_a2a_L8_dt0.3 mlp256       F1=0.9480 acc=0.9685 (23s)
+01:12:29   attack10  qit4+2_a2a_L8_dt0.3 lbfgs        F1=0.3781 acc=0.8599 (5s)
+01:13:06   attack10  qit4+2_a2a_L8_dt0.3 mlp256       F1=0.4672 acc=0.9103 (37s)
+01:13:08   binary         rff82_37m lbfgs        F1=0.8966 acc=0.9343 (1s)
+01:13:41   binary         rff82_37m mlp256       F1=0.9482 acc=0.9687 (33s)
+01:13:46   attack10       rff82_37m lbfgs        F1=0.3642 acc=0.8452 (5s)
+01:14:42   attack10       rff82_37m mlp256       F1=0.4790 acc=0.9130 (56s)
+01:14:42 [step 7/13] it4+6_a2a_L8_dt0.3: readout 86, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:18:47   reservoir it4+6_a2a_L8_dt0.3 built in 245s
+01:18:52   binary    qit4+6_a2a_L8_dt0.3 lbfgs        F1=0.9236 acc=0.9526 (4s)
+01:19:16   binary    qit4+6_a2a_L8_dt0.3 mlp256       F1=0.9483 acc=0.9687 (24s)
+01:19:20   attack10  qit4+6_a2a_L8_dt0.3 lbfgs        F1=0.3899 acc=0.8705 (5s)
+01:19:55   attack10  qit4+6_a2a_L8_dt0.3 mlp256       F1=0.4738 acc=0.9113 (35s)
+01:19:57   binary         rff86_37m lbfgs        F1=0.8881 acc=0.9287 (1s)
+01:20:16   binary         rff86_37m mlp256       F1=0.9486 acc=0.9689 (18s)
+01:20:21   attack10       rff86_37m lbfgs        F1=0.3673 acc=0.8438 (5s)
+01:21:15   attack10       rff86_37m mlp256       F1=0.4762 acc=0.9127 (54s)
+01:21:15 [step 8/13] it6+4_a2a_L8_dt0.3: readout 172, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:21:39   reservoir it6+4_a2a_L8_dt0.3 built in 24s
+01:21:45   binary    qit6+4_a2a_L8_dt0.3 lbfgs        F1=0.9286 acc=0.9559 (6s)
+01:22:16   binary    qit6+4_a2a_L8_dt0.3 mlp256       F1=0.9490 acc=0.9691 (31s)
+01:22:23   attack10  qit6+4_a2a_L8_dt0.3 lbfgs        F1=0.4064 acc=0.8789 (6s)
+01:22:50   attack10  qit6+4_a2a_L8_dt0.3 mlp256       F1=0.4799 acc=0.9140 (28s)
+01:22:53   binary        rff172_37m lbfgs        F1=0.9266 acc=0.9546 (2s)
+01:23:21   binary        rff172_37m mlp256       F1=0.9496 acc=0.9697 (27s)
+01:23:27   attack10      rff172_37m lbfgs        F1=0.4081 acc=0.8798 (7s)
+01:23:57   attack10      rff172_37m mlp256       F1=0.4755 acc=0.9141 (30s)
+01:23:57 [step 9/13] it2+6_a2a_L16_dt0.3: readout 54, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:24:52   reservoir it2+6_a2a_L16_dt0.3 built in 55s
+01:24:56   binary    qit2+6_a2a_L16_dt0.3 lbfgs        F1=0.8784 acc=0.9204 (4s)
+01:25:20   binary    qit2+6_a2a_L16_dt0.3 mlp256       F1=0.9473 acc=0.9682 (24s)
+01:25:24   attack10  qit2+6_a2a_L16_dt0.3 lbfgs        F1=0.3376 acc=0.8115 (4s)
+01:26:06   attack10  qit2+6_a2a_L16_dt0.3 mlp256       F1=0.4579 acc=0.9047 (42s)
+01:26:07   binary         rff54_37m lbfgs        F1=0.8402 acc=0.8924 (1s)
+01:26:29   binary         rff54_37m mlp256       F1=0.9473 acc=0.9681 (22s)
+01:26:34   attack10       rff54_37m lbfgs        F1=0.3254 acc=0.7959 (4s)
+01:27:18   attack10       rff54_37m mlp256       F1=0.4683 acc=0.9090 (44s)
+01:27:18 [step 10/13] it4+4_a2a_L16_dt0.3: readout 164, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:27:31   reservoir it4+4_a2a_L16_dt0.3 built in 13s
+01:27:38   binary    qit4+4_a2a_L16_dt0.3 lbfgs        F1=0.9233 acc=0.9523 (6s)
+01:28:01   binary    qit4+4_a2a_L16_dt0.3 mlp256       F1=0.9484 acc=0.9689 (23s)
+01:28:07   attack10  qit4+4_a2a_L16_dt0.3 lbfgs        F1=0.3817 acc=0.8574 (6s)
+01:29:04   attack10  qit4+4_a2a_L16_dt0.3 mlp256       F1=0.4773 acc=0.9140 (57s)
+01:29:08   binary        rff164_37m lbfgs        F1=0.9291 acc=0.9563 (2s)
+01:29:41   binary        rff164_37m mlp256       F1=0.9501 acc=0.9700 (33s)
+01:29:47   attack10      rff164_37m lbfgs        F1=0.4099 acc=0.8813 (6s)
+01:30:40   attack10      rff164_37m mlp256       F1=0.4858 acc=0.9160 (53s)
+01:30:40 [step 11/13] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+01:30:46   reservoir it4+4_a2a_L8_dt0.3_nomem built in 7s
+01:30:51   binary    qit4+4_a2a_L8_dt0.3_nomem lbfgs        F1=0.9155 acc=0.9470 (4s)
+01:31:15   binary    qit4+4_a2a_L8_dt0.3_nomem mlp256       F1=0.9493 acc=0.9694 (24s)
+01:31:19   attack10  qit4+4_a2a_L8_dt0.3_nomem lbfgs        F1=0.3768 acc=0.8603 (5s)
+01:31:42   attack10  qit4+4_a2a_L8_dt0.3_nomem mlp256       F1=0.4580 acc=0.9055 (23s)
+01:31:42 [step 12/13] 3p12m: readout 220, PCA(12) 96.7%, heads ['lbfgs', 'mlp256']
+01:31:42   binary           dials12 lbfgs        F1=0.7344 acc=0.7921 (0s)
+01:32:03   binary           dials12 mlp256       F1=0.9397 acc=0.9632 (20s)
+01:32:06   attack10         dials12 lbfgs        F1=0.2511 acc=0.6796 (3s)
+01:32:49   attack10         dials12 mlp256       F1=0.3820 acc=0.8721 (43s)
+01:32:51   reservoir 3p12m built in 1s
+01:32:58   binary            q3p12m lbfgs        F1=0.9226 acc=0.9519 (7s)
+01:33:37   binary            q3p12m mlp256       F1=0.9468 acc=0.9678 (40s)
+01:33:44   attack10          q3p12m lbfgs        F1=0.3963 acc=0.8675 (7s)
+01:34:15   attack10          q3p12m mlp256       F1=0.4476 acc=0.9010 (30s)
+01:34:23   binary        rff220_12m lbfgs        F1=0.9361 acc=0.9608 (7s)
+01:35:01   binary        rff220_12m mlp256       F1=0.9473 acc=0.9681 (38s)
+01:35:08   attack10      rff220_12m lbfgs        F1=0.3979 acc=0.8764 (7s)
+01:35:59   attack10      rff220_12m mlp256       F1=0.4556 acc=0.9052 (51s)
+01:35:59 [step 13/13] 3p20m: readout 1,140, PCA(20) 99.5%, heads ['lbfgs', 'mlp256']
+01:36:00   binary           dials20 lbfgs        F1=0.8154 acc=0.8707 (1s)
+01:36:22   binary           dials20 mlp256       F1=0.9447 acc=0.9663 (22s)
+01:36:25   attack10         dials20 lbfgs        F1=0.2995 acc=0.7739 (4s)
+01:37:02   attack10         dials20 mlp256       F1=0.4096 acc=0.8909 (37s)
+01:37:05   reservoir 3p20m built in 3s
+01:37:28   binary            q3p20m lbfgs        F1=0.9454 acc=0.9668 (23s)
+01:38:01   binary            q3p20m mlp256       F1=0.9481 acc=0.9685 (33s)
+01:38:25   attack10          q3p20m lbfgs        F1=0.4465 acc=0.9019 (24s)
+01:39:12   attack10          q3p20m mlp256       F1=0.4809 acc=0.9163 (46s)
+01:39:40   binary       rff1140_20m lbfgs        F1=0.9454 acc=0.9668 (25s)
+01:39:58   binary       rff1140_20m mlp256       F1=0.9476 acc=0.9682 (18s)
+01:40:23   attack10     rff1140_20m lbfgs        F1=0.4469 acc=0.9027 (25s)
+01:41:27   attack10     rff1140_20m mlp256       F1=0.4833 acc=0.9168 (64s)
+01:41:27 === auto_A_unsw_sup done in 38.4 min -> D:\Dev\ai-ml\qorc\runs\auto_A_unsw_sup\results.jsonl ===
+21:49:11 === auto_A_unsw_sup: supervised, seed 42, 13 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:49:11 train (151933, 37) val (16882, 37) test (72350, 37)
+21:49:12 [step 1/13] it4+4_a2a_L8_dt0.3: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:49:12 [step 2/13] it4+4_a2a_L8_dt0.15: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:49:12 [step 3/13] it4+4_a2a_L8_dt0.6: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:49:12 [step 4/13] it4+4_a2a_L8_dt0.3_J2: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:49:20   reservoir it4+4_a2a_L8_dt0.3_J2 built in 8s
+21:49:26   binary    qit4+4_a2a_L8_dt0.3_J2 lbfgs        F1=0.9147 acc=0.9465 (6s)
+21:50:02   binary    qit4+4_a2a_L8_dt0.3_J2 mlp256       F1=0.9483 acc=0.9687 (36s)
+21:50:07   attack10  qit4+4_a2a_L8_dt0.3_J2 lbfgs        F1=0.3744 acc=0.8531 (5s)
+21:50:43   attack10  qit4+4_a2a_L8_dt0.3_J2 mlp256       F1=0.4684 acc=0.9114 (36s)
+21:50:43 [step 5/13] it4+4_ring_L8_dt0.3: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:50:43 [step 6/13] it4+2_a2a_L8_dt0.3: readout 82, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:50:43 [step 7/13] it4+6_a2a_L8_dt0.3: readout 86, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:50:43 [step 8/13] it6+4_a2a_L8_dt0.3: readout 172, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:50:43 [step 9/13] it2+6_a2a_L16_dt0.3: readout 54, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:50:43 [step 10/13] it4+4_a2a_L16_dt0.3: readout 164, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:50:43 [step 11/13] it4+4_a2a_L8_dt0.3_nomem: readout 84, PCA(37) 100.0%, heads ['lbfgs', 'mlp256']
+21:50:43 [step 12/13] 3p12m: readout 220, PCA(12) 96.7%, heads ['lbfgs', 'mlp256']
+21:50:43 [step 13/13] 3p20m: readout 1,140, PCA(20) 99.5%, heads ['lbfgs', 'mlp256']
+21:50:43 === auto_A_unsw_sup done in 1.5 min -> D:\Dev\ai-ml\qorc\runs\auto_A_unsw_sup\results.jsonl ===

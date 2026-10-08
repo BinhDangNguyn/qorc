@@ -1,0 +1,100 @@
+PLAN  classical_novelty  (novelty, seed 42, device cuda)
+data  nslkdd D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+      train 42,426 / val 4,714 / test 78,833 rows, 122 features, label sets ['novelty']
+arms  ['raw']
+out   D:\Dev\ai-ml\qorc\runs\classical_novelty
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+      raw             122          iforest        classical                -    0.1m
+      raw             122          ocsvm-nu0.05   classical                -    0.5m
+      raw             122          lof20          classical                -    0.5m
+      raw             122          knndist5       classical                -    0.5m
+      raw             122          gmm8           classical                -    0.2m
+      raw             122          pca32          classical                -    0.0m
+      raw             122          ae512-b32      classical                -    0.4m
+
+fits  7 total (1 label set(s) x heads x arms), 0 already on disk, 7 to run
+time  ~2 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+13:23:11 === classical_novelty: novelty, seed 42, 0 steps, arms ['raw'], device cuda ===
+13:23:12 train (42426, 122) val (4714, 122) test (78833, 122)
+13:23:13   novelty            raw iforest        macroAUC=0.9168 det@1%=0.7982 macro_det@1%=0.2339 (1s)
+13:23:19   novelty            raw ocsvm-nu0.05   macroAUC=0.9106 det@1%=0.7845 macro_det@1%=0.4869 (6s)
+C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\threadpoolctl.py:1226: RuntimeWarning: 
+Found Intel OpenMP ('libiomp') and LLVM OpenMP ('libomp') loaded at
+the same time. Both libraries are known to be incompatible and this
+can cause random crashes or deadlocks on Linux when loaded in the
+same Python program.
+Using threadpoolctl may cause crashes or deadlocks. For more
+information and possible workarounds, please see
+    https://github.com/joblib/threadpoolctl/blob/master/multiple_openmp.md
+
+  warnings.warn(msg, RuntimeWarning)
+13:23:37   novelty            raw lof20          macroAUC=0.9368 det@1%=0.2016 macro_det@1%=0.2273 (18s)
+13:23:46   novelty            raw knndist5       macroAUC=0.9642 det@1%=0.8527 macro_det@1%=0.5296 (9s)
+Traceback (most recent call last):
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\Dev\ai-ml\qorc\elements\run.py", line 45, in <module>
+    main()
+  File "D:\Dev\ai-ml\qorc\elements\run.py", line 41, in main
+    run(cfg)
+  File "D:\Dev\ai-ml\qorc\elements\experiments\runner.py", line 200, in run
+    train(task, fe.raw(), meta, todo, role, cfg, device, results)
+  File "D:\Dev\ai-ml\qorc\elements\experiments\runner.py", line 138, in _novelty
+    det = make_detector(spec, device, cfg.seed).fit(Xtr, Xva)
+  File "D:\Dev\ai-ml\qorc\elements\heads\factory.py", line 234, in fit
+    self.model.fit(X)
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\mixture\_base.py", line 182, in fit
+    self.fit_predict(X, y)
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\mixture\_base.py", line 237, in fit_predict
+    self._initialize_parameters(X, random_state)
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\mixture\_gaussian_mixture.py", line 784, in _initialize_parameters
+    super()._initialize_parameters(X, random_state)
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\mixture\_base.py", line 141, in _initialize_parameters
+    self._initialize(X, resp)
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\mixture\_gaussian_mixture.py", line 811, in _initialize
+    self.precisions_cholesky_ = _compute_precision_cholesky(
+  File "C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\sklearn\mixture\_gaussian_mixture.py", line 351, in _compute_precision_cholesky
+    raise ValueError(estimate_precision_error_message)
+ValueError: Fitting the mixture model failed because some components have ill-defined empirical covariance (for instance caused by singleton or collapsed samples). Try to decrease the number of components, increase reg_covar, or scale the input data. The numerical accuracy can also be improved by passing float64 data instead of float32.
+PLAN  classical_novelty  (novelty, seed 42, device cuda)
+data  nslkdd D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+      train 42,426 / val 4,714 / test 78,833 rows, 122 features, label sets ['novelty']
+arms  ['raw']
+out   D:\Dev\ai-ml\qorc\runs\classical_novelty
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+      raw             122          iforest        classical                -    0.1m
+      raw             122          ocsvm-nu0.05   classical                -    0.5m
+      raw             122          lof20          classical                -    0.5m
+      raw             122          knndist5       classical                -    0.5m
+      raw             122          gmm8           classical                -    0.2m
+      raw             122          pca32          classical                -    0.0m
+      raw             122          ae512-b32      classical                -    0.4m
+
+fits  7 total (1 label set(s) x heads x arms), 4 already on disk, 3 to run
+time  ~1 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+13:52:52 === classical_novelty: novelty, seed 42, 0 steps, arms ['raw'], device cuda ===
+13:52:53 train (42426, 122) val (4714, 122) test (78833, 122)
+C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\threadpoolctl.py:1226: RuntimeWarning: 
+Found Intel OpenMP ('libiomp') and LLVM OpenMP ('libomp') loaded at
+the same time. Both libraries are known to be incompatible and this
+can cause random crashes or deadlocks on Linux when loaded in the
+same Python program.
+Using threadpoolctl may cause crashes or deadlocks. For more
+information and possible workarounds, please see
+    https://github.com/joblib/threadpoolctl/blob/master/multiple_openmp.md
+
+  warnings.warn(msg, RuntimeWarning)
+13:52:59   novelty            raw gmm8           macroAUC=0.9192 det@1%=0.8666 macro_det@1%=0.6189 (6s)
+13:53:00   novelty            raw pca32          macroAUC=0.8985 det@1%=0.3093 macro_det@1%=0.2009 (1s)
+13:53:33   novelty            raw ae512-b32      macroAUC=0.9792 det@1%=0.9420 macro_det@1%=0.7691 (32s)
+13:53:33 === classical_novelty done in 0.7 min -> D:\Dev\ai-ml\qorc\runs\classical_novelty\results.jsonl ===

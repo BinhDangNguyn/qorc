@@ -1,0 +1,9 @@
+19:48:32 === auto_K_unsw_nov: novelty, seed 42, 0 steps, arms ['raw'], device cuda ===
+19:48:32 train (125876, 37) val (13987, 37) test (101302, 37)
+19:48:33   novelty            raw iforest        macroAUC=0.9073 det@1%=0.0734 macro_det@1%=0.1212 (1s)
+19:48:39   novelty            raw ocsvm-nu0.05   macroAUC=0.5169 det@1%=0.1824 macro_det@1%=0.3063 (5s)
+19:49:17   novelty            raw lof20          macroAUC=0.7775 det@1%=0.1273 macro_det@1%=0.1874 (39s)
+19:49:36   novelty            raw knndist5       macroAUC=0.9323 det@1%=0.2846 macro_det@1%=0.3583 (19s)
+19:49:39   novelty            raw gmm8           macroAUC=0.8931 det@1%=0.1257 macro_det@1%=0.1203 (3s)
+19:51:01   novelty            raw ae512-b32      macroAUC=0.9467 det@1%=0.2067 macro_det@1%=0.2789 (82s)
+19:51:01 === auto_K_unsw_nov done in 2.5 min -> D:\Dev\ai-ml\qorc\runs\auto_K_unsw_nov\results.jsonl ===

@@ -1,0 +1,21 @@
+{
+  "scheme": "A",
+  "m_modes": 8,
+  "n_photons": 2,
+  "k_phases": 8,
+  "input_state": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "phase_scale": "pi",
+  "unitary_seed": 42,
+  "reduction": "pca8",
+  "readout_note": "StandardScaler before linear readout is mandatory (see section 5)",
+  "notes": "PS/BS-only Clements-compatible circuit; rebuild with scheme_A(seed=42)"
+}

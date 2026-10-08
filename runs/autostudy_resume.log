@@ -1,0 +1,23 @@
+[06:09:04] run  auto_A_nsl_nov
+[06:24:43]   exit 0
+[06:24:43] run  auto_A_cic_sup
+[06:25:12]   exit 0
+  nsl_nov: picked it6+4_a2a_L8_dt0.3
+[06:25:13] run  auto_B_nsl_nov
+[06:35:05]   exit 0
+  nsl_nov: head ae1024-b32
+[06:35:05] run  auto_C_nsl_nov_s43
+[06:37:52]   exit 0
+[06:37:52] run  auto_C_nsl_nov_s44
+[06:40:46]   exit 0
+report -> D:\Dev\ai-ml\qorc\docs\findings_autostudy.md
+  cic_sup: picked it4+4_a2a_L16_dt0.3
+[06:40:46] run  auto_B_cic_sup
+[06:41:16]   exit 0
+  cic_sup: head mlp2048
+[06:41:16] run  auto_C_cic_sup_s43
+[06:41:46]   exit 0
+[06:41:46] run  auto_C_cic_sup_s44
+[06:46:33]   exit 0
+report -> D:\Dev\ai-ml\qorc\docs\findings_autostudy.md
+report -> D:\Dev\ai-ml\qorc\docs\findings_autostudy.md

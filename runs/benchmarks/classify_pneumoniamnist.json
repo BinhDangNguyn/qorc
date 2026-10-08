@@ -1,0 +1,38 @@
+[
+  {
+    "dataset": "pneumoniamnist",
+    "task": "classify",
+    "arm": "raw",
+    "dim": 784,
+    "accuracy": 0.8397435897435898,
+    "macro_f1": 0.8113732270897065,
+    "fit_s": 3.0
+  },
+  {
+    "dataset": "pneumoniamnist",
+    "task": "classify",
+    "arm": "dials",
+    "dim": 12,
+    "accuracy": 0.8461538461538461,
+    "macro_f1": 0.8289297830780302,
+    "fit_s": 0.1
+  },
+  {
+    "dataset": "pneumoniamnist",
+    "task": "classify",
+    "arm": "quantum",
+    "dim": 220,
+    "accuracy": 0.8205128205128205,
+    "macro_f1": 0.8049999999999999,
+    "fit_s": 0.4
+  },
+  {
+    "dataset": "pneumoniamnist",
+    "task": "classify",
+    "arm": "logreg_raw",
+    "dim": 784,
+    "accuracy": 0.8477564102564102,
+    "macro_f1": 0.8215828204240718,
+    "fit_s": 9.1
+  }
+]

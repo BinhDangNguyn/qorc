@@ -1,0 +1,55 @@
+{
+  "pick": {
+    "nsl_sup": {
+      "kind": "iontrap",
+      "n_in": 4,
+      "n_mem": 4,
+      "steps": 16,
+      "dt": 0.3,
+      "topology": "all_to_all"
+    },
+    "unsw_sup": {
+      "photons": 3,
+      "modes": 20
+    },
+    "unsw_nov": {
+      "photons": 3,
+      "modes": 12
+    },
+    "cic_sup": {
+      "kind": "iontrap",
+      "n_in": 4,
+      "n_mem": 4,
+      "steps": 16,
+      "dt": 0.3,
+      "topology": "all_to_all"
+    },
+    "cic_nov": {
+      "kind": "iontrap",
+      "n_in": 4,
+      "n_mem": 4,
+      "steps": 16,
+      "dt": 0.3,
+      "topology": "all_to_all"
+    },
+    "nsl_nov": {
+      "kind": "iontrap",
+      "n_in": 6,
+      "n_mem": 4,
+      "steps": 8,
+      "dt": 0.3,
+      "topology": "all_to_all"
+    }
+  },
+  "head": {
+    "nsl_sup": "mlp512x512",
+    "unsw_sup": "mlp512x512",
+    "unsw_nov": "ae256-b32",
+    "cic_sup": "mlp2048",
+    "cic_nov": "ae1024-b32",
+    "nsl_nov": "ae1024-b32"
+  },
+  "notes": {
+    "cic_sup": "stage A winner it4+4_a2a_L8_dt0.3_J2 (0.810 vs 0.790); its B/C were paused on 2026-10-08, so B/C show the runner-up it4+4_a2a_L16_dt0.3"
+  }
+}

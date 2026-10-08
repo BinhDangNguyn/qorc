@@ -1,0 +1,43 @@
+name: classical_novelty
+task: novelty
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  schemes:
+  - families6
+  - all23
+  n_train: 0
+  max_rows: 0
+seed: 42
+split:
+  test_size: 0.3
+  val_frac: 0.1
+encoding:
+  scheme: tanh
+  width: 3.0
+arms:
+- raw
+ladder: null
+grid: null
+rule: null
+models:
+- kind: iforest
+- kind: ocsvm
+  nu: 0.05
+  max_train_rows: 10000
+- kind: lof
+  n_neighbors: 20
+- kind: knndist
+  n_neighbors: 5
+- kind: gmm
+  n_components: 8
+- kind: pca
+  n_components: 32
+- kind: ae
+  hidden:
+  - 512
+  bottleneck: 32
+baseline_heads: []
+device: auto
+out: runs
+notes: ''

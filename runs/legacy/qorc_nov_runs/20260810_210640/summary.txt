@@ -1,0 +1,61 @@
+
+========================================================================
+ZERO-DAY NOVELTY SUMMARY
+========================================================================
+protocol: trained on 47,140 NORMAL rows only; scored against
+          58,630 attack rows across 22 types,
+          every one of them unseen during training.
+
+--- best config per detector (macro AUC over attack types) ---
+  IForest    3p12m  (dim   122) macro_AUC=0.9074  pooled_AUC=0.9798  det@1%FA=0.7975
+  NOV_dials  3p24m  (dim    24) macro_AUC=0.8946  pooled_AUC=0.9614  det@1%FA=0.4036
+  NOV_q      3p12m  (dim   220) macro_AUC=0.9120  pooled_AUC=0.9698  det@1%FA=0.2327
+  NOV_raw    3p12m  (dim   122) macro_AUC=0.8985  pooled_AUC=0.9616  det@1%FA=0.2999
+
+best-vs-best (NOV_q - NOV_dials) macro AUC delta = +0.0175
+  -> reservoir ahead of its own input
+per-config gain: 5/6 configs favour quantum  [3p12m:+0.047] [3p20m:+0.013] [3p24m:+0.010] [4p12m:+0.039] [4p20m:+0.007] [4p24m:-0.001]
+capacity trend (smallest -> largest reservoir): -0.0184 macro AUC
+
+--- per-attack verdict (best over all configs/detectors) ---
+  neptune            n=41,214  best AUC=0.999  detectable
+  satan              n= 3,633  best AUC=0.971  detectable
+  ipsweep            n= 3,599  best AUC=0.981  detectable
+  portsweep          n= 2,931  best AUC=0.997  detectable
+  smurf              n= 2,646  best AUC=0.987  detectable
+  nmap               n= 1,493  best AUC=0.970  detectable
+  back               n=   956  best AUC=0.736  marginal
+  teardrop           n=   892  best AUC=0.911  detectable
+  warezclient        n=   890  best AUC=0.857  detectable
+  pod                n=   201  best AUC=0.986  detectable
+  guess_passwd       n=    53  best AUC=0.998  detectable
+  buffer_overflow    n=    30  best AUC=0.932  detectable
+  warezmaster        n=    20  best AUC=0.971  detectable
+  land               n=    18  best AUC=1.000  detectable  (n too small to trust)
+  imap               n=    11  best AUC=1.000  detectable  (n too small to trust)
+  rootkit            n=    10  best AUC=0.913  detectable  (n too small to trust)
+  loadmodule         n=     9  best AUC=0.942  detectable  (n too small to trust)
+  ftp_write          n=     8  best AUC=0.910  detectable  (n too small to trust)
+  multihop           n=     7  best AUC=0.922  detectable  (n too small to trust)
+  phf                n=     4  best AUC=0.989  detectable  (n too small to trust)
+  perl               n=     3  best AUC=0.998  detectable  (n too small to trust)
+  spy                n=     2  best AUC=0.974  detectable  (n too small to trust)
+
+------------------------------------------------------------------------
+CAVEATS
+------------------------------------------------------------------------
+* Single seed (42). The reservoir unitary and the normal split are both
+  random; the original zero-day notebook saw std up to 0.17 across seeds
+  on one arm. A capacity trend smaller than that is NOT established.
+  Rerun with 2-3 seeds before claiming one.
+* Pooled AUC is dominated by neptune (41,214 of 58,630 attack rows).
+  Quote auc_macro_big, which weights attack TYPES equally.
+* Attack types with fewer than 20 rows are reported but excluded
+  from aggregates; with n=2 an AUC is one row's luck, not a measurement.
+* AUC is threshold-free and flatters a detector that would be useless in
+  practice. The det@FA columns are the deployable numbers.
+* NSL-KDD attacks are not real zero-days -- they are known attacks the
+  detector was not shown. That is the right experiment for this question,
+  but it does not prove performance against genuinely novel traffic.
+* The NOV_dials control shares the reservoir's own PCA front-end, so any
+  gain over it is attributable to the reservoir rather than preprocessing.

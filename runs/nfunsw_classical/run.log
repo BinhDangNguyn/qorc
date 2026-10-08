@@ -1,0 +1,13 @@
+11:05:00 === nfunsw_classical: supervised, seed 42, 0 steps, arms ['raw'], device cuda ===
+11:05:05 train (1505872, 37) val (167320, 37) test (717083, 37)
+11:05:25   binary               raw logreg       F1=0.9445 acc=0.9906 (18s)
+11:06:20   binary               raw extratrees100 F1=0.9832 acc=0.9974 (55s)
+11:07:11   binary               raw rf100        F1=0.9843 acc=0.9976 (51s)
+11:07:30   binary               raw xgb300       F1=0.9775 acc=0.9964 (19s)
+11:12:54   binary               raw mlp512x512   F1=0.9740 acc=0.9958 (324s)
+11:20:13   attack10             raw logreg       F1=0.4218 acc=0.9676 (439s)
+11:21:10   attack10             raw extratrees100 F1=0.6495 acc=0.9892 (57s)
+11:22:07   attack10             raw rf100        F1=0.6539 acc=0.9896 (57s)
+11:25:33   attack10             raw xgb300       F1=0.6467 acc=0.9876 (206s)
+11:37:48   attack10             raw mlp512x512   F1=0.5976 acc=0.9853 (736s)
+11:37:48 === nfunsw_classical done in 32.7 min -> D:\Dev\ai-ml\qorc\runs\nfunsw_classical\results.jsonl ===

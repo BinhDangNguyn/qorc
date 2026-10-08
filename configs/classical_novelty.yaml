@@ -1,0 +1,31 @@
+# Standalone classical zero-day detectors on the raw features -- no reservoir.
+# Same normal-only protocol, seed and split as novelty_ladder.yaml, so the
+# scoring rows are identical and the numbers compare directly with the quantum
+# ladder (runs/novelty_ladder).
+#
+#   python -m elements.run configs/classical_novelty.yaml --plan
+
+name: classical_novelty
+task: novelty
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+
+split:
+  test_size: 0.30      # must match novelty_ladder.yaml
+  val_frac: 0.10
+
+arms: [raw]
+
+models:
+  - {kind: iforest}                                   # isolation forest (the team's baseline)
+  - {kind: ocsvm, nu: 0.05, max_train_rows: 10000}    # one-class SVM, RBF; O(n^2) -> subsampled
+  - {kind: lof, n_neighbors: 20}                      # local outlier factor
+  - {kind: knndist, n_neighbors: 5}                   # distance to the 5th nearest normal row
+  - {kind: gmm, n_components: 8}                      # Gaussian mixture likelihood
+  - {kind: pca, n_components: 32}                     # the team's NOV_raw
+  - {kind: ae, hidden: [512], bottleneck: 32}         # autoencoder, same as a ladder step
+
+out: runs

@@ -1,0 +1,46 @@
+# Zero-day novelty: several CLASSICAL detector designs on a few fixed
+# reservoirs. The ladder grew the autoencoder in width only; this asks which
+# classical choices matter -- subspace size, bottleneck, depth, activation --
+# and whether the answer differs between quantum, RFF and raw features.
+#
+#   python -m elements.run configs/novelty_classical_variants.yaml --plan
+
+name: novelty_classical_variants
+task: novelty
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+
+split:
+  test_size: 0.30
+  val_frac: 0.10
+
+arms: [quantum, rff, dials, raw]
+
+baseline_heads:
+  - {kind: iforest, arms: [raw]}
+
+grid:
+  reservoirs:
+    - {photons: 3, modes: 12}     # 220   -- smallest
+    - {photons: 3, modes: 24}     # 2,024 -- where quantum caught up in the ladder
+    - {photons: 4, modes: 24}     # 10,626 -- largest
+  heads:
+    # linear detector, three subspace sizes
+    - {kind: pca, n_components: 8}
+    - {kind: pca, n_components: 32}
+    - {kind: pca, n_components: 128}
+    # autoencoder: the ladder's middle design, for reference
+    - {kind: ae, hidden: [512], bottleneck: 32}
+    # ... with a much narrower / wider bottleneck (capped at input/3)
+    - {kind: ae, hidden: [512], bottleneck: 8}
+    - {kind: ae, hidden: [512], bottleneck: 128}
+    # ... deeper
+    - {kind: ae, hidden: [512, 128], bottleneck: 32}
+    - {kind: ae, hidden: [1024, 256], bottleneck: 64}
+    # ... ReLU instead of GELU
+    - {kind: ae, hidden: [512], bottleneck: 32, activation: relu, name: ae512-b32-relu}
+
+out: runs

@@ -1,0 +1,43 @@
+PLAN  auto_C_unsw_sup_s43  (supervised, seed 43, device cuda)
+data  nf_unsw_nb15_v2 (default path)
+      train 151,933 / val 16,882 / test 72,350 rows, 37 features, label sets ['binary', 'attack10']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_C_unsw_sup_s43
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  3p20m          1140    1.10  mlp512x512     scaled            851,978    1.1m
+
+fits  8 total (2 label set(s) x heads x arms), 0 already on disk, 8 to run
+time  ~9 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 1.1 GB
+
+04:17:55 === auto_C_unsw_sup_s43: supervised, seed 43, 1 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+04:17:56 train (151933, 37) val (16882, 37) test (72350, 37)
+04:18:36   binary               raw mlp512x512   F1=0.9471 acc=0.9678 (40s)
+04:19:52   attack10             raw mlp512x512   F1=0.4710 acc=0.9131 (76s)
+04:19:52 [step 1/1] 3p20m: readout 1,140, PCA(20) 99.5%, heads ['mlp512x512']
+04:20:25   binary           dials20 mlp512x512   F1=0.9479 acc=0.9684 (33s)
+04:21:29   attack10         dials20 mlp512x512   F1=0.4731 acc=0.9139 (64s)
+04:21:33   reservoir 3p20m built in 4s
+04:22:04   binary            q3p20m mlp512x512   F1=0.9474 acc=0.9681 (31s)
+04:23:05   attack10          q3p20m mlp512x512   F1=0.4837 acc=0.9164 (62s)
+04:23:54   binary       rff1140_20m mlp512x512   F1=0.9486 acc=0.9689 (45s)
+04:24:59   attack10     rff1140_20m mlp512x512   F1=0.4846 acc=0.9162 (65s)
+04:24:59 === auto_C_unsw_sup_s43 done in 7.0 min -> D:\Dev\ai-ml\qorc\runs\auto_C_unsw_sup_s43\results.jsonl ===
+PLAN  auto_C_unsw_sup_s43  (supervised, seed 43, device cuda)
+data  nf_unsw_nb15_v2 (default path)
+      train 151,933 / val 16,882 / test 72,350 rows, 37 features, label sets ['binary', 'attack10']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_C_unsw_sup_s43
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  3p20m          1140    1.10  mlp512x512     scaled            851,978    1.1m
+
+fits  8 total (2 label set(s) x heads x arms), 8 already on disk, 0 to run
+time  ~0 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 1.1 GB
+
+21:58:51 === auto_C_unsw_sup_s43: supervised, seed 43, 1 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:58:51 train (151933, 37) val (16882, 37) test (72350, 37)
+21:58:52 [step 1/1] 3p20m: readout 1,140, PCA(20) 99.5%, heads ['mlp512x512']
+21:58:52 === auto_C_unsw_sup_s43 done in 0.0 min -> D:\Dev\ai-ml\qorc\runs\auto_C_unsw_sup_s43\results.jsonl ===

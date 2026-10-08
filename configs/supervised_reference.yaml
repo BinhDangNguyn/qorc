@@ -1,0 +1,35 @@
+# The ORIGINAL supervised sweep (qorc_supervised_multiclass.ipynb): the
+# reservoir grows, the head stays one linear layer (full-batch L-BFGS softmax).
+# This is the plateau the scaled ladder is compared against.
+#
+# Differences from the historical notebook, both small: one split stratified
+# on the 23 fine labels serves both label schemes (the notebook split each
+# scheme separately), and constant train columns are dropped before scaling.
+
+name: supervised_reference
+task: supervised
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  schemes: [families6, all23]
+
+split:
+  test_size: 0.30
+  val_frac: 0.0          # the linear head trains on the whole train split, as before
+
+arms: [quantum, dials, raw]
+
+grid:
+  reservoirs:
+    - {photons: 3, modes: 12}
+    - {photons: 3, modes: 20}
+    - {photons: 3, modes: 24}
+    - {photons: 4, modes: 12}
+    - {photons: 4, modes: 20}
+    - {photons: 4, modes: 24}
+  heads:
+    - {kind: lbfgs, l2: 1.0e-4, max_iter: 200}
+
+out: runs

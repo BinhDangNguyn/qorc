@@ -1,0 +1,50 @@
+PLAN  auto_C_nsl_sup_s43  (supervised, seed 43, device cuda)
+data  nslkdd (default path)
+      train 79,362 / val 8,819 / test 37,792 rows, 120 features, label sets ['families6', 'all23']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_C_nsl_sup_s43
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L16_dt0.3      164    0.08  mlp512x512     scaled            358,935    0.6m
+   2  it4+4_a2a_L16_dt0.3_nomem      164    0.08  mlp512x512     scaled            358,935    0.6m
+
+fits  10 total (2 label set(s) x heads x arms), 0 already on disk, 10 to run
+time  ~7 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+03:41:36 === auto_C_nsl_sup_s43: supervised, seed 43, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+03:41:37 train (79362, 122) val (8819, 122) test (37792, 122)
+03:42:01   families6            raw mlp512x512   F1=0.9806 acc=0.9918 (24s)
+03:42:19   all23                raw mlp512x512   F1=0.7156 acc=0.9748 (18s)
+03:42:19 [step 1/2] it4+4_a2a_L16_dt0.3: readout 164, PCA(120) 100.0%, heads ['mlp512x512']
+03:42:38   families6       dials120 mlp512x512   F1=0.9854 acc=0.9946 (20s)
+03:42:50   all23           dials120 mlp512x512   F1=0.6651 acc=0.9690 (11s)
+03:42:57   reservoir it4+4_a2a_L16_dt0.3 built in 7s
+03:43:17   families6 qit4+4_a2a_L16_dt0.3 mlp512x512   F1=0.9833 acc=0.9940 (20s)
+03:43:39   all23     qit4+4_a2a_L16_dt0.3 mlp512x512   F1=0.7378 acc=0.9870 (22s)
+03:43:54   families6    rff164_120m mlp512x512   F1=0.9757 acc=0.9915 (14s)
+03:44:15   all23        rff164_120m mlp512x512   F1=0.7216 acc=0.9826 (21s)
+03:44:15 [step 2/2] it4+4_a2a_L16_dt0.3_nomem: readout 164, PCA(120) 100.0%, heads ['mlp512x512']
+03:44:22   reservoir it4+4_a2a_L16_dt0.3_nomem built in 7s
+03:44:43   families6 qit4+4_a2a_L16_dt0.3_nomem mlp512x512   F1=0.9841 acc=0.9943 (20s)
+03:44:58   all23     qit4+4_a2a_L16_dt0.3_nomem mlp512x512   F1=0.6980 acc=0.9814 (15s)
+03:44:58 === auto_C_nsl_sup_s43 done in 3.3 min -> D:\Dev\ai-ml\qorc\runs\auto_C_nsl_sup_s43\results.jsonl ===
+PLAN  auto_C_nsl_sup_s43  (supervised, seed 43, device cuda)
+data  nslkdd (default path)
+      train 79,362 / val 8,819 / test 37,792 rows, 120 features, label sets ['families6', 'all23']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_C_nsl_sup_s43
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L16_dt0.3      164    0.08  mlp512x512     scaled            358,935    0.6m
+   2  it4+4_a2a_L16_dt0.3_nomem      164    0.08  mlp512x512     scaled            358,935    0.6m
+
+fits  10 total (2 label set(s) x heads x arms), 10 already on disk, 0 to run
+time  ~1 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+21:57:39 === auto_C_nsl_sup_s43: supervised, seed 43, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:57:40 train (79362, 122) val (8819, 122) test (37792, 122)
+21:57:40 [step 1/2] it4+4_a2a_L16_dt0.3: readout 164, PCA(120) 100.0%, heads ['mlp512x512']
+21:57:40 [step 2/2] it4+4_a2a_L16_dt0.3_nomem: readout 164, PCA(120) 100.0%, heads ['mlp512x512']
+21:57:40 === auto_C_nsl_sup_s43 done in 0.0 min -> D:\Dev\ai-ml\qorc\runs\auto_C_nsl_sup_s43\results.jsonl ===

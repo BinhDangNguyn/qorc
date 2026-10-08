@@ -1,0 +1,17 @@
+04:25:07 === auto_C_unsw_sup_s44: supervised, seed 44, 1 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+04:25:07 train (151933, 37) val (16882, 37) test (72350, 37)
+04:25:35   binary               raw mlp512x512   F1=0.9455 acc=0.9668 (28s)
+04:26:22   attack10             raw mlp512x512   F1=0.4676 acc=0.9102 (46s)
+04:26:22 [step 1/1] 3p20m: readout 1,140, PCA(20) 99.5%, heads ['mlp512x512']
+04:26:48   binary           dials20 mlp512x512   F1=0.9457 acc=0.9670 (27s)
+04:27:56   attack10         dials20 mlp512x512   F1=0.4846 acc=0.9152 (67s)
+04:27:59   reservoir 3p20m built in 3s
+04:28:23   binary            q3p20m mlp512x512   F1=0.9446 acc=0.9662 (24s)
+04:29:58   attack10          q3p20m mlp512x512   F1=0.4986 acc=0.9171 (95s)
+04:30:40   binary       rff1140_20m mlp512x512   F1=0.9462 acc=0.9672 (39s)
+04:31:33   attack10     rff1140_20m mlp512x512   F1=0.4866 acc=0.9151 (53s)
+04:31:33 === auto_C_unsw_sup_s44 done in 6.4 min -> D:\Dev\ai-ml\qorc\runs\auto_C_unsw_sup_s44\results.jsonl ===
+21:59:02 === auto_C_unsw_sup_s44: supervised, seed 44, 1 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:59:03 train (151933, 37) val (16882, 37) test (72350, 37)
+21:59:03 [step 1/1] 3p20m: readout 1,140, PCA(20) 99.5%, heads ['mlp512x512']
+21:59:03 === auto_C_unsw_sup_s44 done in 0.0 min -> D:\Dev\ai-ml\qorc\runs\auto_C_unsw_sup_s44\results.jsonl ===

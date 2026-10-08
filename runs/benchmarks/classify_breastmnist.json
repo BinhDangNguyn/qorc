@@ -1,0 +1,38 @@
+[
+  {
+    "dataset": "breastmnist",
+    "task": "classify",
+    "arm": "raw",
+    "dim": 784,
+    "accuracy": 0.7948717948717948,
+    "macro_f1": 0.7393483709273183,
+    "fit_s": 2.1
+  },
+  {
+    "dataset": "breastmnist",
+    "task": "classify",
+    "arm": "dials",
+    "dim": 12,
+    "accuracy": 0.7371794871794872,
+    "macro_f1": 0.6966851614738938,
+    "fit_s": 0.0
+  },
+  {
+    "dataset": "breastmnist",
+    "task": "classify",
+    "arm": "quantum",
+    "dim": 220,
+    "accuracy": 0.7051282051282052,
+    "macro_f1": 0.6539351851851852,
+    "fit_s": 0.4
+  },
+  {
+    "dataset": "breastmnist",
+    "task": "classify",
+    "arm": "logreg_raw",
+    "dim": 784,
+    "accuracy": 0.8012820512820513,
+    "macro_f1": 0.7173747881479751,
+    "fit_s": 7.7
+  }
+]

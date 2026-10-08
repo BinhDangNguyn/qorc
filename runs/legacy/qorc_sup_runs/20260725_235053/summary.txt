@@ -1,0 +1,33 @@
+
+========================================================================
+SUMMARY
+========================================================================
+
+--- all23 ---
+best quantum : 4p24m (dim 10626) macro_F1=0.6926  bal_acc=0.8013
+best control : 3p24m (dim 24) macro_F1=0.5153  bal_acc=0.7692
+  -> best-vs-best macro F1 delta = +0.1773  (reservoir ahead of its own input)
+  per-config gain: 4/4 configs favour quantum [3p12m:+0.093] [3p20m:+0.179] [3p24m:+0.152] [4p24m:+0.177]
+  capacity trend (smallest -> largest reservoir): +0.1351 macro F1
+
+--- families6 ---
+best quantum : 4p24m (dim 10626) macro_F1=0.9710  bal_acc=0.9894
+best control : 3p24m (dim 24) macro_F1=0.8562  bal_acc=0.9269
+  -> best-vs-best macro F1 delta = +0.1148  (reservoir ahead of its own input)
+  per-config gain: 4/4 configs favour quantum [3p12m:+0.159] [3p20m:+0.125] [3p24m:+0.113] [4p24m:+0.115]
+  capacity trend (smallest -> largest reservoir): +0.0192 macro F1
+
+------------------------------------------------------------------------
+CAVEATS
+------------------------------------------------------------------------
+* Single seed (42) per config. The reservoir unitary is random; the
+  original zero-day notebook saw std up to 0.17 across seeds on one
+  arm. A capacity trend smaller than that is not yet established -
+  rerun with 2-3 seeds per config before claiming it.
+* This is CLOSED-SET classification on known attack families. It says
+  nothing about zero-day performance; that is the novelty head's job.
+* all23 contains classes with 2-11 rows. Their F1 is noise, not signal.
+  Quote families6 for headline numbers.
+* The 'dials' control shares the reservoir's own PCA front-end, so it
+  is a tight control: any gain is attributable to the reservoir, not
+  to preprocessing.

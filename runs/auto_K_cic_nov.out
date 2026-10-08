@@ -1,0 +1,37 @@
+PLAN  auto_K_cic_nov  (novelty, seed 42, device cuda)
+data  nf_cse_cic_ids2018_v2 (default path)
+      train 118,225 / val 13,137 / test 68,638 rows, 37 features, label sets ['novelty']
+arms  ['raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_K_cic_nov
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+      raw              37          iforest        classical                -    0.1m
+      raw              37          ocsvm-nu0.05   classical                -    0.5m
+      raw              37          lof20          classical                -    0.5m
+      raw              37          knndist5       classical                -    0.5m
+      raw              37          gmm8           classical                -    0.2m
+      raw              37          ae512-b32      classical                -    0.8m
+
+fits  6 total (1 label set(s) x heads x arms), 0 already on disk, 6 to run
+time  ~2 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.0 GB
+
+19:51:21 === auto_K_cic_nov: novelty, seed 42, 0 steps, arms ['raw'], device cuda ===
+19:51:33 train (118225, 37) val (13137, 37) test (68638, 37)
+19:51:34   novelty            raw iforest        macroAUC=0.9242 det@1%=0.3157 macro_det@1%=0.4683 (1s)
+19:51:38   novelty            raw ocsvm-nu0.05   macroAUC=0.9282 det@1%=0.6536 macro_det@1%=0.6378 (4s)
+C:\Users\binh1\miniconda3\envs\py3.10_pytorch\lib\site-packages\threadpoolctl.py:1226: RuntimeWarning: 
+Found Intel OpenMP ('libiomp') and LLVM OpenMP ('libomp') loaded at
+the same time. Both libraries are known to be incompatible and this
+can cause random crashes or deadlocks on Linux when loaded in the
+same Python program.
+Using threadpoolctl may cause crashes or deadlocks. For more
+information and possible workarounds, please see
+    https://github.com/joblib/threadpoolctl/blob/master/multiple_openmp.md
+
+  warnings.warn(msg, RuntimeWarning)
+19:52:11   novelty            raw lof20          macroAUC=0.8616 det@1%=0.0019 macro_det@1%=0.0070 (34s)
+19:52:23   novelty            raw knndist5       macroAUC=0.9298 det@1%=0.8368 macro_det@1%=0.7880 (11s)
+19:52:24   novelty            raw gmm8           macroAUC=0.9220 det@1%=0.4750 macro_det@1%=0.5429 (2s)
+19:53:41   novelty            raw ae512-b32      macroAUC=0.9292 det@1%=0.7809 macro_det@1%=0.7102 (77s)
+19:53:41 === auto_K_cic_nov done in 2.1 min -> D:\Dev\ai-ml\qorc\runs\auto_K_cic_nov\results.jsonl ===

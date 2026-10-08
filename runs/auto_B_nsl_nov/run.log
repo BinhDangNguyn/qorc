@@ -1,0 +1,37 @@
+06:25:20 === auto_B_nsl_nov: novelty, seed 42, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+06:25:20 train (42426, 122) val (4714, 122) test (78833, 122)
+06:25:21   novelty            raw pca32          macroAUC=0.8985 det@1%=0.3093 macro_det@1%=0.2009 (1s)
+06:25:49   novelty            raw ae64-b32       macroAUC=0.9665 det@1%=0.8558 macro_det@1%=0.6082 (28s)
+06:26:14   novelty            raw ae256-b32      macroAUC=0.9771 det@1%=0.9367 macro_det@1%=0.7455 (26s)
+06:26:42   novelty            raw ae1024-b32     macroAUC=0.9770 det@1%=0.8862 macro_det@1%=0.6668 (27s)
+06:27:15   novelty            raw ae512x512-b32  macroAUC=0.9802 det@1%=0.9380 macro_det@1%=0.7580 (34s)
+06:27:16 [step 1/2] it6+4_a2a_L8_dt0.3: readout 172, PCA(96) 100.0%, heads ['pca32', 'ae64-b32', 'ae256-b32', 'ae1024-b32', 'ae512x512-b32']
+06:27:16   novelty        dials96 pca32          macroAUC=0.9307 det@1%=0.6596 macro_det@1%=0.3543 (1s)
+06:27:43   novelty        dials96 ae64-b32       macroAUC=0.9500 det@1%=0.8258 macro_det@1%=0.4824 (26s)
+06:28:09   novelty        dials96 ae256-b32      macroAUC=0.9759 det@1%=0.8776 macro_det@1%=0.6216 (27s)
+06:28:37   novelty        dials96 ae1024-b32     macroAUC=0.9801 det@1%=0.9421 macro_det@1%=0.7621 (28s)
+06:29:11   novelty        dials96 ae512x512-b32  macroAUC=0.9793 det@1%=0.9211 macro_det@1%=0.7017 (34s)
+06:29:24   reservoir it6+4_a2a_L8_dt0.3 built in 13s
+06:29:25   novelty qit6+4_a2a_L8_dt0.3 pca32          macroAUC=0.9379 det@1%=0.7386 macro_det@1%=0.4572 (1s)
+06:29:51   novelty qit6+4_a2a_L8_dt0.3 ae64-b32       macroAUC=0.9710 det@1%=0.8081 macro_det@1%=0.6088 (26s)
+06:30:17   novelty qit6+4_a2a_L8_dt0.3 ae256-b32      macroAUC=0.9805 det@1%=0.9394 macro_det@1%=0.7751 (26s)
+06:30:45   novelty qit6+4_a2a_L8_dt0.3 ae1024-b32     macroAUC=0.9819 det@1%=0.9510 macro_det@1%=0.8046 (28s)
+06:31:19   novelty qit6+4_a2a_L8_dt0.3 ae512x512-b32  macroAUC=0.9833 det@1%=0.9496 macro_det@1%=0.7986 (34s)
+06:31:21   novelty     rff172_96m pca32          macroAUC=0.8371 det@1%=0.0000 macro_det@1%=0.0000 (1s)
+06:31:47   novelty     rff172_96m ae64-b32       macroAUC=0.9587 det@1%=0.7671 macro_det@1%=0.3545 (26s)
+06:32:14   novelty     rff172_96m ae256-b32      macroAUC=0.9753 det@1%=0.8723 macro_det@1%=0.5821 (26s)
+06:32:35   novelty     rff172_96m ae1024-b32     macroAUC=0.9803 det@1%=0.8836 macro_det@1%=0.5981 (21s)
+06:32:57   novelty     rff172_96m ae512x512-b32  macroAUC=0.9792 det@1%=0.8758 macro_det@1%=0.5842 (22s)
+06:32:57 [step 2/2] it6+4_a2a_L8_dt0.3_nomem: readout 172, PCA(96) 100.0%, heads ['pca32', 'ae64-b32', 'ae256-b32', 'ae1024-b32', 'ae512x512-b32']
+06:33:09   reservoir it6+4_a2a_L8_dt0.3_nomem built in 12s
+06:33:10   novelty qit6+4_a2a_L8_dt0.3_nomem pca32          macroAUC=0.9418 det@1%=0.7458 macro_det@1%=0.5179 (1s)
+06:33:37   novelty qit6+4_a2a_L8_dt0.3_nomem ae64-b32       macroAUC=0.9712 det@1%=0.7898 macro_det@1%=0.5888 (26s)
+06:34:03   novelty qit6+4_a2a_L8_dt0.3_nomem ae256-b32      macroAUC=0.9798 det@1%=0.9452 macro_det@1%=0.7907 (26s)
+06:34:31   novelty qit6+4_a2a_L8_dt0.3_nomem ae1024-b32     macroAUC=0.9816 det@1%=0.9487 macro_det@1%=0.7962 (28s)
+06:35:04   novelty qit6+4_a2a_L8_dt0.3_nomem ae512x512-b32  macroAUC=0.9834 det@1%=0.9513 macro_det@1%=0.8025 (34s)
+06:35:04 === auto_B_nsl_nov done in 9.7 min -> D:\Dev\ai-ml\qorc\runs\auto_B_nsl_nov\results.jsonl ===
+21:58:03 === auto_B_nsl_nov: novelty, seed 42, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:58:04 train (42426, 122) val (4714, 122) test (78833, 122)
+21:58:04 [step 1/2] it6+4_a2a_L8_dt0.3: readout 172, PCA(96) 100.0%, heads ['pca32', 'ae64-b32', 'ae256-b32', 'ae1024-b32', 'ae512x512-b32']
+21:58:04 [step 2/2] it6+4_a2a_L8_dt0.3_nomem: readout 172, PCA(96) 100.0%, heads ['pca32', 'ae64-b32', 'ae256-b32', 'ae1024-b32', 'ae512x512-b32']
+21:58:04 === auto_B_nsl_nov done in 0.0 min -> D:\Dev\ai-ml\qorc\runs\auto_B_nsl_nov\results.jsonl ===

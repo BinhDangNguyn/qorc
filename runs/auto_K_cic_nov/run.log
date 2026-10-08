@@ -1,0 +1,9 @@
+19:51:21 === auto_K_cic_nov: novelty, seed 42, 0 steps, arms ['raw'], device cuda ===
+19:51:33 train (118225, 37) val (13137, 37) test (68638, 37)
+19:51:34   novelty            raw iforest        macroAUC=0.9242 det@1%=0.3157 macro_det@1%=0.4683 (1s)
+19:51:38   novelty            raw ocsvm-nu0.05   macroAUC=0.9282 det@1%=0.6536 macro_det@1%=0.6378 (4s)
+19:52:11   novelty            raw lof20          macroAUC=0.8616 det@1%=0.0019 macro_det@1%=0.0070 (34s)
+19:52:23   novelty            raw knndist5       macroAUC=0.9298 det@1%=0.8368 macro_det@1%=0.7880 (11s)
+19:52:24   novelty            raw gmm8           macroAUC=0.9220 det@1%=0.4750 macro_det@1%=0.5429 (2s)
+19:53:41   novelty            raw ae512-b32      macroAUC=0.9292 det@1%=0.7809 macro_det@1%=0.7102 (77s)
+19:53:41 === auto_K_cic_nov done in 2.1 min -> D:\Dev\ai-ml\qorc\runs\auto_K_cic_nov\results.jsonl ===

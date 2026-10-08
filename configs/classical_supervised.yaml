@@ -1,0 +1,33 @@
+# Standalone classical classifiers on the raw features -- no reservoir.
+# Same seed, split and label schemes as supervised_ladder.yaml; the test rows
+# are the same as in runs/joint_scaling and runs/supervised_ladder.
+#
+#   python -m elements.run configs/classical_supervised.yaml --plan
+
+name: classical_supervised
+task: supervised
+seed: 42
+
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  schemes: [families6, all23]
+
+split:
+  test_size: 0.30      # must match the quantum runs
+  val_frac: 0.10
+
+arms: [raw]
+
+# every model uses balanced class weights, like the reservoir heads
+models:
+  - {kind: logreg}
+  - {kind: svm}                                       # linear SVM
+  - {kind: knn, n_neighbors: 5}
+  - {kind: rf, n_estimators: 300}                     # random forest
+  - {kind: extratrees, n_estimators: 300}
+  - {kind: hgb, n_estimators: 300}                    # histogram gradient boosting
+  - {kind: xgb, n_estimators: 300}                    # XGBoost
+  - {kind: mlp, hidden: [512, 512]}                   # a plain classical MLP
+
+out: runs

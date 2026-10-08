@@ -1,0 +1,120 @@
+PLAN  auto_B_nsl_sup  (supervised, seed 42, device cuda)
+data  nslkdd (default path)
+      train 79,362 / val 8,819 / test 37,792 rows, 121 features, label sets ['families6', 'all23']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_B_nsl_sup
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L16_dt0.3      164    0.08  lbfgs          scaled              3,795    0.1m
+                                   mlp32          scaled              6,039    0.5m
+                                   mlp128         scaled             24,087    0.5m
+                                   mlp512         scaled             96,279    0.6m
+                                   mlp2048        scaled            385,047    0.6m
+                                   mlp512x512     scaled            358,935    0.6m
+   2  it4+4_a2a_L16_dt0.3_nomem      164    0.08  lbfgs          scaled              3,795    0.1m
+                                   mlp32          scaled              6,039    0.5m
+                                   mlp128         scaled             24,087    0.5m
+                                   mlp512         scaled             96,279    0.6m
+                                   mlp2048        scaled            385,047    0.6m
+                                   mlp512x512     scaled            358,935    0.6m
+
+fits  60 total (2 label set(s) x heads x arms), 0 already on disk, 60 to run
+time  ~30 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+03:24:46 === auto_B_nsl_sup: supervised, seed 42, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+03:24:46 train (79362, 122) val (8819, 122) test (37792, 122)
+03:24:51   families6            raw lbfgs        F1=0.9218 acc=0.9618 (4s)
+03:25:27   families6            raw mlp32        F1=0.9682 acc=0.9867 (36s)
+03:25:57   families6            raw mlp128       F1=0.9745 acc=0.9892 (30s)
+03:26:09   families6            raw mlp512       F1=0.9745 acc=0.9898 (12s)
+03:26:21   families6            raw mlp2048      F1=0.9721 acc=0.9883 (12s)
+03:26:52   families6            raw mlp512x512   F1=0.9864 acc=0.9946 (31s)
+03:26:56   all23                raw lbfgs        F1=0.6321 acc=0.9425 (4s)
+03:27:05   all23                raw mlp32        F1=0.5829 acc=0.9212 (9s)
+03:27:16   all23                raw mlp128       F1=0.6660 acc=0.9453 (11s)
+03:27:26   all23                raw mlp512       F1=0.6725 acc=0.9576 (9s)
+03:27:34   all23                raw mlp2048      F1=0.6755 acc=0.9493 (8s)
+03:27:45   all23                raw mlp512x512   F1=0.6782 acc=0.9622 (11s)
+03:27:45 [step 1/2] it4+4_a2a_L16_dt0.3: readout 164, PCA(121) 100.0%, heads ['lbfgs', 'mlp32', 'mlp128', 'mlp512', 'mlp2048', 'mlp512x512']
+03:27:49   families6       dials121 lbfgs        F1=0.9270 acc=0.9648 (3s)
+03:28:14   families6       dials121 mlp32        F1=0.9705 acc=0.9880 (25s)
+03:28:30   families6       dials121 mlp128       F1=0.9749 acc=0.9895 (17s)
+03:28:59   families6       dials121 mlp512       F1=0.9786 acc=0.9913 (28s)
+03:29:24   families6       dials121 mlp2048      F1=0.9862 acc=0.9945 (25s)
+03:29:53   families6       dials121 mlp512x512   F1=0.9865 acc=0.9946 (29s)
+03:29:56   all23           dials121 lbfgs        F1=0.6025 acc=0.9480 (4s)
+03:30:13   all23           dials121 mlp32        F1=0.6367 acc=0.9584 (16s)
+03:30:32   all23           dials121 mlp128       F1=0.6824 acc=0.9766 (19s)
+03:31:02   all23           dials121 mlp512       F1=0.7524 acc=0.9785 (30s)
+03:31:28   all23           dials121 mlp2048      F1=0.7280 acc=0.9851 (25s)
+03:31:41   all23           dials121 mlp512x512   F1=0.7184 acc=0.9714 (13s)
+03:31:49   reservoir it4+4_a2a_L16_dt0.3 built in 8s
+03:31:52   families6 qit4+4_a2a_L16_dt0.3 lbfgs        F1=0.9397 acc=0.9743 (3s)
+03:32:17   families6 qit4+4_a2a_L16_dt0.3 mlp32        F1=0.9713 acc=0.9891 (25s)
+03:32:42   families6 qit4+4_a2a_L16_dt0.3 mlp128       F1=0.9779 acc=0.9915 (25s)
+03:33:07   families6 qit4+4_a2a_L16_dt0.3 mlp512       F1=0.9815 acc=0.9932 (25s)
+03:33:30   families6 qit4+4_a2a_L16_dt0.3 mlp2048      F1=0.9805 acc=0.9924 (23s)
+03:33:46   families6 qit4+4_a2a_L16_dt0.3 mlp512x512   F1=0.9822 acc=0.9930 (16s)
+03:33:50   all23     qit4+4_a2a_L16_dt0.3 lbfgs        F1=0.6633 acc=0.9591 (4s)
+03:33:58   all23     qit4+4_a2a_L16_dt0.3 mlp32        F1=0.5838 acc=0.9262 (8s)
+03:34:08   all23     qit4+4_a2a_L16_dt0.3 mlp128       F1=0.6562 acc=0.9650 (10s)
+03:34:18   all23     qit4+4_a2a_L16_dt0.3 mlp512       F1=0.6688 acc=0.9670 (9s)
+03:34:26   all23     qit4+4_a2a_L16_dt0.3 mlp2048      F1=0.6841 acc=0.9680 (8s)
+03:35:11   all23     qit4+4_a2a_L16_dt0.3 mlp512x512   F1=0.7514 acc=0.9864 (45s)
+03:35:17   families6    rff164_121m lbfgs        F1=0.9093 acc=0.9567 (4s)
+03:35:45   families6    rff164_121m mlp32        F1=0.9634 acc=0.9859 (28s)
+03:36:06   families6    rff164_121m mlp128       F1=0.9746 acc=0.9908 (20s)
+03:36:21   families6    rff164_121m mlp512       F1=0.9774 acc=0.9918 (16s)
+03:36:36   families6    rff164_121m mlp2048      F1=0.9779 acc=0.9919 (15s)
+03:36:55   families6    rff164_121m mlp512x512   F1=0.9781 acc=0.9922 (19s)
+03:36:59   all23        rff164_121m lbfgs        F1=0.6487 acc=0.9487 (4s)
+03:37:21   all23        rff164_121m mlp32        F1=0.6583 acc=0.9557 (22s)
+03:37:47   all23        rff164_121m mlp128       F1=0.7063 acc=0.9798 (25s)
+03:38:02   all23        rff164_121m mlp512       F1=0.7173 acc=0.9824 (15s)
+03:38:17   all23        rff164_121m mlp2048      F1=0.7410 acc=0.9857 (15s)
+03:38:31   all23        rff164_121m mlp512x512   F1=0.7144 acc=0.9748 (14s)
+03:38:31 [step 2/2] it4+4_a2a_L16_dt0.3_nomem: readout 164, PCA(121) 100.0%, heads ['lbfgs', 'mlp32', 'mlp128', 'mlp512', 'mlp2048', 'mlp512x512']
+03:38:38   reservoir it4+4_a2a_L16_dt0.3_nomem built in 7s
+03:38:42   families6 qit4+4_a2a_L16_dt0.3_nomem lbfgs        F1=0.9379 acc=0.9733 (4s)
+03:39:06   families6 qit4+4_a2a_L16_dt0.3_nomem mlp32        F1=0.9695 acc=0.9884 (24s)
+03:39:19   families6 qit4+4_a2a_L16_dt0.3_nomem mlp128       F1=0.9719 acc=0.9892 (13s)
+03:39:43   families6 qit4+4_a2a_L16_dt0.3_nomem mlp512       F1=0.9802 acc=0.9922 (24s)
+03:40:08   families6 qit4+4_a2a_L16_dt0.3_nomem mlp2048      F1=0.9820 acc=0.9932 (25s)
+03:40:24   families6 qit4+4_a2a_L16_dt0.3_nomem mlp512x512   F1=0.9819 acc=0.9929 (16s)
+03:40:28   all23     qit4+4_a2a_L16_dt0.3_nomem lbfgs        F1=0.6656 acc=0.9586 (4s)
+03:40:42   all23     qit4+4_a2a_L16_dt0.3_nomem mlp32        F1=0.6458 acc=0.9519 (14s)
+03:41:00   all23     qit4+4_a2a_L16_dt0.3_nomem mlp128       F1=0.6934 acc=0.9735 (17s)
+03:41:09   all23     qit4+4_a2a_L16_dt0.3_nomem mlp512       F1=0.6762 acc=0.9621 (9s)
+03:41:20   all23     qit4+4_a2a_L16_dt0.3_nomem mlp2048      F1=0.7414 acc=0.9707 (11s)
+03:41:28   all23     qit4+4_a2a_L16_dt0.3_nomem mlp512x512   F1=0.7063 acc=0.9661 (8s)
+03:41:28 === auto_B_nsl_sup done in 16.7 min -> D:\Dev\ai-ml\qorc\runs\auto_B_nsl_sup\results.jsonl ===
+PLAN  auto_B_nsl_sup  (supervised, seed 42, device cuda)
+data  nslkdd (default path)
+      train 79,362 / val 8,819 / test 37,792 rows, 121 features, label sets ['families6', 'all23']
+arms  ['quantum', 'dials', 'rff', 'raw']
+out   D:\Dev\ai-ml\qorc\runs\auto_B_nsl_sup
+
+step  reservoir   readout feat GB  head           role     params (quantum)    ~fit
+   1  it4+4_a2a_L16_dt0.3      164    0.08  lbfgs          scaled              3,795    0.1m
+                                   mlp32          scaled              6,039    0.5m
+                                   mlp128         scaled             24,087    0.5m
+                                   mlp512         scaled             96,279    0.6m
+                                   mlp2048        scaled            385,047    0.6m
+                                   mlp512x512     scaled            358,935    0.6m
+   2  it4+4_a2a_L16_dt0.3_nomem      164    0.08  lbfgs          scaled              3,795    0.1m
+                                   mlp32          scaled              6,039    0.5m
+                                   mlp128         scaled             24,087    0.5m
+                                   mlp512         scaled             96,279    0.6m
+                                   mlp2048        scaled            385,047    0.6m
+                                   mlp512x512     scaled            358,935    0.6m
+
+fits  60 total (2 label set(s) x heads x arms), 60 already on disk, 0 to run
+time  ~1 min remaining (rough: +-50%, one GPU, nothing else running)
+RAM   peak feature matrix 0.1 GB
+
+21:57:28 === auto_B_nsl_sup: supervised, seed 42, 2 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+21:57:29 train (79362, 122) val (8819, 122) test (37792, 122)
+21:57:29 [step 1/2] it4+4_a2a_L16_dt0.3: readout 164, PCA(121) 100.0%, heads ['lbfgs', 'mlp32', 'mlp128', 'mlp512', 'mlp2048', 'mlp512x512']
+21:57:29 [step 2/2] it4+4_a2a_L16_dt0.3_nomem: readout 164, PCA(121) 100.0%, heads ['lbfgs', 'mlp32', 'mlp128', 'mlp512', 'mlp2048', 'mlp512x512']
+21:57:29 === auto_B_nsl_sup done in 0.0 min -> D:\Dev\ai-ml\qorc\runs\auto_B_nsl_sup\results.jsonl ===

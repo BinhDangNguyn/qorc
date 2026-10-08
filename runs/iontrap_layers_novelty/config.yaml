@@ -1,0 +1,78 @@
+name: iontrap_layers_novelty
+task: novelty
+data:
+  dataset: nslkdd
+  path: D:/Dev/ai-ml/reservoir-computing/QRC/data/NSL_KDD_labeled.csv
+  schemes:
+  - families6
+  - all23
+  n_train: 0
+  max_rows: 0
+seed: 42
+split:
+  test_size: 0.3
+  val_frac: 0.1
+encoding:
+  scheme: tanh
+  width: 3.0
+arms:
+- quantum
+- dials
+- rff
+- raw
+ladder: null
+grid:
+  reservoirs:
+  - kind: iontrap
+    n_in: 4
+    n_mem: 4
+    steps: 16
+    slice_order: roundrobin
+  - kind: iontrap
+    n_in: 4
+    n_mem: 4
+    steps: 8
+    uploads: 2
+    slice_order: roundrobin
+  - kind: iontrap
+    n_in: 4
+    n_mem: 4
+    steps: 4
+    uploads: 4
+    slice_order: roundrobin
+  - kind: iontrap
+    n_in: 4
+    n_mem: 4
+    steps: 8
+    encode_all: true
+    slice_order: roundrobin
+  - kind: iontrap
+    n_in: 4
+    n_mem: 4
+    steps: 4
+    uploads: 2
+    encode_all: true
+    slice_order: roundrobin
+  - kind: iontrap
+    n_in: 4
+    n_mem: 4
+    steps: 2
+    uploads: 4
+    encode_all: true
+    slice_order: roundrobin
+  heads:
+  - kind: pca
+    n_components: 32
+  - kind: ae
+    hidden:
+    - 256
+    bottleneck: 32
+rule: null
+models: null
+baseline_heads:
+- kind: iforest
+  arms:
+  - raw
+device: auto
+out: runs
+notes: ''

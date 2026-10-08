@@ -1,0 +1,48 @@
+12:38:07 === novelty_ladder: novelty, seed 42, 5 steps, arms ['quantum', 'dials', 'rff', 'raw'], device cuda ===
+12:38:07 train (42426, 122) val (4714, 122) test (78833, 122)
+12:38:32   novelty            raw ae128-b16      macroAUC=0.9689 det@1%=0.8763 macro_det@1%=0.6014 (24s)
+12:38:32   novelty            raw pca32          macroAUC=0.8985 det@1%=0.3093 macro_det@1%=0.2009 (1s)
+12:38:33   novelty            raw iforest        macroAUC=0.9168 det@1%=0.7982 macro_det@1%=0.2339 (1s)
+12:38:56   novelty            raw ae256-b32      macroAUC=0.9771 det@1%=0.9367 macro_det@1%=0.7455 (23s)
+12:39:20   novelty            raw ae512-b32      macroAUC=0.9792 det@1%=0.9420 macro_det@1%=0.7691 (24s)
+12:39:49   novelty            raw ae1024-b64     macroAUC=0.9796 det@1%=0.9200 macro_det@1%=0.7573 (29s)
+12:40:18   novelty            raw ae2048-b64     macroAUC=0.9771 det@1%=0.9030 macro_det@1%=0.7266 (29s)
+12:40:18 [step 1/5] 3p12m: readout 220, PCA(12) 48.2%, heads ['ae128-b16', 'pca32', 'iforest']
+12:40:48   novelty        dials12 ae128-b16      macroAUC=0.9605 det@1%=0.7022 macro_det@1%=0.4697 (30s)
+12:40:48   novelty        dials12 pca32          macroAUC=0.8697 det@1%=0.6334 macro_det@1%=0.2210 (0s)
+12:40:49   reservoir 3p12m built in 1s
+12:41:15   novelty         q3p12m ae128-b16      macroAUC=0.9619 det@1%=0.8540 macro_det@1%=0.5376 (26s)
+12:41:16   novelty         q3p12m pca32          macroAUC=0.9120 det@1%=0.2360 macro_det@1%=0.3341 (1s)
+12:41:41   novelty     rff220_12m ae128-b16      macroAUC=0.9668 det@1%=0.8513 macro_det@1%=0.5359 (25s)
+12:41:43   novelty     rff220_12m pca32          macroAUC=0.9126 det@1%=0.1949 macro_det@1%=0.0628 (1s)
+12:41:43 [step 2/5] 3p20m: readout 1,140, PCA(20) 60.8%, heads ['ae256-b32', 'pca32', 'iforest']
+12:42:08   novelty        dials20 ae256-b32      macroAUC=0.9637 det@1%=0.9181 macro_det@1%=0.6361 (25s)
+12:42:08   novelty        dials20 pca32          macroAUC=0.8957 det@1%=0.6224 macro_det@1%=0.2473 (0s)
+12:42:10   reservoir 3p20m built in 2s
+12:42:36   novelty         q3p20m ae256-b32      macroAUC=0.9715 det@1%=0.8625 macro_det@1%=0.5549 (26s)
+12:42:41   novelty         q3p20m pca32          macroAUC=0.9051 det@1%=0.0581 macro_det@1%=0.1553 (5s)
+12:43:10   novelty    rff1140_20m ae256-b32      macroAUC=0.9735 det@1%=0.9181 macro_det@1%=0.6595 (27s)
+12:43:15   novelty    rff1140_20m pca32          macroAUC=0.8677 det@1%=0.0133 macro_det@1%=0.0624 (5s)
+12:43:15 [step 3/5] 3p24m: readout 2,024, PCA(24) 66.2%, heads ['ae512-b32', 'pca32', 'iforest']
+12:43:40   novelty        dials24 ae512-b32      macroAUC=0.9666 det@1%=0.8027 macro_det@1%=0.5046 (25s)
+12:43:41   novelty        dials24 pca32          macroAUC=0.8946 det@1%=0.2980 macro_det@1%=0.1888 (0s)
+12:43:43   reservoir 3p24m built in 3s
+12:44:10   novelty         q3p24m ae512-b32      macroAUC=0.9744 det@1%=0.9285 macro_det@1%=0.6761 (27s)
+12:44:18   novelty         q3p24m pca32          macroAUC=0.9071 det@1%=0.0662 macro_det@1%=0.1599 (8s)
+12:44:47   novelty    rff2024_24m ae512-b32      macroAUC=0.9749 det@1%=0.9253 macro_det@1%=0.6734 (26s)
+12:44:56   novelty    rff2024_24m pca32          macroAUC=0.8596 det@1%=0.0043 macro_det@1%=0.0108 (8s)
+12:44:56 [step 4/5] 4p20m: readout 4,845, PCA(20) 60.8%, heads ['ae1024-b64', 'pca32', 'iforest']
+12:45:22   novelty        dials20 ae1024-b64     macroAUC=0.9572 det@1%=0.9055 macro_det@1%=0.6335 (27s)
+12:45:29   reservoir 4p20m built in 6s
+12:46:51   novelty         q4p20m ae1024-b64     macroAUC=0.9762 det@1%=0.9345 macro_det@1%=0.6989 (82s)
+12:47:11   novelty         q4p20m pca32          macroAUC=0.8981 det@1%=0.0624 macro_det@1%=0.1239 (20s)
+12:48:40   novelty    rff4845_20m ae1024-b64     macroAUC=0.9763 det@1%=0.9335 macro_det@1%=0.7124 (82s)
+12:49:00   novelty    rff4845_20m pca32          macroAUC=0.8602 det@1%=0.0135 macro_det@1%=0.0633 (20s)
+12:49:00 [step 5/5] 4p24m: readout 10,626, PCA(24) 66.2%, heads ['ae2048-b64', 'pca32', 'iforest']
+12:49:30   novelty        dials24 ae2048-b64     macroAUC=0.9643 det@1%=0.7977 macro_det@1%=0.4955 (30s)
+12:50:02   reservoir 4p24m built in 32s
+12:55:28   novelty         q4p24m ae2048-b64     macroAUC=0.9771 det@1%=0.9392 macro_det@1%=0.7222 (326s)
+12:56:17   novelty         q4p24m pca32          macroAUC=0.8985 det@1%=0.0256 macro_det@1%=0.1212 (48s)
+13:01:53   novelty   rff10626_24m ae2048-b64     macroAUC=0.9753 det@1%=0.9370 macro_det@1%=0.7253 (321s)
+13:02:38   novelty   rff10626_24m pca32          macroAUC=0.8572 det@1%=0.0069 macro_det@1%=0.0225 (45s)
+13:02:38 === novelty_ladder done in 24.5 min -> D:\Dev\ai-ml\qorc\runs\novelty_ladder\results.jsonl ===

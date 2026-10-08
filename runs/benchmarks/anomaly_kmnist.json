@@ -1,0 +1,46 @@
+[
+  {
+    "dataset": "kmnist",
+    "task": "anomaly",
+    "arm": "raw",
+    "dim": 784,
+    "auc": 0.47185295999999993,
+    "det@0.001": 0.001,
+    "det@0.01": 0.0076,
+    "det@0.05": 0.0388,
+    "fit_s": 0.4
+  },
+  {
+    "dataset": "kmnist",
+    "task": "anomaly",
+    "arm": "dials",
+    "dim": 12,
+    "auc": 0.40987376,
+    "det@0.001": 0.0006,
+    "det@0.01": 0.003,
+    "det@0.05": 0.022,
+    "fit_s": 0.0
+  },
+  {
+    "dataset": "kmnist",
+    "task": "anomaly",
+    "arm": "quantum",
+    "dim": 220,
+    "auc": 0.46174415999999996,
+    "det@0.001": 0.0004,
+    "det@0.01": 0.0044,
+    "det@0.05": 0.029,
+    "fit_s": 0.2
+  },
+  {
+    "dataset": "kmnist",
+    "task": "anomaly",
+    "arm": "iforest_raw",
+    "dim": 784,
+    "auc": 0.476012,
+    "det@0.001": 0.0006,
+    "det@0.01": 0.0064,
+    "det@0.05": 0.0392,
+    "fit_s": 0.3
+  }
+]
